@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460">
+<rect width="800" height="460" fill="#07111f"/>
+<rect width="800" height="460" fill="#d9eef9"/>
+<path d="M0 335 C110 315 190 350 290 330 C390 310 485 350 590 328 C675 310 735 325 800 318 L800 460 L0 460 Z" fill="#90c5df"/>
+<line x1="400" y1="132" x2="400" y2="235" stroke="#165d35" stroke-width="10"/>
+<polygon points="400,80 365,135 435,135" fill="#159447"/>
+<path d="M350 235 L450 235 L425 380 L375 380 Z" fill="#159447" stroke="#0b6430" stroke-width="5"/>
+</svg>

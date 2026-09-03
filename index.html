@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f6b78" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Test JSM – Jachtowy Sternik Morski</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="quiz-mode">
+  <main class="app-shell">
+    <header class="app-header">
+      <h1>⚓ JSM</h1>
+      <p class="subtitle">75 pytań</p>
+    </header>
+
+    <div id="quizArea" class="quiz-screen">
+      <div class="quiz-status">
+        <div class="status-line">
+          <span id="questionNumber" class="question-number"></span>
+          <span id="progressText" class="progress-text"></span>
+        </div>
+        <div class="progress-shell" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <section class="card quiz-card">
+        <div id="questionScroll" class="question-scroll">
+          <div id="questionMeta" class="question-meta"></div>
+          <h2 id="questionText" class="question"></h2>
+
+          <div id="questionImageContainer" class="question-image-container">
+            <img id="questionImage" class="question-image" alt="Ilustracja do pytania" />
+          </div>
+
+          <div id="answers" class="answers"></div>
+          <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="nav">
+          <button id="nextBtn" class="next-btn">Następne pytanie →</button>
+        </div>
+      </section>
+    </div>
+
+    <section id="resultArea" class="card result">
+      <h2>Test ukończony</h2>
+      <div id="score" class="score"></div>
+      <p id="resultMessage"></p>
+      <button id="restartBtn" class="restart-btn">Wylosuj nowy test</button>
+      <div id="review" class="review"></div>
+    </section>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
