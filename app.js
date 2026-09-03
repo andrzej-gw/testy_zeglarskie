@@ -223,22 +223,38 @@ function showResult() {
     const selectedText = q.answers[ua.selected];
     const correctText = q.answers[q.correct];
 
+    const reviewImage = q.image
+      ? `
+        <div class="review-image-container">
+          <img
+            class="review-image"
+            src="${q.image}"
+            alt="Ilustracja do pytania ${q.id}"
+            loading="lazy"
+          >
+        </div>
+      `
+      : "";
+
     item.innerHTML = `
-      <strong>${index + 1}. ${q.question}</strong><br>
-      ${
-        ua.correct
-          ? '<span class="review-good">✓ poprawnie</span>'
-          : '<span class="review-bad">✗ błędnie</span>'
-      }
-      <br>
-      Twoja odpowiedź:
-      ${String.fromCharCode(65 + ua.selected)}. ${selectedText}
-      ${
-        ua.correct
-          ? ""
-          : `<br>Poprawna:
-             ${String.fromCharCode(65 + q.correct)}. ${correctText}`
-      }
+      <strong>${index + 1}. ${q.question}</strong>
+      ${reviewImage}
+      <div class="review-answer">
+        ${
+          ua.correct
+            ? '<span class="review-good">✓ poprawnie</span>'
+            : '<span class="review-bad">✗ błędnie</span>'
+        }
+        <br>
+        Twoja odpowiedź:
+        ${String.fromCharCode(65 + ua.selected)}. ${selectedText}
+        ${
+          ua.correct
+            ? ""
+            : `<br>Poprawna:
+               ${String.fromCharCode(65 + q.correct)}. ${correctText}`
+        }
+      </div>
     `;
 
     review.appendChild(item);
