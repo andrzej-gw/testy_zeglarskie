@@ -1,0 +1,20 @@
+
+/* Dopisz do admin.css, jeśli chcesz estetyczny komunikat konfiguracji. */
+.setup-error {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  color: #7a3e00;
+  background: #fff6df;
+  border: 1px solid #e8c77b;
+  border-radius: 12px;
+}
+
+.setup-error p {
+  margin: 6px 0 0;
+}
+
+.setup-error code {
+  padding: 1px 5px;
+  background: rgba(255,255,255,.75);
+  border-radius: 5px;
+}
