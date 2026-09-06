@@ -6,7 +6,7 @@
   <title>JSM • Panel oceny pytań</title>
 
   <script>
-    // Dzięki temu /admin i /admin/ zachowują się identycznie.
+    // /admin i /admin/ mają działać identycznie.
     if (!location.pathname.endsWith('/')) {
       location.replace(location.pathname + '/' + location.search + location.hash);
     }
@@ -17,7 +17,16 @@
 <body>
   <header class="topbar">
     <div class="brand">⚓ JSM <span>panel admina</span></div>
-    <div id="saveStatus" class="save-status" aria-live="polite"></div>
+
+    <div class="topbar-actions">
+      <button id="newQuestionBtn" class="secondary-btn compact-btn" type="button">
+        ＋ Nowe pytanie
+      </button>
+      <button id="exportQuestionsBtn" class="secondary-btn compact-btn" type="button">
+        ↓ Eksport questions.js
+      </button>
+      <div id="saveStatus" class="save-status" aria-live="polite"></div>
+    </div>
   </header>
 
   <main class="app-shell">
@@ -44,10 +53,17 @@
 
     <section class="workspace">
       <article class="question-card">
-        <div class="section-heading">
+        <div class="section-heading question-heading">
           <div>
             <p class="eyebrow">Podgląd pytania</p>
             <h1 id="questionTitle">Ładowanie…</h1>
+            <div id="questionBadges" class="question-badges"></div>
+          </div>
+
+          <div class="question-actions">
+            <button id="editQuestionBtn" class="secondary-btn" type="button" hidden>
+              Edytuj
+            </button>
           </div>
         </div>
 
@@ -175,6 +191,142 @@
       </aside>
     </section>
   </main>
+
+  <dialog id="questionEditor" class="editor-dialog">
+    <form id="questionEditorForm" class="editor-form" method="dialog">
+      <div class="editor-header">
+        <div>
+          <p class="eyebrow">Baza robocza Supabase</p>
+          <h2 id="editorTitle">Nowe pytanie</h2>
+          <p id="editorQuestionId" class="editor-id"></p>
+        </div>
+        <button id="closeEditorBtn" class="icon-btn" type="button" aria-label="Zamknij">×</button>
+      </div>
+
+      <div class="editor-scroll">
+        <div class="editor-grid">
+          <label class="field">
+            <span>Autor</span>
+            <input id="qAuthor" type="text" maxlength="120" placeholder="np. Andrzej / ChatGPT">
+          </label>
+
+          <label class="field">
+            <span>Kategoria</span>
+            <input id="qCategory" type="text" list="categoryOptions" maxlength="120" placeholder="np. COLREG">
+            <datalist id="categoryOptions"></datalist>
+          </label>
+
+          <label class="field">
+            <span>Trudność</span>
+            <select id="qDifficulty">
+              <option value="">— wybierz —</option>
+              <option value="łatwe">łatwe</option>
+              <option value="średnie">średnie</option>
+              <option value="trudne">trudne</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Obecny status</span>
+            <input id="qStatusDisplay" type="text" readonly>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Treść pytania</span>
+          <textarea id="qQuestion" rows="5" maxlength="5000" placeholder="Treść pytania…"></textarea>
+        </label>
+
+        <section class="editor-image-section">
+          <h3>Obrazek <small>(opcjonalny)</small></h3>
+
+          <div class="editor-grid">
+            <label class="field">
+              <span>Adres / ścieżka obrazka</span>
+              <input id="qImageUrl" type="text" maxlength="2000"
+                placeholder="np. images/q211.svg albo https://…">
+            </label>
+
+            <label class="field">
+              <span>Albo wgraj nowy plik</span>
+              <input id="qImageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml">
+            </label>
+          </div>
+
+          <div id="editorImagePreviewWrap" class="editor-image-preview" hidden>
+            <img id="editorImagePreview" alt="Podgląd obrazka">
+          </div>
+        </section>
+
+        <section>
+          <h3>Odpowiedzi</h3>
+
+          <div class="editor-answer">
+            <label>
+              <input type="radio" name="qCorrect" value="0">
+              <strong>A</strong>
+            </label>
+            <input id="qAnswerA" type="text" maxlength="2000" placeholder="Odpowiedź A">
+          </div>
+
+          <div class="editor-answer">
+            <label>
+              <input type="radio" name="qCorrect" value="1">
+              <strong>B</strong>
+            </label>
+            <input id="qAnswerB" type="text" maxlength="2000" placeholder="Odpowiedź B">
+          </div>
+
+          <div class="editor-answer">
+            <label>
+              <input type="radio" name="qCorrect" value="2">
+              <strong>C</strong>
+            </label>
+            <input id="qAnswerC" type="text" maxlength="2000" placeholder="Odpowiedź C">
+          </div>
+
+          <p class="field-note">Zaznacz kółko przy poprawnej odpowiedzi.</p>
+        </section>
+
+        <label class="field">
+          <span>Wyjaśnienie</span>
+          <textarea id="qExplanation" rows="5" maxlength="6000"
+            placeholder="Dlaczego ta odpowiedź jest poprawna?"></textarea>
+        </label>
+
+        <div id="editorValidation" class="editor-validation" hidden></div>
+
+        <section id="testPreview" class="test-preview" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Podgląd</p>
+              <h3>Tak zobaczy je zdający</h3>
+            </div>
+          </div>
+
+          <div id="testPreviewImageWrap" class="test-preview-image" hidden>
+            <img id="testPreviewImage" alt="Podgląd ilustracji">
+          </div>
+
+          <p id="testPreviewQuestion" class="question-text"></p>
+          <div id="testPreviewAnswers" class="answers-list"></div>
+        </section>
+      </div>
+
+      <div class="editor-footer">
+        <div class="editor-footer-left">
+          <button id="previewQuestionBtn" class="secondary-btn" type="button">Podgląd</button>
+          <button id="archiveQuestionBtn" class="danger-outline-btn" type="button" hidden>Zarchiwizuj</button>
+        </div>
+
+        <div class="editor-footer-actions">
+          <button id="saveDraftBtn" class="secondary-btn" type="button">Zapisz szkic</button>
+          <button id="sendReviewBtn" class="secondary-btn" type="button">Wyślij do oceny</button>
+          <button id="publishQuestionBtn" class="primary-btn" type="button">Opublikuj</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
 
   <script src="../questions.js"></script>
   <script src="config.js"></script>
