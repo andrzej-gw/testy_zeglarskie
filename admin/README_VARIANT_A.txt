@@ -18,7 +18,7 @@ CO ROBI TA WERSJA
 
 PODMIANA PLIKÓW
 ---------------
-W jsm_test/admin/ podmień:
+W testy_zeglarskie/admin/ podmień:
   index.html
   admin.js
   admin.css

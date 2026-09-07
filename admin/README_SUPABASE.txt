@@ -9,7 +9,7 @@ Może działać jako zwykła strona statyczna na students.mimuw.edu.pl.
 
 W katalogu:
 
-  jsm_test/admin/
+  testy_zeglarskie/admin/
 
 dodaj/podmień:
 
@@ -76,7 +76,7 @@ Taki klucz NIGDY nie powinien znaleźć się na stronie WWW.
 4. TEST LOKALNY
 ---------------
 
-Z katalogu zawierającego jsm_test uruchom:
+Z katalogu zawierającego testy_zeglarskie uruchom:
 
   php -S localhost:8000
 
@@ -85,7 +85,7 @@ Panel sam nie korzysta z PHP.
 
 Otwórz:
 
-  http://localhost:8000/jsm_test/admin/
+  http://localhost:8000/testy_zeglarskie/admin/
 
 5. TEST WSPÓLNEJ BAZY
 ---------------------

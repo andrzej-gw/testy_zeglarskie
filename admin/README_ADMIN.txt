@@ -3,9 +3,9 @@ JSM — PANEL ADMINISTRACYJNY
 
 GDZIE WGRAC
 -----------
-Wgraj cały katalog "admin" do istniejącego katalogu jsm_test:
+Wgraj cały katalog "admin" do istniejącego katalogu testy_zeglarskie:
 
-jsm_test/
+testy_zeglarskie/
   questions.js
   images/
   ...
@@ -17,7 +17,7 @@ jsm_test/
     data/
 
 Panel będzie wtedy dostępny pod:
-https://twoja-domena/.../jsm_test/admin/
+https://twoja-domena/.../testy_zeglarskie/admin/
 
 Nie trzeba kopiować ani modyfikować questions.js. Panel czyta istniejącą bazę
 z ../questions.js.
@@ -35,7 +35,7 @@ właścicielem katalogu był użytkownik procesu WWW lub aby hosting pozwalał P
 zapisywać pliki w katalogu aplikacji.
 
 Plik .htaccess blokuje bezpośredni dostęp do danych na Apache. Jeśli używasz
-Nginx, zablokuj publiczny dostęp do /jsm_test/admin/data/ w konfiguracji serwera.
+Nginx, zablokuj publiczny dostęp do /testy_zeglarskie/admin/data/ w konfiguracji serwera.
 
 Możesz też ustawić zmienną środowiskową JSM_REVIEW_DB na ścieżkę poza webrootem,
 np. /var/lib/jsm/reviews.json. To jest najlepsza opcja produkcyjna.
@@ -49,7 +49,7 @@ Dane te trafiają również do każdej zapisanej opinii.
 BEZPIECZENSTWO
 --------------
 Panel nie zawiera własnego logowania. Ponieważ jest przeznaczony dla adminów,
-zabezpiecz katalog /jsm_test/admin/ logowaniem hostingu, HTTP Basic Auth,
+zabezpiecz katalog /testy_zeglarskie/admin/ logowaniem hostingu, HTTP Basic Auth,
 Cloudflare Access albo istniejącym systemem logowania strony.
 
 API używa tokenu sesji CSRF i blokad pliku flock przy zapisie, więc równoległe

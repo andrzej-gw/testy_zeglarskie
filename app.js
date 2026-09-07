@@ -48,6 +48,7 @@ const review = document.getElementById("review");
 const startArea = document.getElementById("startArea");
 const startError = document.getElementById("startError");
 const subtitle = document.getElementById("subtitle");
+const mainTitle = document.getElementById("mainTitle");
 const resultTitle = document.getElementById("resultTitle");
 const changeExamBtn = document.getElementById("changeExamBtn");
 const examChoiceButtons = [...document.querySelectorAll(".exam-choice")];
@@ -172,9 +173,13 @@ function restoreAnsweredQuestionUI() {
 }
 
 function setExamHeader() {
-  subtitle.textContent = selectedExam && EXAMS[selectedExam]
-    ? `${EXAMS[selectedExam].short} • 75 pytań`
-    : "Wybierz egzamin";
+  if (selectedExam && EXAMS[selectedExam]) {
+    mainTitle.textContent = `⚓ ${EXAMS[selectedExam].short}`;
+    subtitle.textContent = EXAMS[selectedExam].name;
+  } else {
+    mainTitle.textContent = "⚓ Testy żeglarskie";
+    subtitle.textContent = "Wybierz egzamin";
+  }
 }
 
 function showExamSelector() {
@@ -424,8 +429,8 @@ function showResult(endedEarly = false) {
   const exam = EXAMS[selectedExam];
   resultTitle.textContent = exam
     ? endedEarly
-      ? `Test ${exam.short} zakończony wcześniej`
-      : `Test ${exam.short} ukończony`
+      ? `${exam.short} • zakończono wcześniej`
+      : `${exam.short} • test ukończony`
     : endedEarly
       ? "Test zakończony wcześniej"
       : "Test ukończony";
