@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zgłoszenia pytań • JSM</title>
+
+  <script>
+    if (!location.pathname.endsWith('/')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
+
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">⚓ JSM <span>zgłoszenia użytkowników</span></div>
+
+    <div class="top-actions">
+      <a class="top-link" href="../admin/">Panel admina</a>
+      <a class="top-link" href="../">Test</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="toolbar-card">
+      <div class="heading-row">
+        <div>
+          <p class="eyebrow">Publiczne zgłoszenia</p>
+          <h1>Uwagi do pytań</h1>
+        </div>
+
+        <button id="refreshBtn" class="secondary-btn" type="button">
+          ↻ Odśwież
+        </button>
+      </div>
+
+      <div class="filters">
+        <label class="field">
+          <span>ID pytania</span>
+          <input id="questionFilter" type="number" min="1" inputmode="numeric" placeholder="np. 237">
+        </label>
+
+        <label class="field search-field">
+          <span>Szukaj w treści</span>
+          <input id="textFilter" type="search" placeholder="np. światła, odpowiedź B…">
+        </label>
+
+        <label class="field">
+          <span>Sortowanie</span>
+          <select id="sortSelect">
+            <option value="newest">Najnowsze najpierw</option>
+            <option value="oldest">Najstarsze najpierw</option>
+            <option value="question">Według ID pytania</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="stats" class="stats"></div>
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+
+    <section id="reportsList" class="reports-list"></section>
+  </main>
+
+  <template id="emptyTemplate">
+    <div class="empty-state">
+      <strong>Brak zgłoszeń</strong>
+      <p>Nie znaleziono nic pasującego do wybranych filtrów.</p>
+    </div>
+  </template>
+
+  <script src="../admin/config.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>

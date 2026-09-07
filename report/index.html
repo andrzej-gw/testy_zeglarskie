@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zgłoś pytanie • JSM</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <main class="report-shell">
+    <section class="report-card">
+      <header>
+        <div class="brand">⚓ JSM</div>
+        <h1>Zgłoś pytanie</h1>
+        <p>
+          Zauważyłeś błąd, niejasność albo po prostu masz uwagę?
+          Napisz, co warto poprawić.
+        </p>
+      </header>
+
+      <div id="setupWarning" class="warning" hidden></div>
+
+      <form id="reportForm">
+        <label class="field small-field">
+          <span>Numer pytania</span>
+          <input id="questionId" name="question_id" type="number" min="1" required>
+        </label>
+
+        <label class="field">
+          <span>Co chcesz zgłosić?</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="8"
+            maxlength="6000"
+            required
+            placeholder="Np. odpowiedź B jest niejednoznaczna, na obrazku brakuje oznaczenia, wyjaśnienie jest nieprecyzyjne…"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Kontakt <small>(opcjonalnie)</small></span>
+          <input
+            id="contact"
+            name="contact"
+            type="text"
+            maxlength="180"
+            placeholder="np. e-mail, jeśli chcesz żebyśmy mogli dopytać">
+        </label>
+
+        <div class="actions">
+          <a id="backToTestLink" class="back-link" href="../">← Wróć do testu</a>
+          <button id="submitBtn" type="submit">Wyślij zgłoszenie</button>
+        </div>
+
+        <div id="status" class="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Wykorzystujemy ten sam publishable key co panel admina. -->
+  <script src="../admin/config.js"></script>
+  <script src="report.js"></script>
+</body>
+</html>

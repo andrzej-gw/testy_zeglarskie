@@ -468,3 +468,33 @@ body.result-mode .result {
     max-height: 210px;
   }
 }
+
+
+.report-question-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 3px 7px;
+  color: var(--muted);
+  font-size: 0.72em;
+  font-weight: 650;
+  line-height: 1.25;
+  text-decoration: none;
+  vertical-align: middle;
+  background: #f7fafb;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.report-question-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .report-question-link {
+    margin-left: 5px;
+    padding: 3px 6px;
+    font-size: 0.68em;
+  }
+}

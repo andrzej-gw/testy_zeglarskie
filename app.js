@@ -1,4 +1,5 @@
 const TEST_SIZE = 75;
+const TEST_STATE_KEY = "jsmTestState";
 
 let testQuestions = [];
 let current = 0;
@@ -23,6 +24,120 @@ const scoreEl = document.getElementById("score");
 const resultMessage = document.getElementById("resultMessage");
 const restartBtn = document.getElementById("restartBtn");
 const review = document.getElementById("review");
+
+
+function saveTestState() {
+  try {
+    sessionStorage.setItem(TEST_STATE_KEY, JSON.stringify({
+      questionIds: testQuestions.map(q => q.id),
+      current,
+      score,
+      answered,
+      userAnswers
+    }));
+  } catch (error) {
+    console.warn("Nie udało się zapisać stanu testu:", error);
+  }
+}
+
+function restoreTestState() {
+  try {
+    const raw = sessionStorage.getItem(TEST_STATE_KEY);
+    if (!raw) return false;
+
+    const saved = JSON.parse(raw);
+
+    if (
+      !saved ||
+      !Array.isArray(saved.questionIds) ||
+      !Number.isInteger(saved.current) ||
+      !Number.isInteger(saved.score) ||
+      !Array.isArray(saved.userAnswers)
+    ) {
+      return false;
+    }
+
+    const questionMap = new Map(
+      window.QUESTIONS.map(q => [Number(q.id), q])
+    );
+
+    const restoredQuestions = saved.questionIds
+      .map(id => questionMap.get(Number(id)))
+      .filter(Boolean);
+
+    if (
+      restoredQuestions.length !== saved.questionIds.length ||
+      restoredQuestions.length === 0
+    ) {
+      return false;
+    }
+
+    testQuestions = restoredQuestions;
+    current = Math.min(
+      Math.max(saved.current, 0),
+      testQuestions.length - 1
+    );
+    score = saved.score;
+    userAnswers = saved.userAnswers;
+    answered = Boolean(saved.answered);
+
+    return true;
+  } catch (error) {
+    console.warn("Nie udało się odtworzyć stanu testu:", error);
+    return false;
+  }
+}
+
+function clearTestState() {
+  try {
+    sessionStorage.removeItem(TEST_STATE_KEY);
+  } catch (error) {
+    console.warn("Nie udało się wyczyścić stanu testu:", error);
+  }
+}
+
+function restoreAnsweredQuestionUI() {
+  if (!answered) return;
+
+  const q = testQuestions[current];
+  const currentAnswer = userAnswers[current];
+
+  if (!q || !currentAnswer) {
+    answered = false;
+    return;
+  }
+
+  const buttons = [...answers.querySelectorAll(".answer")];
+
+  buttons.forEach((button, index) => {
+    button.disabled = true;
+
+    if (index === q.correct) {
+      button.classList.add("correct");
+    }
+
+    if (index === currentAnswer.selected && !currentAnswer.correct) {
+      button.classList.add("wrong");
+    }
+  });
+
+  if (currentAnswer.correct) {
+    feedback.className = "feedback correct";
+    feedback.innerHTML =
+      `<strong>✓ Dobrze!</strong><br>${q.explanation || ""}`;
+  } else {
+    feedback.className = "feedback wrong";
+    feedback.innerHTML =
+      `<strong>✗ Niepoprawnie.</strong><br>${q.explanation || ""}`;
+  }
+
+  nextBtn.textContent =
+    current === testQuestions.length - 1
+      ? "Zobacz wynik"
+      : "Następne pytanie →";
+
+  nextBtn.style.display = "inline-block";
+}
 
 function validateQuestionBank() {
   if (!Array.isArray(window.QUESTIONS)) {
@@ -60,6 +175,7 @@ function shuffle(array) {
 
 function createNewTest() {
   validateQuestionBank();
+  clearTestState();
 
   const size = Math.min(TEST_SIZE, window.QUESTIONS.length);
   testQuestions = shuffle(window.QUESTIONS).slice(0, size);
@@ -75,10 +191,10 @@ function createNewTest() {
   quizArea.style.display = "grid";
 
   renderQuestion();
+  saveTestState();
 }
 
 function renderQuestion() {
-  answered = false;
   if (questionScroll) questionScroll.scrollTop = 0;
   nextBtn.style.display = "none";
   feedback.className = "feedback";
@@ -91,7 +207,8 @@ function renderQuestion() {
 
   questionNumber.innerHTML =
     `Pytanie ${current + 1} z ${testQuestions.length}` +
-    ` <span class="question-id">ID ${q.id}</span>`;
+    ` <span class="question-id">ID ${q.id}</span>` +
+    ` <a class="report-question-link" href="report/?question=${encodeURIComponent(q.id)}">Zgłoś pytanie</a>`;
 
   questionText.textContent = q.question;
 
@@ -120,6 +237,9 @@ function renderQuestion() {
   progressBar.style.width = `${progress}%`;
   progressText.textContent =
     `Wynik: ${score} pkt • Baza: ${window.QUESTIONS.length} pytań`;
+
+  restoreAnsweredQuestionUI();
+  saveTestState();
 }
 
 function selectAnswer(selected) {
@@ -175,6 +295,8 @@ function selectAnswer(selected) {
       feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
   }
+
+  saveTestState();
 }
 
 nextBtn.addEventListener("click", () => {
@@ -182,6 +304,7 @@ nextBtn.addEventListener("click", () => {
 
   if (current < testQuestions.length - 1) {
     current++;
+    answered = false;
     renderQuestion();
   } else {
     showResult();
@@ -189,6 +312,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 function showResult() {
+  clearTestState();
   document.body.classList.remove("quiz-mode");
   document.body.classList.add("result-mode");
   quizArea.style.display = "none";
@@ -269,4 +393,14 @@ restartBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-createNewTest();
+validateQuestionBank();
+
+if (restoreTestState()) {
+  document.body.classList.add("quiz-mode");
+  document.body.classList.remove("result-mode");
+  resultArea.style.display = "none";
+  quizArea.style.display = "grid";
+  renderQuestion();
+} else {
+  createNewTest();
+}
