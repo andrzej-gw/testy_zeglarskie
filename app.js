@@ -236,7 +236,7 @@ function renderQuestion() {
   const progress = (current / testQuestions.length) * 100;
   progressBar.style.width = `${progress}%`;
   progressText.textContent =
-    `Wynik: ${score} pkt • Baza: ${window.QUESTIONS.length} pytań`;
+    `Wynik: ${score} pkt`;
 
   restoreAnsweredQuestionUI();
   saveTestState();
@@ -280,7 +280,7 @@ function selectAnswer(selected) {
   }
 
   progressText.textContent =
-    `Wynik: ${score} pkt • Baza: ${window.QUESTIONS.length} pytań`;
+    `Wynik: ${score} pkt`;
 
   nextBtn.textContent =
     current === testQuestions.length - 1
