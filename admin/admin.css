@@ -569,3 +569,42 @@ input[type="file"]:focus {
     grid-column: 1 / -1;
   }
 }
+
+.admin-main-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.admin-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 10px;
+  color: var(--muted);
+  font-size: .84rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: #f7fafb;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.admin-nav-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .admin-main-nav {
+    width: 100%;
+    order: -1;
+  }
+
+  .admin-nav-link {
+    min-height: 32px;
+    padding: 5px 8px;
+    font-size: .76rem;
+  }
+}
