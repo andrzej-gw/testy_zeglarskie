@@ -5,6 +5,10 @@
     ? window.QUESTIONS.map(q => ({ ...q, __source: 'static', status: 'published' }))
     : [];
 
+  const staticQuestionsById = new Map(
+    staticQuestions.map(q => [Number(q.id), q])
+  );
+
   let databaseQuestions = [];
   let questions = [];
   let byId = new Map();
@@ -42,6 +46,8 @@
     reviewerName: document.getElementById('reviewerName'),
     contact: document.getElementById('contact'),
     changesSection: document.getElementById('changesSection'),
+    changeExamScope: document.getElementById('changeExamScope'),
+    reviewExamScopeProposal: document.getElementById('reviewExamScopeProposal'),
     saveReviewBtn: document.getElementById('saveReviewBtn'),
     saveStatus: document.getElementById('saveStatus'),
     reviewStats: document.getElementById('reviewStats'),
@@ -62,6 +68,10 @@
     categoryOptions: document.getElementById('categoryOptions'),
     qDifficulty: document.getElementById('qDifficulty'),
     qStatusDisplay: document.getElementById('qStatusDisplay'),
+    qZj: document.getElementById('qZj'),
+    qJsm: document.getElementById('qJsm'),
+    qSm: document.getElementById('qSm'),
+    qMsm: document.getElementById('qMsm'),
     qQuestion: document.getElementById('qQuestion'),
     qImageUrl: document.getElementById('qImageUrl'),
     qImageFile: document.getElementById('qImageFile'),
@@ -120,6 +130,64 @@
       .replaceAll('>', '&gt;')
       .replaceAll('"', '&quot;')
       .replaceAll("'", '&#039;');
+  }
+
+  const EXAM_SCOPE = [
+    ['zj', 'ŻJ'],
+    ['jsm', 'JSM'],
+    ['sm', 'SM'],
+    ['msm', 'MSM'],
+  ];
+
+  function examScopeText(question) {
+    const active = EXAM_SCOPE
+      .filter(([key]) => Boolean(question?.[key]))
+      .map(([, label]) => label);
+
+    return active.length ? active.join(', ') : 'brak';
+  }
+
+  function examScopeHtml(scope) {
+    return EXAM_SCOPE.map(([key, label]) => `
+      <span class="exam-flag ${scope?.[key] ? 'yes' : 'no'}">
+        ${escapeHtml(label)} ${scope?.[key] ? '✓' : '×'}
+      </span>
+    `).join('');
+  }
+
+  function reviewProposedScope() {
+    return {
+      zj: checked('proposed_zj'),
+      jsm: checked('proposed_jsm'),
+      sm: checked('proposed_sm'),
+      msm: checked('proposed_msm'),
+    };
+  }
+
+  function fillReviewExamScopeProposal(question = currentQuestion()) {
+    const values = {
+      proposed_zj: Boolean(question?.zj),
+      proposed_jsm: Boolean(question?.jsm),
+      proposed_sm: Boolean(question?.sm),
+      proposed_msm: Boolean(question?.msm),
+    };
+
+    for (const [name, value] of Object.entries(values)) {
+      const input = els.reviewForm.querySelector(`input[name="${name}"]`);
+      if (input) input.checked = value;
+    }
+  }
+
+  function updateReviewExamScopeVisibility() {
+    const visible =
+      selectedRadio('status') === 'needs_changes' &&
+      Boolean(els.changeExamScope?.checked);
+
+    els.reviewExamScopeProposal.hidden = !visible;
+
+    if (visible) {
+      fillReviewExamScopeProposal();
+    }
   }
 
   function statusLabel(status) {
@@ -225,11 +293,23 @@
   }
 
   function databaseRowToQuestion(row) {
+    const id = Number(row.id);
+    const staticFallback = staticQuestionsById.get(id);
+
+    const scopeValue = key => {
+      if (typeof row[key] === 'boolean') return row[key];
+      return Boolean(staticFallback?.[key]);
+    };
+
     return {
-      id: Number(row.id),
+      id,
       author: row.author || '',
       category: row.category || '',
       difficulty: row.difficulty || '',
+      zj: scopeValue('zj'),
+      jsm: scopeValue('jsm'),
+      sm: scopeValue('sm'),
+      msm: scopeValue('msm'),
       question: row.question || '',
       answers: [
         row.answer_a || '',
@@ -291,7 +371,7 @@
   async function loadDatabaseQuestions() {
     const rows = await restGet(
       questionsTable,
-      'select=id,author,category,difficulty,question,answer_a,answer_b,answer_c,correct,explanation,image_url,status,created_at,updated_at&order=id.asc'
+      'select=id,author,category,difficulty,zj,jsm,sm,msm,question,answer_a,answer_b,answer_c,correct,explanation,image_url,status,created_at,updated_at&order=id.asc'
     );
 
     databaseQuestions = rows.map(databaseRowToQuestion);
@@ -338,6 +418,7 @@
       ['Autor', q.author ?? '—'],
       ['Kategoria', q.category ?? '—'],
       ['Trudność', q.difficulty ?? '—'],
+      ['Egzaminy', examScopeText(q)],
       [
         'Poprawna odpowiedź',
         Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 2
@@ -401,6 +482,7 @@
     els.reviewerName.value = name;
     els.contact.value = contact;
     els.changesSection.hidden = true;
+    els.reviewExamScopeProposal.hidden = true;
   }
 
   function goToIndex(index) {
@@ -537,14 +619,22 @@
       answer_b: 'odp. B',
       answer_c: 'odp. C',
       difficulty: 'trudność',
-      category: 'kategoria',
+      category: 'kategoria tematyczna',
+      exam_scope: 'zakres egzaminów',
       explanation: 'wyjaśnienie',
     };
 
     els.reviewsList.innerHTML = reviews.map(review => {
       const selectedChanges = Object.entries(review.changes || {})
-        .filter(([, value]) => Boolean(value))
+        .filter(([key, value]) => key !== 'exam_scope_values' && Boolean(value))
         .map(([key]) => changeLabels[key] || key);
+
+      const proposedScope =
+        review.changes?.exam_scope &&
+        review.changes?.exam_scope_values &&
+        typeof review.changes.exam_scope_values === 'object'
+          ? review.changes.exam_scope_values
+          : null;
 
       const date = review.created_at
         ? new Date(review.created_at).toLocaleString('pl-PL')
@@ -576,6 +666,15 @@
 
           ${selectedChanges.length
             ? `<p><strong>Do zmiany:</strong> ${escapeHtml(selectedChanges.join(', '))}</p>`
+            : ''}
+
+          ${proposedScope
+            ? `
+              <div class="review-exam-scope">
+                <strong>Proponowany zakres:</strong>
+                <div class="exam-flags">${examScopeHtml(proposedScope)}</div>
+              </div>
+            `
             : ''}
 
           ${review.change_details
@@ -628,6 +727,10 @@
           answer_c: checked('change_answer_c'),
           difficulty: checked('change_difficulty'),
           category: checked('change_category'),
+          exam_scope: checked('change_exam_scope'),
+          ...(checked('change_exam_scope')
+            ? { exam_scope_values: reviewProposedScope() }
+            : {}),
           explanation: checked('change_explanation'),
         }
       : {};
@@ -693,6 +796,10 @@
       author: els.qAuthor.value.trim(),
       category: els.qCategory.value.trim(),
       difficulty: els.qDifficulty.value,
+      zj: Boolean(els.qZj.checked),
+      jsm: Boolean(els.qJsm.checked),
+      sm: Boolean(els.qSm.checked),
+      msm: Boolean(els.qMsm.checked),
       question: els.qQuestion.value.trim(),
       answer_a: els.qAnswerA.value.trim(),
       answer_b: els.qAnswerB.value.trim(),
@@ -714,6 +821,9 @@
     if (!data.author) errors.push('Wpisz autora.');
     if (!data.category) errors.push('Wybierz lub wpisz kategorię.');
     if (!data.difficulty) errors.push('Wybierz trudność.');
+    if (![data.zj, data.jsm, data.sm, data.msm].some(Boolean)) {
+      errors.push('Zaznacz co najmniej jeden egzamin: ŻJ, JSM, SM lub MSM.');
+    }
     if (!data.question) errors.push('Wpisz treść pytania.');
     if (!data.answer_a) errors.push('Wpisz odpowiedź A.');
     if (!data.answer_b) errors.push('Wpisz odpowiedź B.');
@@ -792,6 +902,10 @@
       `Planowane ID ${nextId} • wyliczone jako najwyższe istniejące ID + 1`;
     els.qStatusDisplay.value = 'Nowy szkic';
     els.qAuthor.value = '';
+    els.qZj.checked = false;
+    els.qJsm.checked = false;
+    els.qSm.checked = false;
+    els.qMsm.checked = false;
 
     els.archiveQuestionBtn.hidden = true;
     els.testPreview.hidden = true;
@@ -811,6 +925,10 @@
     els.qCategory.value = question.category || '';
     els.qDifficulty.value = question.difficulty || '';
     els.qStatusDisplay.value = statusLabel(question.status);
+    els.qZj.checked = Boolean(question.zj);
+    els.qJsm.checked = Boolean(question.jsm);
+    els.qSm.checked = Boolean(question.sm);
+    els.qMsm.checked = Boolean(question.msm);
     els.qQuestion.value = question.question || '';
     els.qImageUrl.value = question.image || '';
     els.qAnswerA.value = question.answers?.[0] || '';
@@ -1043,6 +1161,10 @@
       author: q.author || '',
       category: q.category || '',
       difficulty: q.difficulty || '',
+      zj: Boolean(q.zj),
+      jsm: Boolean(q.jsm),
+      sm: Boolean(q.sm),
+      msm: Boolean(q.msm),
       question: q.question || '',
       answers: [
         q.answers?.[0] || '',
@@ -1145,9 +1267,15 @@ window.QUESTIONS = `;
             els.changesSection
               .querySelectorAll('textarea')
               .forEach(textarea => textarea.value = '');
+
+            els.reviewExamScopeProposal.hidden = true;
           }
         });
       });
+
+    els.changeExamScope.addEventListener('change', () => {
+      updateReviewExamScopeVisibility();
+    });
 
     els.newQuestionBtn.addEventListener('click', openNewQuestionEditor);
     els.exportQuestionsBtn.addEventListener('click', exportQuestionsJs);

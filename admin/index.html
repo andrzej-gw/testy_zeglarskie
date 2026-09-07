@@ -159,10 +159,37 @@
                 <label><input type="checkbox" name="change_answer_b"><span>Odpowiedź B</span></label>
                 <label><input type="checkbox" name="change_answer_c"><span>Odpowiedź C</span></label>
                 <label><input type="checkbox" name="change_difficulty"><span>Trudność</span></label>
-                <label><input type="checkbox" name="change_category"><span>Kategorię</span></label>
+                <label><input type="checkbox" name="change_category"><span>Kategorię tematyczną</span></label>
+                <label><input id="changeExamScope" type="checkbox" name="change_exam_scope"><span>Zakres egzaminów</span></label>
                 <label><input type="checkbox" name="change_explanation"><span>Wyjaśnienie</span></label>
               </div>
             </fieldset>
+
+            <div id="reviewExamScopeProposal" class="exam-scope-proposal" hidden>
+              <strong>Proponowany zakres egzaminacyjny</strong>
+              <div class="exam-scope-grid compact">
+                <label title="Żeglarz Jachtowy">
+                  <input type="checkbox" name="proposed_zj">
+                  <span>ŻJ</span>
+                </label>
+                <label title="Jachtowy Sternik Morski">
+                  <input type="checkbox" name="proposed_jsm">
+                  <span>JSM</span>
+                </label>
+                <label title="Sternik Motorowodny">
+                  <input type="checkbox" name="proposed_sm">
+                  <span>SM</span>
+                </label>
+                <label title="Motorowodny Sternik Morski">
+                  <input type="checkbox" name="proposed_msm">
+                  <span>MSM</span>
+                </label>
+              </div>
+              <p class="field-note">
+                Zaznaczone = pytanie powinno należeć do zakresu danego egzaminu.
+                Po włączeniu sekcji kopiowany jest obecny zakres pytania, więc wystarczy zmienić właściwe pola.
+              </p>
+            </div>
 
             <label class="field">
               <span>Co dokładnie zmienić?</span>
@@ -212,7 +239,7 @@
         <div class="editor-grid">
           <label class="field">
             <span>Autor</span>
-            <input id="qAuthor" type="text" maxlength="120" placeholder="np. Andrzej / ChatGPT">
+            <input id="qAuthor" type="text" maxlength="120" placeholder="np. Adam / PZŻ">
           </label>
 
           <label class="field">
@@ -236,6 +263,31 @@
             <input id="qStatusDisplay" type="text" readonly>
           </label>
         </div>
+
+        <fieldset class="exam-scope-fieldset">
+          <legend>Zakres egzaminacyjny</legend>
+          <div class="exam-scope-grid">
+            <label title="Żeglarz Jachtowy">
+              <input id="qZj" type="checkbox">
+              <span><strong>ŻJ</strong><small>Żeglarz Jachtowy</small></span>
+            </label>
+            <label title="Jachtowy Sternik Morski">
+              <input id="qJsm" type="checkbox">
+              <span><strong>JSM</strong><small>Jachtowy Sternik Morski</small></span>
+            </label>
+            <label title="Sternik Motorowodny">
+              <input id="qSm" type="checkbox">
+              <span><strong>SM</strong><small>Sternik Motorowodny</small></span>
+            </label>
+            <label title="Motorowodny Sternik Morski">
+              <input id="qMsm" type="checkbox">
+              <span><strong>MSM</strong><small>Motorowodny Sternik Morski</small></span>
+            </label>
+          </div>
+          <p class="field-note">
+            Zaznacz wszystkie egzaminy, do których zakresu pasuje temat pytania.
+          </p>
+        </fieldset>
 
         <label class="field">
           <span>Treść pytania</span>
