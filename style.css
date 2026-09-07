@@ -201,7 +201,9 @@ button { font: inherit; }
 
 .answer:focus-visible,
 .next-btn:focus-visible,
-.restart-btn:focus-visible {
+.restart-btn:focus-visible,
+.change-exam-btn:focus-visible,
+.exam-choice:focus-visible {
   outline: 3px solid rgba(15, 107, 120, 0.25);
   outline-offset: 2px;
 }
@@ -267,7 +269,8 @@ button { font: inherit; }
   padding: 9px 18px calc(9px + var(--safe-bottom));
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 10px;
   background: rgba(255, 255, 255, 0.98);
   border-top: 1px solid var(--border);
 }
@@ -496,5 +499,242 @@ body.result-mode .result {
     margin-left: 5px;
     padding: 3px 6px;
     font-size: 0.68em;
+  }
+}
+
+
+/* ---------- Ekran wyboru egzaminu ---------- */
+
+body.start-mode {
+  min-height: 100dvh;
+  overflow: auto;
+}
+
+body.start-mode .app-shell {
+  width: min(820px, calc(100% - 20px));
+  height: auto;
+  min-height: 100dvh;
+  display: block;
+  padding: calc(12px + var(--safe-top)) 0 calc(24px + var(--safe-bottom));
+}
+
+body.start-mode .app-header {
+  min-height: auto;
+  padding: 4px 2px 14px;
+}
+
+.start-screen {
+  display: block;
+  padding: clamp(22px, 4vw, 34px);
+  border-radius: 18px;
+}
+
+.start-intro {
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+
+.start-kicker {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.start-intro h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 4vw, 2.15rem);
+  line-height: 1.18;
+}
+
+.start-intro > p:last-child {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.exam-choice {
+  min-height: 112px;
+  padding: 18px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  background: #f8fbfc;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  transition:
+    transform .15s ease,
+    border-color .15s ease,
+    background .15s ease,
+    box-shadow .15s ease;
+}
+
+.exam-choice:hover {
+  background: #f1f8fa;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 53, 75, .08);
+}
+
+.exam-choice:active {
+  transform: scale(.99);
+}
+
+.exam-choice strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.exam-choice span {
+  display: block;
+  color: var(--text);
+  font-size: .98rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.start-error {
+  min-height: 1.2em;
+  margin-top: 14px;
+  color: var(--wrong);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+/* Ekrany testu i wyniku są przełączane przez JS. */
+body.start-mode .quiz-screen,
+body.start-mode .result {
+  display: none;
+}
+
+/* ---------- Wynik: wybór nowego testu / egzaminu ---------- */
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.change-exam-btn {
+  min-height: 48px;
+  padding: 12px 19px;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  background: #f7fafb;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition:
+    border-color .15s ease,
+    background .15s ease,
+    transform .15s ease;
+}
+
+.change-exam-btn:hover {
+  background: #eef7f8;
+  border-color: var(--accent);
+}
+
+.change-exam-btn:active {
+  transform: scale(.99);
+}
+
+@media (max-width: 560px) {
+  body.start-mode .app-shell {
+    width: min(100% - 12px, 820px);
+    padding-top: calc(6px + var(--safe-top));
+  }
+
+  .start-screen {
+    padding: 20px 14px;
+    border-radius: 16px;
+  }
+
+  .start-intro {
+    margin-bottom: 18px;
+  }
+
+  .exam-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .exam-choice {
+    min-height: 78px;
+    padding: 13px 15px;
+  }
+
+  .exam-choice strong {
+    display: inline-block;
+    min-width: 54px;
+    margin: 0 8px 0 0;
+    font-size: 1.2rem;
+  }
+
+  .exam-choice span {
+    display: inline;
+    font-size: .94rem;
+  }
+
+  .result-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .change-exam-btn,
+  .restart-btn {
+    width: 100%;
+  }
+}
+
+
+.finish-exam-btn {
+  min-height: 42px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 750;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.finish-exam-btn:hover {
+  color: var(--wrong);
+  background: #fff7f7;
+  border-color: #e7bcbc;
+}
+
+.finish-exam-btn:focus-visible {
+  outline: 3px solid rgba(15, 107, 120, 0.25);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 8px;
+  }
+
+  .finish-exam-btn {
+    min-height: 40px;
+    padding: 7px 9px;
+    font-size: .74rem;
   }
 }

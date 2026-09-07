@@ -6,15 +6,47 @@
   <meta name="theme-color" content="#0f6b78" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>Test JSM – Jachtowy Sternik Morski</title>
+  <title>Testy patentowe – żeglarstwo i motorowodniactwo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="quiz-mode">
+<body class="start-mode">
   <main class="app-shell">
     <header class="app-header">
-      <h1>⚓ JSM</h1>
-      <p class="subtitle">75 pytań</p>
+      <h1>⚓ Test patentowy</h1>
+      <p id="subtitle" class="subtitle">Wybierz egzamin</p>
     </header>
+
+    <section id="startArea" class="card start-screen">
+      <div class="start-intro">
+        <p class="start-kicker">Wybierz zakres</p>
+        <h2>Do jakiego egzaminu chcesz się przygotowywać?</h2>
+        <p>Wylosuję 75 pytań przypisanych do wybranego egzaminu.</p>
+      </div>
+
+      <div class="exam-grid" aria-label="Wybór egzaminu">
+        <button class="exam-choice" type="button" data-exam="zj">
+          <strong>ŻJ</strong>
+          <span>Żeglarz Jachtowy</span>
+        </button>
+
+        <button class="exam-choice" type="button" data-exam="jsm">
+          <strong>JSM</strong>
+          <span>Jachtowy Sternik Morski</span>
+        </button>
+
+        <button class="exam-choice" type="button" data-exam="sm">
+          <strong>SM</strong>
+          <span>Sternik Motorowodny</span>
+        </button>
+
+        <button class="exam-choice" type="button" data-exam="msm">
+          <strong>MSM</strong>
+          <span>Motorowodny Sternik Morski</span>
+        </button>
+      </div>
+
+      <div id="startError" class="start-error" role="alert" aria-live="polite"></div>
+    </section>
 
     <div id="quizArea" class="quiz-screen">
       <div class="quiz-status">
@@ -41,16 +73,22 @@
         </div>
 
         <div class="nav">
+          <button id="finishExamBtn" class="finish-exam-btn" type="button">
+            Zakończ egzamin
+          </button>
           <button id="nextBtn" class="next-btn">Następne pytanie →</button>
         </div>
       </section>
     </div>
 
     <section id="resultArea" class="card result">
-      <h2>Test ukończony</h2>
+      <h2 id="resultTitle">Test ukończony</h2>
       <div id="score" class="score"></div>
       <p id="resultMessage"></p>
-      <button id="restartBtn" class="restart-btn">Wylosuj nowy test</button>
+      <div class="result-actions">
+        <button id="restartBtn" class="restart-btn">Wylosuj nowy test</button>
+        <button id="changeExamBtn" class="change-exam-btn">Zmień egzamin</button>
+      </div>
       <div id="review" class="review"></div>
     </section>
   </main>

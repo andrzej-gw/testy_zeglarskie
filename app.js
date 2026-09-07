@@ -1,11 +1,31 @@
 const TEST_SIZE = 75;
 const TEST_STATE_KEY = "jsmTestState";
 
+const EXAMS = {
+  zj: {
+    short: "ŻJ",
+    name: "Żeglarz Jachtowy",
+  },
+  jsm: {
+    short: "JSM",
+    name: "Jachtowy Sternik Morski",
+  },
+  sm: {
+    short: "SM",
+    name: "Sternik Motorowodny",
+  },
+  msm: {
+    short: "MSM",
+    name: "Motorowodny Sternik Morski",
+  },
+};
+
 let testQuestions = [];
 let current = 0;
 let score = 0;
 let answered = false;
 let userAnswers = [];
+let selectedExam = null;
 
 const questionMeta = document.getElementById("questionMeta");
 const questionNumber = document.getElementById("questionNumber");
@@ -16,6 +36,7 @@ const questionImage = document.getElementById("questionImage");
 const answers = document.getElementById("answers");
 const feedback = document.getElementById("feedback");
 const nextBtn = document.getElementById("nextBtn");
+const finishExamBtn = document.getElementById("finishExamBtn");
 const progressBar = document.getElementById("progressBar");
 const progressText = document.getElementById("progressText");
 const quizArea = document.getElementById("quizArea");
@@ -24,11 +45,18 @@ const scoreEl = document.getElementById("score");
 const resultMessage = document.getElementById("resultMessage");
 const restartBtn = document.getElementById("restartBtn");
 const review = document.getElementById("review");
+const startArea = document.getElementById("startArea");
+const startError = document.getElementById("startError");
+const subtitle = document.getElementById("subtitle");
+const resultTitle = document.getElementById("resultTitle");
+const changeExamBtn = document.getElementById("changeExamBtn");
+const examChoiceButtons = [...document.querySelectorAll(".exam-choice")];
 
 
 function saveTestState() {
   try {
     sessionStorage.setItem(TEST_STATE_KEY, JSON.stringify({
+      exam: selectedExam,
       questionIds: testQuestions.map(q => q.id),
       current,
       score,
@@ -49,6 +77,7 @@ function restoreTestState() {
 
     if (
       !saved ||
+      !EXAMS[saved.exam] ||
       !Array.isArray(saved.questionIds) ||
       !Number.isInteger(saved.current) ||
       !Number.isInteger(saved.score) ||
@@ -56,6 +85,8 @@ function restoreTestState() {
     ) {
       return false;
     }
+
+    selectedExam = saved.exam;
 
     const questionMap = new Map(
       window.QUESTIONS.map(q => [Number(q.id), q])
@@ -67,7 +98,8 @@ function restoreTestState() {
 
     if (
       restoredQuestions.length !== saved.questionIds.length ||
-      restoredQuestions.length === 0
+      restoredQuestions.length === 0 ||
+      restoredQuestions.some(q => q[selectedExam] !== true)
     ) {
       return false;
     }
@@ -139,6 +171,42 @@ function restoreAnsweredQuestionUI() {
   nextBtn.style.display = "inline-block";
 }
 
+function setExamHeader() {
+  subtitle.textContent = selectedExam && EXAMS[selectedExam]
+    ? `${EXAMS[selectedExam].short} • 75 pytań`
+    : "Wybierz egzamin";
+}
+
+function showExamSelector() {
+  clearTestState();
+  selectedExam = null;
+  testQuestions = [];
+  current = 0;
+  score = 0;
+  answered = false;
+  userAnswers = [];
+
+  document.body.classList.remove("quiz-mode", "result-mode");
+  document.body.classList.add("start-mode");
+
+  startArea.style.display = "block";
+  quizArea.style.display = "none";
+  resultArea.style.display = "none";
+  startError.textContent = "";
+  setExamHeader();
+}
+
+function questionsForExam(exam) {
+  return window.QUESTIONS.filter(q => q[exam] === true);
+}
+
+function startExam(exam) {
+  if (!EXAMS[exam]) return;
+
+  selectedExam = exam;
+  createNewTest();
+}
+
 function validateQuestionBank() {
   if (!Array.isArray(window.QUESTIONS)) {
     throw new Error("Nie znaleziono bazy QUESTIONS.");
@@ -159,6 +227,12 @@ function validateQuestionBank() {
     if (!Number.isInteger(q.correct) || q.correct < 0 || q.correct >= q.answers.length) {
       throw new Error(`Niepoprawne pole "correct" w pytaniu ID ${q.id}`);
     }
+
+    for (const exam of Object.keys(EXAMS)) {
+      if (q[exam] !== undefined && typeof q[exam] !== "boolean") {
+        throw new Error(`Niepoprawne pole "${exam}" w pytaniu ID ${q.id}`);
+      }
+    }
   }
 }
 
@@ -175,20 +249,38 @@ function shuffle(array) {
 
 function createNewTest() {
   validateQuestionBank();
+
+  if (!selectedExam || !EXAMS[selectedExam]) {
+    showExamSelector();
+    return;
+  }
+
+  const pool = questionsForExam(selectedExam);
+
+  if (pool.length === 0) {
+    showExamSelector();
+    startError.textContent =
+      `Brak pytań przypisanych do egzaminu ${EXAMS[selectedExam]?.short || ""}.`;
+    return;
+  }
+
   clearTestState();
 
-  const size = Math.min(TEST_SIZE, window.QUESTIONS.length);
-  testQuestions = shuffle(window.QUESTIONS).slice(0, size);
+  const size = Math.min(TEST_SIZE, pool.length);
+  testQuestions = shuffle(pool).slice(0, size);
 
   current = 0;
   score = 0;
   answered = false;
   userAnswers = [];
 
+  document.body.classList.remove("start-mode", "result-mode");
   document.body.classList.add("quiz-mode");
-  document.body.classList.remove("result-mode");
+
+  startArea.style.display = "none";
   resultArea.style.display = "none";
   quizArea.style.display = "grid";
+  setExamHeader();
 
   renderQuestion();
   saveTestState();
@@ -299,6 +391,16 @@ function selectAnswer(selected) {
   saveTestState();
 }
 
+finishExamBtn.addEventListener("click", () => {
+  const confirmed = window.confirm(
+    "Czy na pewno chcesz zakończyć egzamin i przejść do podsumowania?"
+  );
+
+  if (!confirmed) return;
+
+  showResult(true);
+});
+
 nextBtn.addEventListener("click", () => {
   if (!answered) return;
 
@@ -311,31 +413,59 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-function showResult() {
+function showResult(endedEarly = false) {
   clearTestState();
-  document.body.classList.remove("quiz-mode");
+  document.body.classList.remove("quiz-mode", "start-mode");
   document.body.classList.add("result-mode");
+  startArea.style.display = "none";
   quizArea.style.display = "none";
   resultArea.style.display = "block";
 
-  const percent =
-    Math.round((score / testQuestions.length) * 100);
+  const exam = EXAMS[selectedExam];
+  resultTitle.textContent = exam
+    ? endedEarly
+      ? `Test ${exam.short} zakończony wcześniej`
+      : `Test ${exam.short} ukończony`
+    : endedEarly
+      ? "Test zakończony wcześniej"
+      : "Test ukończony";
+  setExamHeader();
 
-  scoreEl.textContent =
-    `${score} / ${testQuestions.length} (${percent}%)`;
+  const answeredCount = userAnswers.length;
 
-  if (percent >= 90) {
+  if (endedEarly) {
+    const answeredPercent =
+      answeredCount > 0
+        ? Math.round((score / answeredCount) * 100)
+        : 0;
+
+    scoreEl.textContent =
+      answeredCount > 0
+        ? `${score} / ${answeredCount} poprawnych (${answeredPercent}%)`
+        : "Brak udzielonych odpowiedzi";
+
     resultMessage.textContent =
-      "Bardzo mocny wynik. ⚓";
-  } else if (percent >= 75) {
-    resultMessage.textContent =
-      "Dobry wynik. Kilka tematów warto jeszcze doszlifować.";
-  } else if (percent >= 60) {
-    resultMessage.textContent =
-      "Solidna baza, ale przyda się jeszcze jedna runda.";
+      `Odpowiedziano na ${answeredCount} z ${testQuestions.length} pytań.`;
   } else {
-    resultMessage.textContent =
-      "Warto powtórzyć materiał i wylosować kolejny zestaw.";
+    const percent =
+      Math.round((score / testQuestions.length) * 100);
+
+    scoreEl.textContent =
+      `${score} / ${testQuestions.length} (${percent}%)`;
+
+    if (percent >= 90) {
+      resultMessage.textContent =
+        "Bardzo mocny wynik. ⚓";
+    } else if (percent >= 75) {
+      resultMessage.textContent =
+        "Dobry wynik. Kilka tematów warto jeszcze doszlifować.";
+    } else if (percent >= 60) {
+      resultMessage.textContent =
+        "Solidna baza, ale przyda się jeszcze jedna runda.";
+    } else {
+      resultMessage.textContent =
+        "Warto powtórzyć materiał i wylosować kolejny zestaw.";
+    }
   }
 
   review.innerHTML = "<h3>Podsumowanie odpowiedzi</h3>";
@@ -393,14 +523,27 @@ restartBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+changeExamBtn.addEventListener("click", () => {
+  showExamSelector();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+examChoiceButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    startExam(button.dataset.exam);
+  });
+});
+
 validateQuestionBank();
 
 if (restoreTestState()) {
+  document.body.classList.remove("start-mode", "result-mode");
   document.body.classList.add("quiz-mode");
-  document.body.classList.remove("result-mode");
+  startArea.style.display = "none";
   resultArea.style.display = "none";
   quizArea.style.display = "grid";
+  setExamHeader();
   renderQuestion();
 } else {
-  createNewTest();
+  showExamSelector();
 }
