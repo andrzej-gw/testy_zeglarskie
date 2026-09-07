@@ -89,8 +89,9 @@ function renderQuestion() {
   questionMeta.textContent =
     [q.category, q.difficulty].filter(Boolean).join(" • ");
 
-  questionNumber.textContent =
-    `Pytanie ${current + 1} z ${testQuestions.length}`;
+  questionNumber.innerHTML =
+    `Pytanie ${current + 1} z ${testQuestions.length}` +
+    ` <span class="question-id">ID ${q.id}</span>`;
 
   questionText.textContent = q.question;
 

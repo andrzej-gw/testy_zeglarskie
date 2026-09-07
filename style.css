@@ -99,6 +99,14 @@ button { font: inherit; }
   white-space: nowrap;
 }
 
+.question-id {
+  margin-left: 7px;
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 650;
+  opacity: 0.9;
+}
+
 .progress-text {
   min-width: 0;
   overflow: hidden;

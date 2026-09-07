@@ -791,10 +791,7 @@
     els.editorQuestionId.textContent =
       `Planowane ID ${nextId} • wyliczone jako najwyższe istniejące ID + 1`;
     els.qStatusDisplay.value = 'Nowy szkic';
-    els.qAuthor.value =
-      localStorage.getItem('jsmQuestionAuthor') ||
-      els.reviewerName.value.trim() ||
-      'ChatGPT';
+    els.qAuthor.value = '';
 
     els.archiveQuestionBtn.hidden = true;
     els.testPreview.hidden = true;
