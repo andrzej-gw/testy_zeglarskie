@@ -1840,14 +1840,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "„Set” prądu oznacza:",
+    "question": "Kierunek prądu morskiego określa:",
     "answers": [
-      "Wysokość pływu",
-      "Kierunek, w którym płynie prąd",
-      "Prędkość prądu"
+      "Kierunek, z którego napływa woda",
+      "Kierunek, w którym przemieszcza się woda",
+      "Nie występuje w żeglarstwie, bo ruch mas wody jest zbyt złożony"
     ],
     "correct": 1,
-    "explanation": "Set to kierunek prądu, a drift to jego prędkość."
+    "explanation": "Kierunek prądu podaje się jako kierunek, w którym płynie woda. Na przykład prąd o kierunku 090° płynie na wschód."
   },
   {
     "id": 103,
@@ -1858,14 +1858,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "„Drift” prądu w terminologii nawigacyjnej oznacza:",
+    "question": "Znos to:",
     "answers": [
-      "Prędkość prądu",
-      "Kierunek prądu",
-      "Poprawkę deklinacji"
+      "Odchylenie kursu nad dnem od kursu po wodzie spowodowane przez prąd wody",
+      "Odchylenie kursu kompasowego od magnetycznego spowodowane przez konstrukcję jachtu",
+      "Odchylenie kursu po wodzie od kursu rzeczywistego spowodowane przez wiatr"
     ],
     "correct": 0,
-    "explanation": "Drift określa prędkość prądu."
+    "explanation": "Znos (poprawka na prąd), to odchylenie kursu spowodowane przez prąd wody"
   },
   {
     "id": 104,
@@ -1876,14 +1876,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "Dryf od wiatru powoduje, że:",
+    "question": "Dryf to:",
     "answers": [
-      "Zmienia się deklinacja magnetyczna",
-      "GPS przestaje działać",
-      "Droga jachtu przez wodę odchyla się od osi symetrii/kursu sterowanego"
+      "Odchylenie kursu kompasowego od magnetycznego spowodowane przez konstrukcję jachtu",
+      "Odchylenie kursu nad dnem od kursu po wodzie spowodowane przez prąd wody",
+      "Odchylenie kursu po wodzie od kursu rzeczywistego spowodowane przez wiatr"
     ],
     "correct": 2,
-    "explanation": "Wiatr może spychać jacht poprzecznie, powodując różnicę między kursem sterowanym a kierunkiem ruchu przez wodę."
+    "explanation": "Dryf (poprawka na wiatr), to odchylenie kursu spowodowane przez wiatr."
   },
   {
     "id": 105,
@@ -2128,14 +2128,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "CTS oznacza najczęściej:",
+    "question": "KK w nawigacji oznacza:",
     "answers": [
-      "Kurs, jaki należy sterować, aby uzyskać zamierzoną drogę",
-      "Czas do zachodu słońca",
-      "Prędkość wiatru rzeczywistego"
+      "Kurs, jaki należy utrzymywać na kompasie, aby uzyskać zamierzoną drogę",
+      "Kurs, jakim porusza się jacht nad dnem",
+      "Kurs, jaki utrzymuje kadłub jachtu (bez uwzględnienia dryfu i znosu)"
     ],
     "correct": 0,
-    "explanation": "Course To Steer jest kursem do sterowania z uwzględnieniem poprawek potrzebnych do osiągnięcia planowanej drogi."
+    "explanation": "Kurs Kompasowy jest kursem do utrzymywania na kompasie z uwzględnieniem poprawek potrzebnych do osiągnięcia planowanej drogi."
   },
   {
     "id": 119,
@@ -5659,9 +5659,9 @@ window.QUESTIONS.push(
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
-  "zj": true,
+  "zj": false,
   "jsm": true,
-  "sm": true,
+  "sm": false,
   "msm": true,
   "question": "Radiowy morski komunikat meteorologiczny posiada następujący schemat:",
   "answers": [
@@ -6409,9 +6409,9 @@ window.QUESTIONS.push(
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
-  "zj": true,
+  "zj": false,
   "jsm": true,
-  "sm": true,
+  "sm": false,
   "msm": true,
   "question": "Jacht płynący pod żaglami po otwartych wodach morskich ustępuje:",
   "answers": [
@@ -6549,8 +6549,8 @@ window.QUESTIONS.push(
     "Statek na mieliźnie, sprawdzić położenie na mapie i odpowiednio ominąć",
     "Statek wzywa pomocy, nawiązać łączność"
   ],
-  "correct": 1,
-  "explanation": "Dwa czerwone światła pionowo wraz ze światłem kotwicznym oznaczają statek na mieliźnie.",
+  "correct": 0,
+  "explanation": "Dwa czerwone światła widoczne dookoła widnokręgu, ustawione pionowo, oznaczają statek nieodpowiadający za swoje ruchy. Statek na mieliźnie pokazuje dodatkowo światło lub światła kotwiczne.",
   "image": "images/q359.png"
 },
 {
@@ -6789,7 +6789,7 @@ window.QUESTIONS.push(
     "Typ otaklowania żaglowego jachtu"
   ],
   "correct": 0,
-  "explanation": "Wielkość znosu zależy w dużym stopniu od prędkości jachtu i warunków falowania."
+  "explanation": "Wielkość dryfu zależy w dużym stopniu od prędkości jachtu i warunków falowania."
 },
 {
   "id": 373,
@@ -8624,7 +8624,7 @@ window.QUESTIONS.push(
   "msm": false,
   "question": "W jakiej sytuacji wybrać metodę równoczesnego sztormowania pod żaglami i na silniku?",
   "answers": [
-    "Jeżeli musimy sztormować w bejdewindzie z uwagi na bliski ląd po zawietrznej",
+    "Jeżeli musimy sztormować w bajdewindzie z uwagi na bliski ląd po zawietrznej",
     "Jeżeli zależy nam na utrzymaniu dużej szybkości",
     "Jeżeli obawiamy się utraty sterowności w przypadku porwania żagli"
   ],
@@ -9506,11 +9506,11 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": false,
   "msm": true,
-  "question": "Na jachcie usłyszano korespondencję na kanale 16: „May Day, May Day, May Day, this is yacht Regina SPG 1234, my position is ..., I have fire on board, immediate help necessary, 5 persons on board”. Upłynęło kilka minut, nie słychać żadnej korespondencji. Co należy zrobić?",
+  "question": "Na jachcie usłyszano korespondencję na kanale 16: „Mayday, Mayday, Mayday, this is yacht Regina SPG 1234, my position is ..., I have fire on board, immediate help necessary, 5 persons on board”. Upłynęło kilka minut, nie słychać żadnej korespondencji. Co należy zrobić?",
   "answers": [
-    "Nadać komunikat May Day Relay, dalszą akcją zajmie się stacja brzegowa",
+    "Nadać komunikat Mayday Relay, dalszą akcją zajmie się stacja brzegowa",
     "Natychmiast próbować nawiązać kontakt z tą jednostką i płynąć do niej",
-    "Nadać komunikat May Day Relay, jeżeli nie ma odzewu stacji brzegowej nawiązać kontakt z tą jednostką i płynąć do niej"
+    "Nadać komunikat Mayday Relay, jeżeli nie ma odzewu stacji brzegowej nawiązać kontakt z tą jednostką i płynąć do niej"
   ],
   "correct": 2,
   "explanation": "Jeżeli wezwanie nie zostało potwierdzone, statek który je odebrał powinien przekazać alarm dalej, a w miarę możliwości nawiązać kontakt i udzielić pomocy."
