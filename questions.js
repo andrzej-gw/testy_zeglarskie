@@ -58,7 +58,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Dwa jachty żaglowe płyną tym samym halsem i istnieje ryzyko zderzenia. Który ustępuje?",
+    "question": "Dwa jachty żaglowe płyną tym samym halsem i istnieje ryzyko zderzenia. Który powinien ustąpić?",
     "answers": [
       "Jacht o większej długości",
       "Jacht nawietrzny",
@@ -76,7 +76,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Dwa statki o napędzie mechanicznym przecinają kursy. Drugi statek znajduje się po twojej prawej burcie. Co powinieneś zrobić?",
+    "question": "Płyniesz statkiem o napędzie mechanicznym. Zauważasz drugi statek o napędzie mechanicznym i oceniasz, że wasze kursy są kolizyjne - przecinające się. Drugi statek znajduje się na twojej prawej burcie. Co powinieneś zrobić?",
     "answers": [
       "Ustąpić mu",
       "Utrzymać kurs niezależnie od sytuacji",
@@ -112,7 +112,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Który statek ma obowiązek ustąpić podczas wyprzedzania?",
+    "question": "Który statek ma obowiązek ustąpić podczas wyprzedzania w potencjalnej sytuacji kolizyjnej?",
     "answers": [
       "Zawsze statek znajdujący się po lewej stronie toru wodnego",
       "Statek wyprzedzany",
@@ -184,7 +184,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jak powinien prowadzić się statek idący wzdłuż wąskiego toru wodnego?",
+    "question": "Jaki powinien trzymać kurs statek idący wzdłuż wąskiego toru wodnego?",
     "answers": [
       "Tak blisko zewnętrznej granicy toru po swojej prawej stronie, jak jest to bezpieczne i wykonalne",
       "Dokładnie środkiem toru",
@@ -202,14 +202,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jacht żaglowy przecina wąski tor wodny. Czy może utrudniać przejście statkowi, który może bezpiecznie nawigować tylko w tym torze?",
+    "question": "Jacht żaglowy przecina tor wodny. Czy może utrudniać przejście statkowi, który może bezpiecznie nawigować tylko w tym torze?",
     "answers": [
       "Nie",
       "Tak, jeśli płynie prawym halsem",
       "Tak, bo jacht żaglowy zawsze ma pierwszeństwo"
     ],
     "correct": 0,
-    "explanation": "Statek żaglowy nie powinien przeszkadzać statkowi, który może bezpiecznie nawigować jedynie w granicach wąskiego toru."
+    "explanation": "Statek żaglowy nie powinien przeszkadzać statkowi, który może bezpiecznie nawigować jedynie w granicach toru wodnego."
   },
   {
     "id": 12,
@@ -241,8 +241,8 @@ window.QUESTIONS = [
     "question": "Jacht żaglowy o długości 12 m znajduje się w systemie rozgraniczenia ruchu. Wobec statku o napędzie mechanicznym podążającego pasem ruchu powinien:",
     "answers": [
       "Nie przeszkadzać w jego bezpiecznym przejściu",
-      "Zawsze wymuszać pierwszeństwo jako jednostka żaglowa",
-      "Stanąć w dryf na osi pasa"
+      "Utrzymać kurs i prędkość, bo ma pierwszeństwo jako jednostka żaglowa",
+      "Jak najszybciej opuścić pas ruchu, gdyż jednostki żaglowe nie mogą tam wpływać"
     ],
     "correct": 0,
     "explanation": "Statek żaglowy oraz statek o długości poniżej 20 m nie powinny przeszkadzać bezpiecznemu przejściu statku o napędzie mechanicznym podążającego pasem ruchu."
@@ -263,7 +263,7 @@ window.QUESTIONS = [
       "Nieodpowiadający za swoje ruchy"
     ],
     "correct": 2,
-    "explanation": "Dwa czerwone światła pionowo to podstawowy znak nocny statku nieodpowiadającego za swoje ruchy."
+    "explanation": "Dwa czerwone światła pionowo to podstawowy znak nocny statku nieodpowiadającego za swoje ruchy. Mnemotechnika: Red over red, captain's dead."
   },
   {
     "id": 15,
@@ -277,11 +277,11 @@ window.QUESTIONS = [
     "question": "Światła czerwone-białe-czerwone ustawione pionowo oznaczają statek:",
     "answers": [
       "Na kotwicy",
-      "Ograniczony zdolnością manewrową",
+      "Ograniczony w swojej zdolności manewrowej",
       "Zajęty trałowaniem"
     ],
     "correct": 1,
-    "explanation": "Czerwone-białe-czerwone to charakterystyczne światła statku ograniczonego zdolnością manewrową."
+    "explanation": "Czerwone-białe-czerwone to charakterystyczne światła statku ograniczonego w swojej zdolności manewrowej."
   },
   {
     "id": 16,
@@ -346,7 +346,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Statek pilotowy pełniący służbę pilotową pokazuje charakterystycznie:",
+    "question": "Statek pilotowy pełniący służbę pilotową pokazuje:",
     "answers": [
       "Białe światło nad czerwonym",
       "Czerwone nad zielonym",
@@ -382,7 +382,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Statek na mieliźnie powinien w dzień, oprócz znaków statku na kotwicy, pokazywać:",
+    "question": "Statek na mieliźnie powinien w dzień pokazywać:",
     "answers": [
       "Jeden czarny romb",
       "Trzy czarne kule ustawione pionowo",
@@ -436,14 +436,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Statek o napędzie mechanicznym o długości poniżej 50 m, będący w drodze, pokazuje zasadniczo:",
+    "question": "Statek o napędzie mechanicznym o długości 12 m lub większej, lecz mniejszej niż 50 m, będący w drodze, jest obowiązany pokazywać co najmniej:",
     "answers": [
       "Wyłącznie światła burtowe",
       "Jedno światło masztowe, światła burtowe i rufowe",
       "Dwa czerwone światła i światło rufowe"
     ],
     "correct": 1,
-    "explanation": "Dla statku o napędzie mechanicznym poniżej 50 m podstawowym zestawem jest jedno światło masztowe, światła burtowe oraz rufowe."
+    "explanation": "Statek o napędzie mechanicznym o długości od 12 m do poniżej 50 m, będący w drodze, powinien pokazywać przednie światło masztowe, światła burtowe oraz światło rufowe. Może również pokazywać drugie światło masztowe umieszczone za pierwszym i wyżej, ale w przypadku statku o długości poniżej 50 m nie jest ono obowiązkowe."
   },
   {
     "id": 25,
@@ -472,7 +472,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Dwa krótkie sygnały dźwiękowe oznaczają:",
+    "question": "Dwa krótkie sygnały dźwiękowe statku o napędzie mechanicznym oznaczają:",
     "answers": [
       "Zmieniam kurs w prawo",
       "Pracuję napędem wstecz",
@@ -490,7 +490,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Trzy krótkie sygnały dźwiękowe oznaczają:",
+    "question": "Trzy krótkie sygnały dźwiękowe statku o napędzie mechanicznym oznaczają:",
     "answers": [
       "Nie odpowiadam za swoje ruchy",
       "Pracuję napędem wstecz",
@@ -528,9 +528,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Jaki sygnał mgłowy nadaje statek o napędzie mechanicznym posuwający się po wodzie?",
     "answers": [
-      "Dwa długie dźwięki co najwyżej co minutę",
+      "Dwa długie dźwięki nie rzadziej niż co minutę",
       "Jeden krótki co 30 sekund",
-      "Jeden długi dźwięk co najwyżej co 2 minuty"
+      "Jeden długi dźwięk nie rzadziej niż co 2 minuty"
     ],
     "correct": 2,
     "explanation": "Statek o napędzie mechanicznym posuwający się po wodzie nadaje jeden długi dźwięk w odstępach nie większych niż 2 minuty."
@@ -544,10 +544,10 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jaki sygnał mgłowy nadaje statek o napędzie mechanicznym będący w drodze, lecz zatrzymany i nieposuwający się po wodzie?",
+    "question": "Jaki sygnał mgłowy nadaje statek o napędzie mechanicznym będący w drodze, lecz nieposuwający się po wodzie?",
     "answers": [
       "Pięć krótkich",
-      "Dwa długie dźwięki z przerwą około 2 sekund, co najwyżej co 2 minuty",
+      "Dwa długie dźwięki z przerwą około 2 sekund, nie rzadziej niż co 2 minuty",
       "Jeden długi i dwa krótkie"
     ],
     "correct": 1,
@@ -562,14 +562,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jacht żaglowy w ograniczonej widzialności powinien nadawać co najwyżej co 2 minuty:",
+    "question": "Jacht żaglowy w ograniczonej widzialności powinien nadawać nie rzadziej niż co 2 minuty:",
     "answers": [
-      "Jeden długi i dwa krótkie dźwięki",
+      "Jeden długi i następujące po nim dwa krótkie dźwięki",
       "Jeden długi dźwięk",
       "Dwa długie dźwięki"
     ],
     "correct": 0,
-    "explanation": "Jeden długi i dwa krótkie stosują m.in. statki żaglowe, NUC, RAM i statki zajęte połowem."
+    "explanation": "Jeden długi i następujące po nim dwa krótkie stosują m.in. statki żaglowe, NUC, RAM i statki zajęte połowem."
   },
   {
     "id": 32,
@@ -638,7 +638,7 @@ window.QUESTIONS = [
     "answers": [
       "Zmiany kursu w prawo",
       "Zmniejszenia prędkości",
-      "Zmiany kursu w lewo dla statku znajdującego się przed jego trawersem"
+      "Zmiany kursu w lewo"
     ],
     "correct": 2,
     "explanation": "W ograniczonej widzialności COLREG zaleca, jeśli to możliwe, unikanie zmiany kursu w lewo dla statku znajdującego się przed trawersem, chyba że jest to statek wyprzedzany."
@@ -654,9 +654,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Określenie „statek nieodpowiadający za swoje ruchy” oznacza statek, który:",
     "answers": [
-      "Prowadzi połowy",
+      "Ze względu na charakter wykonywanej pracy ma ograniczoną zdolność manewrowania zgodnie z wymaganiami przepisów",
       "Z powodu wyjątkowych okoliczności nie jest w stanie manewrować zgodnie z wymaganiami przepisów",
-      "Ma ograniczone zanurzenie"
+      "Ze względu na swoje zanurzenie w stosunku do dostępnej głębokości i szerokości akwenu ma poważnie ograniczoną możliwość zejścia z kursu"
     ],
     "correct": 1,
     "explanation": "NUC to statek, który z wyjątkowych przyczyn nie może manewrować zgodnie z przepisami i dlatego nie może ustąpić innemu statkowi."
@@ -673,8 +673,8 @@ window.QUESTIONS = [
     "question": "Określenie „statek ograniczony zdolnością manewrową” odnosi się do statku, którego zdolność manewrowania jest ograniczona:",
     "answers": [
       "Ze względu na charakter wykonywanej pracy",
-      "Wyłącznie przez małą moc silnika",
-      "Wyłącznie przez silny wiatr"
+      "Ze względu na wyjątkowe okoliczności, np. awarię steru",
+      "Ze względu na warunki na akwenie"
     ],
     "correct": 0,
     "explanation": "RAM jest ograniczony charakterem wykonywanej pracy, np. pracami podwodnymi, pogłębianiem czy zaopatrywaniem w morzu."
@@ -728,7 +728,7 @@ window.QUESTIONS = [
     "answers": [
       "Ukończenie 18 lat oraz odbycie co najmniej dwóch rejsów morskich o łącznym czasie co najmniej 200 godzin",
       "Ukończenie 16 lat i 100 godzin stażu",
-      "Posiadanie patentu kapitana jachtowego"
+      "Posiadanie patentu żeglarza jachtowego"
     ],
     "correct": 0,
     "explanation": "Do uzyskania JSM wymagane są m.in. ukończone 18 lat, dwa rejsy morskie i łącznie co najmniej 200 godzin żeglugi oraz zdany egzamin."
@@ -763,11 +763,11 @@ window.QUESTIONS = [
     "question": "Do czego służą wanty?",
     "answers": [
       "Do wybierania grota",
-      "Do bocznego podparcia masztu",
+      "Do stabilizowania masztu na boki",
       "Do regulacji kąta steru"
     ],
     "correct": 1,
-    "explanation": "Wanty podpierają maszt przede wszystkim w kierunku poprzecznym."
+    "explanation": "Wanty stabilizują maszt przede wszystkim w kierunku poprzecznym."
   },
   {
     "id": 43,
@@ -778,14 +778,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": false,
-    "question": "Sztag dziobowy przede wszystkim:",
+    "question": "Sztag przede wszystkim:",
     "answers": [
-      "Podtrzymuje maszt od strony dziobu",
+      "Stabilizuje maszt od strony dziobu",
       "Łączy bom z masztem",
       "Służy do mocowania odbijaczy"
     ],
     "correct": 0,
-    "explanation": "Sztag dziobowy stabilizuje maszt w kierunku wzdłużnym od strony dziobu."
+    "explanation": "Sztag stabilizuje maszt w kierunku wzdłużnym od strony dziobu."
   },
   {
     "id": 44,
@@ -798,8 +798,8 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Dlaczego zawory denne należy znać i okresowo kontrolować?",
     "answers": [
-      "Regulują napięcie olinowania",
-      "Sterują ładowaniem akumulatorów",
+      "Ponieważ ich częściowe zamknięcie może powodować wzrost ciśnienia w instalacji wody słodkiej",
+      "Odpowiadają za odprowadzanie nadmiaru gazu i ich niesprawność grozi pożarem",
       "Ich uszkodzenie lub nieszczelność może doprowadzić do zalewania jachtu"
     ],
     "correct": 2,
@@ -816,8 +816,8 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Głównym zadaniem pompy zęzowej jest:",
     "answers": [
-      "Chłodzenie alternatora",
-      "Usuwanie wody gromadzącej się w zęzie",
+      "Podawanie wody do chłodzenia silnika",
+      "Usuwanie wody gromadzącej się w najniższych częściach jachtu",
       "Podawanie paliwa do silnika"
     ],
     "correct": 1,
@@ -836,7 +836,7 @@ window.QUESTIONS = [
     "answers": [
       "Czy z wydechu wypływa woda chłodząca",
       "Czy wskazówka paliwa pokazuje pełny zbiornik",
-      "Czy światła nawigacyjne są włączone"
+      "Czy temperatura płynu chłodzącego nie jest poniżej minimum"
     ],
     "correct": 0,
     "explanation": "Brak wody na wylocie może oznaczać problem z dopływem wody chłodzącej lub pompą i grozi przegrzaniem."
@@ -850,10 +850,10 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Częstą przyczyną braku przepływu wody chłodzącej w małym silniku morskim jest:",
+    "question": "Częstą przyczyną braku przepływu wody chłodzącej w silniku morskim jest:",
     "answers": [
-      "Zbyt wysoki poziom oleju napędowego",
-      "Rozładowana bateria w radiu VHF",
+      "Uszkodzona przekładnia",
+      "Zbyt niska temperatura oleju",
       "Uszkodzony wirnik gumowy pompy wody zaburtowej"
     ],
     "correct": 2,
@@ -870,9 +870,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Przed uruchomieniem stacjonarnego silnika Diesla należy m.in. sprawdzić:",
     "answers": [
-      "Kolor światła rufowego",
+      "Czy koło sterowe jest w pozycji 0",
       "Poziom oleju silnikowego",
-      "Napięcie want zawietrznych"
+      "Stan świec zapłonowych"
     ],
     "correct": 1,
     "explanation": "Kontrola poziomu oleju jest podstawową czynnością przed uruchomieniem silnika."
@@ -886,11 +886,11 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jeżeli do układu paliwowego silnika Diesla dostało się powietrze, typowym działaniem jest:",
+    "question": "Jeżeli do układu paliwowego silnika Diesla dostało się powietrze, trzeba:",
     "answers": [
-      "Odpowietrzenie układu paliwowego zgodnie z instrukcją silnika",
-      "Dolanie wody destylowanej do paliwa",
-      "Zamknięcie zaworu wydechowego"
+      "Odpowietrzyć układ paliwowy zgodnie z instrukcją silnika",
+      "Odciąć dopływ paliwa",
+      "Zamknąć zawór wydechowy"
     ],
     "correct": 0,
     "explanation": "Silnik Diesla może nie uruchomić się po zapowietrzeniu układu; konieczne jest jego odpowietrzenie zgodnie z procedurą producenta."
@@ -906,8 +906,8 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Dlaczego wodę i zanieczyszczenia z odstojnika filtra paliwa należy usuwać?",
     "answers": [
-      "Zwiększają prąd ładowania",
-      "Zmniejszają zanurzenie jachtu",
+      "Zanieczyszczony olej ma gorsze właściwości smarujące",
+      "Aby zanieczyszczone paliwo nie dostawało się do zbiornika paliwa",
       "Mogą powodować nierówną pracę lub zatrzymanie silnika"
     ],
     "correct": 2,
