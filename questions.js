@@ -3606,8 +3606,8 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Po wejściu na mieliznę pierwszym rozsądnym działaniem jest:",
     "answers": [
-      "Natychmiastowe zwiększenie obrotów do maksimum wstecz niezależnie od dna",
-      "Wyrzucenie wszystkich map za burtę",
+      "Natychmiastowe zwiększenie obrotów do maksimum naprzód",
+      "Natychmiastowe zwiększenie obrotów do maksimum wstecz",
       "Ocena sytuacji: stan kadłuba, głębokości, pływu, fali i ryzyka dalszych uszkodzeń"
     ],
     "correct": 2,
@@ -4238,8 +4238,8 @@ window.QUESTIONS.push(
     "Tylko jedną kulę i stożek",
     "Jachty nie muszą pokazywać tych sygnałów"
   ],
-  "correct": 0,
-  "explanation": "Jacht musi mieć możliwość pokazywania wymaganych znaków dziennych w różnych stanach, m.in. kotwiczenia, wejścia na mieliznę czy jednoczesnego używania żagli i silnika."
+  "correct": 1,
+  "explanation": "Jacht o długości co najmniej 7 m powinien w dzień pokazywać kulę podczas postoju na kotwicy, z wyjątkami określonymi w MPZZM dla jednostek poniżej 7 m. Jeżeli płynie jednocześnie pod żaglami i z użyciem napędu mechanicznego, powinien pokazywać z przodu stożek skierowany wierzchołkiem w dół. Statek o długości poniżej 12 m, gdy znajduje się na mieliźnie, jest zwolniony z obowiązku pokazywania dodatkowych trzech kul przewidzianych dla statku na mieliźnie."
 },
 {
   "id": 234,
@@ -4347,7 +4347,7 @@ window.QUESTIONS.push(
     "Tak, o ile posiadają aktualną datę ważności"
   ],
   "correct": 1,
-  "explanation": "Archiwalne wymagania określały nie tylko liczbę, lecz także rodzaje środków pirotechnicznych; sam taki zestaw nie odpowiadał wymaganej konfiguracji."
+  "explanation": "Dla jachtu objętego wymaganiami wyposażenia dla żeglugi pełnomorskiej wymagane jest 12 rakiet spadochronowych czerwonych oraz 1 pławka dymna pomarańczowa. Zestaw zawierający tylko 8 rakiet nie spełnia więc wymagań, nawet jeśli wszystkie środki pirotechniczne mają ważny termin przydatności."
 },
 {
   "id": 240,
@@ -4524,8 +4524,8 @@ window.QUESTIONS.push(
   "question": "Wypożyczając jacht, na tabliczce znamionowej producenta odczytano: CE, kategoria C, max. obciążenie 1000 kg, max. liczba osób 8. Czy takim jachtem (bandera polska) kapitan ze stopniem J.ST.M. może pływać w Chorwacji i na Morzu Adriatyckim przy każdej pogodzie zgodnie z przepisami?",
   "answers": [
     "Tak, jeżeli załoga nie przekroczy 8 osób",
-    "Tak, jeżeli załoga nie przekracza 8 osób, a jacht jest krótszy niż 18 m, przy wietrze do 8° Beauforta",
-    "Tak, o ile jacht jest krótszy niż 18 m, załoga nie przekracza 8 osób, przy wietrze do 6° Beauforta po wodach przybrzeżnych"
+    "Nie. Może pływać jeżeli załoga nie przekracza 8 osób, a jacht jest krótszy niż 18 m, przy wietrze do 8° Beauforta",
+    "Nie. Może pływać, jeżeli jacht jest krótszy niż 18 m, załoga nie przekracza 8 osób, przy wietrze do 6° Beauforta po wodach przybrzeżnych"
   ],
   "correct": 2,
   "explanation": "Kategoria projektowa C odpowiada warunkom przybrzeżnym i jest ograniczona m.in. projektową siłą wiatru i wysokością fali; nie oznacza zdolności do żeglugi w każdej pogodzie."
@@ -7204,8 +7204,8 @@ window.QUESTIONS.push(
     "Nigdy, bo należy zawsze jeszcze uwzględnić dryf jachtu spowodowany wiatrem",
     "Tak, ale tylko w przypadku, gdy jacht żegluje kursami pełnymi (baksztag, fordewind)"
   ],
-  "correct": 1,
-  "explanation": "Brak prądu nie eliminuje znosu wywołanego wiatrem, więc kurs jachtu i droga nad dnem mogą się różnić."
+  "correct": 2,
+  "explanation": "W kursach pełnych dryf jest znikomy, więc KR=KDD."
 },
 {
   "id": 396,
@@ -7382,10 +7382,10 @@ window.QUESTIONS.push(
   "answers": [
     "Tak, bo to pozwala na prowadzenie nawigacji",
     "Nie, bo wymagane są równolegle mapy papierowe",
-    "Tak, o ile mamy dwa odbiorniki GPS"
+    "Tak, o ile system elektroniczny jest zdublowany"
   ],
-  "correct": 1,
-  "explanation": "Według wymagań przyjętych w materiale źródłowym sam ploter z mapami wektorowymi nie zastępuje kompletu map papierowych."
+  "correct": 2,
+  "explanation": "Przepisy wymagają map papierowych lub zdublowanego systemu z mapami elektronicznymi"
 },
 {
   "id": 406,
@@ -7781,8 +7781,8 @@ window.QUESTIONS.push(
     "Nie, jachty nie muszą mieć radaru",
     "Tak, ale tylko jachty o LOA większej niż 20 m"
   ],
-  "correct": 1,
-  "explanation": "W materiale źródłowym radar nie jest wskazany jako obowiązkowe wyposażenie każdego jachtu w żegludze pełnomorskiej."
+  "correct": 2,
+  "explanation": "W żegludze pełnomorskiej jachty od 20 m muszą być wyposażone w radar."
 },
 {
   "id": 428,
@@ -7991,14 +7991,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": false,
   "msm": true,
-  "question": "Sprawdzamy wyposażenie jachtu o długości 15 m przed rejsem pełnomorskim. Jakie wyposażenie do sygnalizacji dźwiękowej powinno być na jachcie?",
+  "question": "Sprawdzamy wyposażenie jachtu żaglowego o długości 15 m przed rejsem pełnomorskim. Jakie wyposażenie do sygnalizacji dźwiękowej jest wymagane zgodnie z MPZZM?",
   "answers": [
-    "Nie ma specjalnych wymagań; jakiekolwiek urządzenie dające donośny sygnał",
-    "Gwizdek o słyszalności przynajmniej 0,5 Mm i dzwon",
-    "Jachty nie muszą mieć takiego wyposażenia"
+    "Dowolne urządzenie umożliwiające nadawanie donośnych sygnałów dźwiękowych, np. ręczny róg mgłowy, bez szczególnych wymagań technicznych",
+    "Gwizdek spełniający wymagania MPZZM, o nominalnym zasięgu słyszalności 0,5 Mm; dzwon nie jest wymagany",
+    "Gwizdek o nominalnym zasięgu słyszalności 0,5 Mm oraz dzwon umożliwiający ręczne nadawanie sygnałów"
   ],
   "correct": 1,
-  "explanation": "Odpowiedź odzwierciedla wymagania przyjęte w archiwalnym materiale źródłowym dla jednostki tej długości."
+  "explanation": "Zgodnie z prawidłem 33 MPZZM statki o długości co najmniej 12 m muszą być wyposażone w gwizdek spełniający wymagania załącznika III. Dzwon jest wymagany dopiero na statkach o długości co najmniej 20 m, natomiast gong od 100 m. Dla jednostek o długości poniżej 20 m załącznik III określa nominalny zasięg słyszalności gwizdka wynoszący 0,5 mili morskiej. Gwizdkiem w rozumieniu MPZZM może być odpowiednie urządzenie mechaniczne, pneumatyczne lub elektryczne, umożliwiające nadawanie wymaganych sygnałów dźwiękowych."
 },
 {
   "id": 440,
@@ -8140,10 +8140,10 @@ window.QUESTIONS.push(
   "answers": [
     "Kartą bezpieczeństwa jachtu",
     "Świadectwem klasy jachtu",
-    "Załącznikiem nr 1 do Rozporządzenia MTBiGM z 28.02.2008 r."
+    "Załącznikiem nr 1 do Rozporządzenia MTBiGM z 28.02.2012 r."
   ],
   "correct": 2,
-  "explanation": "Pytanie źródłowe odwołuje się wprost do historycznego załącznika określającego wymagane wyposażenie."
+  "explanation": "Rodzaj i liczba środków pirotechnicznych dla jachtów morskich o długości do 24 m, do których stosuje się wymagania § 12 rozporządzenia, zostały określone w załączniku nr 1 i zależą od rejonu żeglugi. Przykładowo dla żeglugi pełnomorskiej i oceanicznej wymagane jest 12 czerwonych rakiet spadochronowych oraz jedna pomarańczowa pławka dymna."
 },
 {
   "id": 448,
@@ -8158,10 +8158,10 @@ window.QUESTIONS.push(
   "answers": [
     "Tak, na wszystkich",
     "Nie, na jachtach takie rozkłady nie są obowiązkowe",
-    "Tak, ale tylko na jachtach o długości większej niż 15 m i załodze powyżej 5 osób"
+    "Tak, ale tylko na jachtach o długości większej niż 24 m lub gdy załoga liczy co najmniej 5 osób"
   ],
   "correct": 2,
-  "explanation": "Odpowiedź odzwierciedla historyczny próg wskazany w materiale źródłowym."
+  "explanation": "Zgodnie z § 13 rozporządzenia MTBiGM z 28 lutego 2012 r. na jachcie morskim objętym tymi przepisami powinien być opracowany rozkład alarmowy. Jedynie gdy liczba członków załogi wynosi mniej niż 5 osób, może on zostać zastąpiony zasadami postępowania określonymi przez armatora oraz odpowiednimi ćwiczeniami."
 },
 {
   "id": 449,
@@ -8178,8 +8178,8 @@ window.QUESTIONS.push(
     "Nie, w żadnym wypadku",
     "Tak, o ile system obsługujący mapy wektorowe będzie zdublowany"
   ],
-  "correct": 1,
-  "explanation": "W archiwalnym materiale źródłowym mapy elektroniczne nie zastępują wymaganego zestawu map papierowych."
+  "correct": 2,
+  "explanation": "Mapy papierowe mogą być zastąpione aktualnymi mapami wektorowymi, jeśli system jest zdublowany"
 },
 {
   "id": 450,
@@ -8391,7 +8391,7 @@ window.QUESTIONS.push(
   "question": "W polskiej strefie Morskiej Służby Poszukiwania i Ratownictwa (SAR) łączność radiową w niebezpieczeństwie zapewniają:",
   "answers": [
     "Kapitanaty portów polskich",
-    "Radiostacja „Witowo Radio” i jej ekspozytury",
+    "Radiostacja „Polish Rescue Radio” i jej ekspozytury",
     "Specjalne radiostacje SAR"
   ],
   "correct": 1,
@@ -8514,14 +8514,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": true,
   "msm": true,
-  "question": "Jakie środki bezpieczeństwa osobistego i w jakiej ilości powinny być na jachcie (bandera polska)?",
+  "question": "Jakie wyposażenie w indywidualne środki ratunkowe i pasy bezpieczeństwa powinien posiadać jacht morski o długości do 24 m, objęty wymaganiami wyposażeniowymi polskich przepisów, podczas żeglugi pełnomorskiej?",
   "answers": [
-    "Pasy ratunkowe dla całej załogi, pasy bezpieczeństwa dla całej załogi",
-    "Pasy ratunkowe dla całej załogi, pasy bezpieczeństwa dla jednej wachty",
-    "Pasy ratunkowe dla całej załogi + 1, pasy bezpieczeństwa co najmniej dla połowy załogi"
+    "Kamizelki ratunkowe dla każdej osoby oraz pasy bezpieczeństwa dla co najmniej połowy osób",
+    "Kamizelki ratunkowe dla każdej osoby oraz pasy bezpieczeństwa dla wszystkich osób",
+    "Kamizelki ratunkowe dla każdej osoby i jedna zapasowa oraz pasy bezpieczeństwa dla jednej wachty"
   ],
   "correct": 2,
-  "explanation": "Odpowiedź odzwierciedla ilości wymagane w historycznych przepisach, na których oparto materiał źródłowy."
+  "explanation": "Zgodnie z załącznikiem nr 1 do rozporządzenia w sprawie bezpiecznego uprawiania żeglugi przez jachty morskie, jacht o długości do 24 m w żegludze pełnomorskiej powinien być wyposażony w pasy lub kamizelki ratunkowe oraz pasy bezpieczeństwa dla wszystkich osób znajdujących się na jachcie. Jeżeli kamizelki mają odpowiednią uprząż, dodatkowe pasy bezpieczeństwa nie są wymagane. Dla kamizelek pneumatycznych wymagany jest zapas w wysokości 10% ich liczby, nie mniej niż jeden, przy czym dopuszcza się zapasowe naboje. Wymagania te nie dotyczą wszystkich jachtów rekreacyjnych, ponieważ przepisy przewidują wyłączenia."
 },
 {
   "id": 469,
@@ -8893,14 +8893,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": true,
   "msm": true,
-  "question": "Członek załogi przewrócił się na pokładzie, ma silny ból klatki piersiowej szczególnie przy wdechu. Jak postępować z poszkodowanym?",
+  "question": "Członek załogi przewrócił się na pokładzie i skarży się na silny ból klatki piersiowej, nasilający się podczas wdechu. Jest przytomny i oddycha samodzielnie. Jak należy postępować?",
   "answers": [
-    "Umieścić go w pozycji półsiedzącej w miejscu najmniej narażonym na kołysanie, założyć okrężną opaskę z szerokiego bandaża na klatkę piersiową, podać środki przeciwbólowe",
-    "Ułożyć go w pozycji bezpiecznej, w miejscu dobrze wentylowanym",
-    "Podawać ciepłe płyny i środki przeciwkaszlowe"
+    "Ułożyć go w pozycji ułatwiającej oddychanie, ograniczyć ruchy, kontrolować stan poszkodowanego i zapewnić pomoc medyczną",
+    "Ułożyć go w pozycji półsiedzącej i ciasno zabandażować klatkę piersiową, aby ograniczyć ruchomość żeber",
+    "Ułożyć go na plecach i zalecić płytkie oddychanie, aby ograniczyć ból i ruchy klatki piersiowej"
   ],
   "correct": 0,
-  "explanation": "Odpowiedź zachowuje zalecenie z archiwalnego materiału źródłowego dla podejrzenia urazu żeber/klatki piersiowej."
+  "explanation": "Silny ból klatki piersiowej nasilający się podczas wdechu może wskazywać na stłuczenie lub złamanie żeber. Poszkodowanemu należy zapewnić wygodną pozycję ułatwiającą oddychanie, zwykle półsiedzącą, ograniczyć wysiłek oraz obserwować jego stan. Nie należy ciasno bandażować klatki piersiowej, ponieważ ogranicza to jej ruchomość i utrudnia prawidłowe oddychanie. Uraz może prowadzić do poważnych powikłań, takich jak odma opłucnowa, dlatego wskazana jest ocena medyczna. W przypadku duszności lub pogarszania się stanu należy niezwłocznie wezwać pomoc."
 },
 {
   "id": 490,
@@ -8911,14 +8911,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": true,
   "msm": true,
-  "question": "Przy pracach konserwacyjnych członek załogi oparzył się kwasem z akumulatora. Jak postępować?",
+  "question": "Podczas prac konserwacyjnych członek załogi oblał skórę kwasem z akumulatora. Jak należy udzielić mu pierwszej pomocy?",
   "answers": [
-    "Nałożyć na miejsce oparzone sterylny opatrunek",
-    "Starannie i długo płukać miejsce oparzone wodą, a następnie roztworem sody oczyszczonej lub mydła. Nałożyć sterylny opatrunek",
-    "Nałożyć na miejsce oparzone okład alkaliczny np. z mydła"
+    "Natychmiast nałożyć na oparzone miejsce jałowy opatrunek, aby ograniczyć dalsze działanie kwasu",
+    "Niezwłocznie usunąć skażoną odzież, obficie i długo płukać skórę wodą, a następnie zabezpieczyć oparzenie jałowym opatrunkiem i zapewnić pomoc medyczną",
+    "Najpierw zneutralizować kwas roztworem sody oczyszczonej, a następnie przemyć skórę wodą i założyć opatrunek"
   ],
   "correct": 1,
-  "explanation": "Źródło wskazuje długie płukanie wodą jako podstawową czynność, a następnie dalsze zaopatrzenie oparzenia. To pytanie ma charakter archiwalny i nie zastępuje aktualnych wytycznych medycznych."
+  "explanation": "Elektrolit tradycyjnego akumulatora kwasowo-ołowiowego zawiera kwas siarkowy, który może powodować poważne oparzenia chemiczne. Należy zadbać o bezpieczeństwo ratownika, niezwłocznie usunąć skażoną odzież i obficie płukać oparzoną skórę czystą, chłodną lub letnią bieżącą wodą, najlepiej przez kilkadziesiąt minut. Nie należy próbować neutralizować kwasu na skórze sodą oczyszczoną ani innymi substancjami chemicznymi, ponieważ może to pogłębić uszkodzenia. Po zakończeniu płukania należy zabezpieczyć oparzenie jałowym, nieprzylegającym opatrunkiem i zapewnić pilną pomoc medyczną. Jeśli kwas dostał się do oka, należy natychmiast rozpocząć jego płukanie wodą i pilnie wezwać pomoc medyczną."
 },
 {
   "id": 491,
@@ -9260,8 +9260,8 @@ window.QUESTIONS.push(
     "Nie",
     "Tak, o ile są w dobrym stanie technicznym"
   ],
-  "correct": 0,
-  "explanation": "W materiale źródłowym podana liczba odpowiada wymaganemu zestawowi pod warunkiem zachowania ważności środków pirotechnicznych."
+  "correct": 1,
+  "explanation": "Dla jachtu objętego wymaganiami wyposażenia dla żeglugi pełnomorskiej wymagane jest 12 rakiet spadochronowych czerwonych oraz 1 pławka dymna pomarańczowa. Zestaw zawierający tylko 8 rakiet nie spełnia więc wymagań, nawet jeśli wszystkie środki pirotechniczne mają ważny termin przydatności."
 },
 {
   "id": 510,
@@ -9344,14 +9344,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": false,
   "msm": true,
-  "question": "Czy jachty powinny być wyposażone w dzwon?",
+  "question": "Czy zgodnie z MPZZM jachty morskie muszą być wyposażone w dzwon?",
   "answers": [
-    "Tak, ale tylko dłuższe od 12 m",
-    "Nie",
-    "Tak, wszystkie"
+    "Tak, jachty o długości co najmniej 20 m",
+    "Tak, jachty o długości co najmniej 12 m",
+    "Tak, wszystkie jachty, niezależnie od długości"
   ],
   "correct": 0,
-  "explanation": "Odpowiedź zachowuje próg długości podany w archiwalnym zestawie. Wymagania COLREG były później zmieniane, dlatego pytanie należy traktować jako historyczne."
+  "explanation": "Zgodnie z prawidłem 33 MPZZM (COLREG), jednostki o długości co najmniej 20 m muszą być wyposażone w dzwon oraz gwizdek. Na jednostkach o długości od 12 m do poniżej 20 m wymagany jest jedynie gwizdek, natomiast jednostki krótsze niż 12 m muszą posiadać środek umożliwiający nadawanie skutecznych sygnałów dźwiękowych. Dzwon może zostać zastąpiony urządzeniem o równoważnych właściwościach dźwiękowych, zapewniającym możliwość ręcznego nadawania wymaganych sygnałów."
 },
 {
   "id": 515,
