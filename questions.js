@@ -924,9 +924,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Alternator podczas pracy silnika służy głównie do:",
     "answers": [
-      "Sterowania autopilotem mechanicznie",
-      "Ładowania akumulatorów i zasilania instalacji elektrycznej",
-      "Chłodzenia skrzyni biegów"
+      "Pomiaru napięcia akumulatorów",
+      "Ładowania akumulatorów",
+      "Dodawania mocy na wysokich obrotach"
     ],
     "correct": 1,
     "explanation": "Alternator przetwarza energię mechaniczną silnika na energię elektryczną."
@@ -997,8 +997,8 @@ window.QUESTIONS = [
     "question": "Butla gazowa na jachcie powinna być przechowywana:",
     "answers": [
       "W przeznaczonej do tego, wentylowanej przestrzeni z odpływem za burtę",
-      "W zęzie obok akumulatora",
-      "W koi pod materacem"
+      "W najniższym miejscu na jachcie, bo gaz jest cięższy od powietrza",
+      "Powyżej kuchenki gazowej, żeby gaz mógł dotrzeć do kuchenki"
     ],
     "correct": 0,
     "explanation": "Szafka gazowa powinna ograniczać możliwość przedostania się LPG do wnętrza i umożliwiać odpływ gazu za burtę."
@@ -1032,9 +1032,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Bezpiecznik w instalacji elektrycznej chroni przede wszystkim przed:",
     "answers": [
-      "Korozją kadłuba",
+      "Korozją przewodów elektrycznych",
       "Nadmiernym prądem mogącym przegrzać przewody",
-      "Spadkiem ciśnienia atmosferycznego"
+      "Uruchomieniem silnika przez niepożądane osoby"
     ],
     "correct": 1,
     "explanation": "Bezpiecznik przerywa obwód przy nadmiernym prądzie i chroni przewody oraz urządzenia przed przegrzaniem i pożarem."
@@ -1140,9 +1140,9 @@ window.QUESTIONS = [
     "msm": false,
     "question": "Zadaniem kilu balastowego jest m.in.:",
     "answers": [
-      "Zmniejszanie powierzchni zmoczonej przy postoju",
+      "Zmniejszenie sił działających na płetwę sterową",
       "Zwiększenie stateczności i przeciwdziałanie przechyłowi",
-      "Ładowanie akumulatorów"
+      "Zmniejszenie oporów kadłuba"
     ],
     "correct": 1,
     "explanation": "Balast obniża środek ciężkości jachtu i poprawia jego stateczność."
@@ -2094,12 +2094,12 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Pozycja z GPS:",
     "answers": [
-      "Jest zawsze bezbłędna",
-      "Zwalnia z prowadzenia obserwacji",
-      "Powinna być kontrolowana innymi dostępnymi metodami i zdrowym rozsądkiem"
+      "Jest dokładniejsza w pobliżu wysokich klifów",
+      "Nie może być zakłócana, bo korzysta z szyfrowania danych",
+      "Jest dokładniejsza na płaskim terenie"
     ],
     "correct": 2,
-    "explanation": "GNSS jest bardzo użyteczny, ale może ulec awarii, zakłóceniu lub błędom mapy; dobra praktyka wymaga kontroli pozycji."
+    "explanation": "GPS może być mniej dokładny w pobliżu wysokich klifów, a jego sygnał może być zakłócany."
   },
   {
     "id": 117,
@@ -2614,14 +2614,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "Zakres pływu to różnica między:",
+    "question": "Skok pływu to różnica między:",
     "answers": [
       "Wysokością wysokiej i niskiej wody",
       "Głębokością pod kilem i zanurzeniem",
       "Prędkością prądu przy przypływie i odpływie"
     ],
     "correct": 0,
-    "explanation": "Range of tide to różnica poziomu między HW i LW."
+    "explanation": "Skok pływu to różnica poziomu między HW i LW."
   },
   {
     "id": 146,
@@ -3319,8 +3319,8 @@ window.QUESTIONS = [
     "question": "Po przypadkowym nadaniu fałszywego alarmu DSC należy:",
     "answers": [
       "Niezwłocznie go odwołać zgodnie z procedurą i poinformować właściwą stację",
-      "Wyłączyć radio i nic nie robić",
-      "Nadać drugi alarm dla potwierdzenia"
+      "Jak najszybciej wyłączyć radio, żeby przestało nadawać komunikaty",
+      "Nadać komunikat Mayday Relay"
     ],
     "correct": 0,
     "explanation": "Fałszywy alarm trzeba anulować zgodnie z procedurą, aby służby nie prowadziły niepotrzebnej akcji."
@@ -3581,7 +3581,7 @@ window.QUESTIONS = [
     "id": 199,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
-    "difficulty": "średnie",
+    "difficulty": "łatwe",
     "zj": true,
     "jsm": true,
     "sm": true,
@@ -3589,8 +3589,8 @@ window.QUESTIONS = [
     "question": "Przed wyjściem w morze wachtę i załogę należy poinformować m.in. o:",
     "answers": [
       "Rozmieszczeniu środków ratunkowych, procedurach alarmowych i zasadach poruszania się po jachcie",
-      "Wyłącznie haśle do Wi‑Fi",
-      "Tylko godzinie obiadu"
+      "Kodzie do toalety",
+      "Podziale na wachty kambuzowe"
     ],
     "correct": 0,
     "explanation": "Briefing bezpieczeństwa powinien obejmować środki ratunkowe, alarmy, drogi ewakuacji i podstawowe zasady działania na jachcie."
@@ -4383,7 +4383,7 @@ window.QUESTIONS.push(
     "Kodeks Morski"
   ],
   "correct": 1,
-  "explanation": "Pytanie odwołuje się do obowiązującego w czasie powstania bazy rozporządzenia z 28 lutego 2012 r. i jego załącznika z wymaganiami wyposażeniowymi."
+  "explanation": "Rozporządzenie z 28 lutego 2012 r. pozostaje obowiązującą podstawą prawną określającą wyposażenie jachtów morskich. Zgodnie z § 12 wymagania wyposażeniowe dla jachtów o długości do 24 m zawiera załącznik nr 1. Należy jednak pamiętać o wyłączeniach przewidzianych w § 2, w szczególności dotyczących jachtów rekreacyjnych o długości do 15 m, które nie zostały dobrowolnie poddane inspekcji."
 },
 {
   "id": 242,
@@ -4583,7 +4583,7 @@ window.QUESTIONS.push(
     "Tak, o ile mamy przynajmniej 30 m łańcucha"
   ],
   "correct": 1,
-  "explanation": "Oznaczenie dna na rysunku wskazuje podłoże niekorzystne do kotwiczenia, dlatego samo zapewnienie odpowiedniej długości łańcucha nie rozwiązuje problemu.",
+  "explanation": "Oznaczenie dna na rysunku wskazuje podłoże niekorzystne do kotwiczenia (kamienie), dlatego samo zapewnienie odpowiedniej długości łańcucha nie rozwiązuje problemu.",
   "image": "images/q252.png"
 },
 {
@@ -6953,7 +6953,7 @@ window.QUESTIONS.push(
     "Typowa nawigacja zliczeniowa"
   ],
   "correct": 1,
-  "explanation": "Na dobrze oznakowanym, ciasnym akwenie podstawą jest pilotage oparty na obserwowanych znakach; elektronika powinna wspierać, a nie zastępować obserwację."
+  "explanation": "Na dobrze oznakowanym, ciasnym akwenie podstawą jest nawigacja oparta na obserwowanych znakach; elektronika powinna wspierać, a nie zastępować obserwację."
 },
 {
   "id": 382,
@@ -7216,14 +7216,14 @@ window.QUESTIONS.push(
   "jsm": true,
   "sm": false,
   "msm": true,
-  "question": "Jakimi sposobami można obliczyć poprawkę na prąd przy czynnym uwzględnianiu prądu?",
+  "question": "Jakimi sposobami można ustalić poprawkę na prąd?",
   "answers": [
-    "Tylko wykonując obliczenia trygonometryczne",
-    "Wykonując wykres lub z tablic nawigacyjnych",
-    "Analizując już przebytą drogę i dryf jachtu spowodowany wiatrem"
+    "Dodać do kursu kąt poprawki sprawdzonej w tabeli dewiacyjnej",
+    "Wykonując wykres wektorów lub z tablic nawigacyjnych",
+    "Zmierzyć kąt kilwatera od osi jachtu"
   ],
   "correct": 1,
-  "explanation": "Trójkąt prędkości można rozwiązać graficznie lub obliczeniowo/tablicowo."
+  "explanation": "Aby ustalić poprawkę na prąd sumujemy wektor KdW i wektor prądu. Nie wystarczy zsumować samych kątów, bo wynik zależy również od siły prądu oraz prędkości jachtu."
 },
 {
   "id": 397,
@@ -8827,7 +8827,7 @@ window.QUESTIONS.push(
     "Taśm albo lin rozpiętych od dziobu do rufy"
   ],
   "correct": 2,
-  "explanation": "Jackline biegnąca wzdłuż pokładu pozwala pozostawać wpiętym podczas przemieszczania się między stanowiskami."
+  "explanation": "Life-lina biegnąca wzdłuż pokładu pozwala pozostawać wpiętym podczas przemieszczania się między stanowiskami."
 },
 {
   "id": 486,
@@ -8936,7 +8936,7 @@ window.QUESTIONS.push(
     "Zastosować zimne okłady przez 15-30 minut, unieruchomić staw, podać środki przeciwbólowe"
   ],
   "correct": 2,
-  "explanation": "Chłodzenie i unieruchomienie ograniczają obrzęk i dalsze uszkodzenie tkanek po urazie."
+  "explanation": "Ograniczenie ruchu uszkodzonego stawu jest właściwe, jednak nie każde skręcenie wymaga natychmiastowej pomocy lekarskiej. Podstawowe postępowanie obejmuje odciążenie stawu, chłodzenie i zabezpieczenie przed dalszym urazem. W przypadku podejrzenia złamania lub ciężkiego urazu należy uzyskać pilną pomoc medyczną."
 },
 {
   "id": 492,
