@@ -518,7 +518,7 @@
     try {
       const rows = await restGet(
         reviewsTable,
-        'select=question_id,status,coolness&order=question_id.asc'
+        'select=question_id,status,usefulness&order=question_id.asc'
       );
 
       const nextSummary = {};
@@ -533,7 +533,7 @@
             approved: 0,
             needs_changes: 0,
             delete: 0,
-            coolnessSum: 0,
+            usefulnessSum: 0,
           };
         }
 
@@ -544,7 +544,7 @@
           item[row.status] += 1;
         }
 
-        item.coolnessSum += Number(row.coolness || 0);
+        item.usefulnessSum += Number(row.usefulness || 0);
       }
 
       summary = nextSummary;
@@ -570,7 +570,7 @@
       const rows = await restGet(
         reviewsTable,
         [
-          'select=id,question_id,reviewer_name,contact,status,coolness,changes,change_details,general_comment,created_at',
+          'select=id,question_id,reviewer_name,contact,status,usefulness,changes,change_details,general_comment,created_at',
           `question_id=eq.${encodeURIComponent(q.id)}`,
           'order=created_at.desc',
         ].join('&')
@@ -600,7 +600,7 @@
     const needsChanges = reviews.filter(r => r.status === 'needs_changes').length;
     const toDelete = reviews.filter(r => r.status === 'delete').length;
     const avg = reviews.reduce(
-      (sum, review) => sum + Number(review.coolness || 0),
+      (sum, review) => sum + Number(review.usefulness || 0),
       0
     ) / reviews.length;
 
@@ -661,7 +661,7 @@
             <span class="chip ${statusClass}">
               Status: ${escapeHtml(statusLabel(review.status))}
             </span>
-            <span class="chip">Fajność: ${escapeHtml(review.coolness)}/5</span>
+            <span class="chip">Użyteczność: ${escapeHtml(review.usefulness)}/5</span>
           </div>
 
           ${selectedChanges.length
@@ -740,7 +740,7 @@
       reviewer_name: els.reviewerName.value.trim(),
       contact: els.contact.value.trim() || null,
       status,
-      coolness: Number(selectedRadio('coolness')),
+      usefulness: Number(selectedRadio('usefulness')),
       changes,
       change_details:
         status === 'needs_changes'
