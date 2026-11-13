@@ -1464,9 +1464,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Po rzuceniu kotwicy należy sprawdzić, czy kotwica trzyma, m.in. przez:",
     "answers": [
-      "Poluzowanie całego łańcucha bez kontroli",
+      "Poluzowanie całego łańcucha",
       "Obserwację pozycji lub namiarów i kontrolowane obciążenie kotwicy",
-      "Natychmiastowe wyłączenie wszystkich urządzeń nawigacyjnych"
+      "Wyłączenie silnika"
     ],
     "correct": 1,
     "explanation": "Po zakotwiczeniu trzeba upewnić się, że kotwica się wbiła i jacht nie dryfuje."
@@ -1552,14 +1552,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Jedna mila morska ma dokładnie:",
+    "question": "Jedna mila morska to około:",
     "answers": [
       "1609 m",
       "2000 m",
       "1852 m"
     ],
     "correct": 2,
-    "explanation": "Międzynarodowa mila morska ma 1852 metry."
+    "explanation": "Międzynarodowa mila morska ma około 1852 metry."
   },
   {
     "id": 87,
@@ -2002,14 +2002,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "Kąt kursowy 090° oznacza obiekt:",
+    "question": "Obiekt o namiarze 090° znajduje się:",
     "answers": [
       "Na lewym trawersie",
       "Na prawym trawersie",
       "Dokładnie za rufą"
     ],
     "correct": 1,
-    "explanation": "Kąt kursowy 090° mierzony od dziobu zgodnie z ruchem wskazówek oznacza prawy trawers."
+    "explanation": "Namiar 090° oznacza prawy trawers."
   },
   {
     "id": 112,
@@ -2038,7 +2038,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Sonda echosondowa służy do pomiaru:",
+    "question": "Echosonda służy do pomiaru:",
     "answers": [
       "Kierunku wiatru",
       "Deklinacji",
@@ -2726,7 +2726,7 @@ window.QUESTIONS = [
     "answers": [
       "Duży gradient ciśnienia i silniejszy wiatr",
       "Brak wiatru",
-      "Wyłącznie wysoką temperaturę"
+      "Wysoką temperaturę"
     ],
     "correct": 0,
     "explanation": "Im większy gradient ciśnienia, tym zwykle większa prędkość wiatru gradientowego."
@@ -3154,11 +3154,11 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Okres fali to czas między:",
+    "question": "Okres fali to",
     "answers": [
-      "Przejściem dwóch kolejnych grzbietów przez ten sam punkt",
-      "Wschodem i zachodem słońca",
-      "Dwoma zmianami ciśnienia o 1 hPa"
+      "Czas między przejściem dwóch kolejnych grzbietów przez ten sam punkt",
+      "Czas po jakim fala zmienia kierunek",
+      "Czas po jakim fala martwa fala zanika"
     ],
     "correct": 0,
     "explanation": "Okres określa czas między kolejnymi odpowiadającymi sobie fazami fali w jednym miejscu."
