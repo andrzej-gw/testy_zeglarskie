@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Zgłoś pytanie • JSM</title>
+  <title>Zgłoś pytanie • Testy żeglarskie</title>
   <link rel="stylesheet" href="report.css">
 </head>
 <body>
   <main class="report-shell">
     <section class="report-card">
       <header id="formHeader">
-        <div class="brand">⚓ JSM</div>
+        <div class="brand">⚓ Testy żeglarskie</div>
         <h1>Zgłoś pytanie</h1>
         <p>
           Zauważyłeś błąd, niejasność albo po prostu masz uwagę?
@@ -25,6 +25,7 @@
           <span>ID pytania</span>
           <input id="questionId" name="question_id" type="number" min="1" required>
         </label>
+        <p id="questionIdError" class="field-error" role="alert" hidden></p>
 
         <label class="field">
           <span>Co chcesz zgłosić?</span>
@@ -69,6 +70,7 @@
   </main>
 
   <!-- Wykorzystujemy ten sam publishable key co panel admina. -->
+  <script src="../questions.js"></script>
   <script src="../admin/config.js"></script>
   <script src="report.js"></script>
 </body>

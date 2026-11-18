@@ -11,6 +11,7 @@
   const message = document.getElementById('message');
   const contact = document.getElementById('contact');
   const submitBtn = document.getElementById('submitBtn');
+  const questionIdError = document.getElementById('questionIdError');
   const status = document.getElementById('status');
   const setupWarning = document.getElementById('setupWarning');
   const backToTestLink = document.getElementById('backToTestLink');
@@ -22,8 +23,6 @@
   const params = new URLSearchParams(location.search);
   const idFromUrl = Number(params.get('question'));
 
-  const numberFromUrl = Number(params.get('number'));
-  const totalFromUrl = Number(params.get('total'));
   let testPosition = null;
 
   // Numer w teście pobieramy z zapisanego stanu, aby nie pomylić go z ID w bazie.
@@ -40,12 +39,6 @@
     console.warn('Nie udało się odczytać pozycji pytania w teście:', error);
   }
 
-  // Parametry odnośnika są awaryjnym źródłem pozycji (np. przy braku stanu testu).
-  if (!testPosition && Number.isInteger(numberFromUrl) && numberFromUrl > 0 &&
-      Number.isInteger(totalFromUrl) && totalFromUrl >= numberFromUrl) {
-    testPosition = { number: numberFromUrl, total: totalFromUrl };
-  }
-
   if (Number.isInteger(idFromUrl) && idFromUrl > 0) {
     questionId.value = idFromUrl;
 
@@ -54,6 +47,26 @@
       successBackLink.textContent = `← Wróć do pytania ${testPosition.number}`;
     }
   }
+
+  const validQuestionIds = new Set(
+    Array.isArray(window.QUESTIONS)
+      ? window.QUESTIONS.map(q => Number(q.id))
+      : []
+  );
+
+  function validateQuestionId() {
+    const value = Number(questionId.value);
+    const valid = Number.isSafeInteger(value) && value > 0 &&
+      validQuestionIds.has(value);
+    questionIdError.hidden = valid || !questionId.value.trim();
+    questionIdError.textContent = valid ? '' :
+      'Nie znaleziono pytania o takim ID w bazie. Sprawdź numer.';
+    questionId.setCustomValidity(valid ? '' : 'Podaj ID istniejącego pytania.');
+    return valid;
+  }
+
+  questionId.addEventListener('input', validateQuestionId);
+  validateQuestionId();
 
   function configured() {
     return (
@@ -88,7 +101,10 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
 
-    if (!configured() || !form.reportValidity()) return;
+    if (!configured() || !validateQuestionId() || !form.reportValidity()) {
+      if (configured()) form.reportValidity();
+      return;
+    }
 
     const payload = {
       question_id: Number(questionId.value),

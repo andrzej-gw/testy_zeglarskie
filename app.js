@@ -517,6 +517,17 @@ function showResult(endedEarly = false) {
       </div>
     `;
 
+    // Zgłoszenie można wysłać także po zakończeniu testu.
+    const reportLink = document.createElement("a");
+    reportLink.className = "report-question-link review-report-link";
+    reportLink.href = `report/?question=${encodeURIComponent(q.id)}`;
+    reportLink.textContent = "Zgłoś pytanie";
+    reportLink.addEventListener("click", () => {
+      // Przy powrocie z formularza odtwórz podsumowanie zamiast nowego testu.
+      saveTestState();
+      sessionStorage.setItem("jsmReturnToResult", endedEarly ? "early" : "complete");
+    });
+    item.appendChild(reportLink);
     review.appendChild(item);
   });
 
@@ -548,8 +559,15 @@ if (restoreTestState()) {
   resultArea.style.display = "none";
   quizArea.style.display = "grid";
   setExamHeader();
-  renderQuestion();
+  const resultReturn = sessionStorage.getItem("jsmReturnToResult");
+  if (resultReturn === "early" || resultReturn === "complete") {
+    sessionStorage.removeItem("jsmReturnToResult");
+    showResult(resultReturn === "early");
+  } else {
+    renderQuestion();
+  }
 } else {
+  sessionStorage.removeItem("jsmReturnToResult");
   showExamSelector();
 }
 

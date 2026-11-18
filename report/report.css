@@ -236,3 +236,11 @@ button:disabled { opacity: .55; cursor: default; }
   .success-screen { padding: 12px 0; }
   .success-back { width: 100%; }
 }
+
+.field-error {
+  margin: -9px 0 14px;
+  color: var(--bad);
+  font-size: .9rem;
+  font-weight: 650;
+}
+input:invalid:not(:placeholder-shown) { border-color: #cc7777; }

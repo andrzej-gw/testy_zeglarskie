@@ -738,3 +738,9 @@ body.start-mode .result {
     font-size: .74rem;
   }
 }
+
+/* Zgłoszenie błędu dostępne również przy pytaniu w podsumowaniu. */
+.review-report-link {
+  margin: 12px 0 0;
+  font-size: .85rem;
+}
