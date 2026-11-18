@@ -1,421 +1,64 @@
-# Testy żeglarskie
+# ⚓ Testy żeglarskie
 
-Prosta, statyczna aplikacja webowa do nauki do polskich egzaminów żeglarskich i motorowodnych.
+Statyczna aplikacja do ćwiczenia pytań przed egzaminami **ŻJ** (Żeglarz Jachtowy), **JSM** (Jachtowy Sternik Morski), **SM** (Sternik Motorowodny) i **MSM** (Motorowodny Sternik Morski). Frontend działa w HTML, CSS i JavaScript, bez frameworka i budowania. **Supabase** obsługuje zgłoszenia oraz zaplecze administracyjne.
 
-Obsługiwane egzaminy:
+## Testy i zapisywanie postępu
 
-- **ŻJ** — Żeglarz Jachtowy
-- **JSM** — Jachtowy Sternik Morski
-- **SM** — Sternik Motorowodny
-- **MSM** — Motorowodny Sternik Morski
+- Po wyborze egzaminu aplikacja losuje maksymalnie **75 różnych pytań** z przypisanego zakresu.
+- Po odpowiedzi pokazuje poprawne rozwiązanie i wyjaśnienie; obsługuje również ilustracje.
+- Wynik, odpowiedzi, kolejność pytań i bieżąca pozycja są zapisywane w **`localStorage`**. Po ponownym otwarciu strony można **kontynuować test** lub **rozpocząć nowy**.
+- Przy aktualizacji starszy zapis z `sessionStorage` jest przenoszony do `localStorage`, jeśli nie istnieje już nowszy zapis.
+- Test można zakończyć wcześniej; podsumowanie zawiera udzielone odpowiedzi i wynik.
 
-Aplikacja jest napisana w czystym HTML/CSS/JavaScript i może być hostowana na zwykłym serwerze statycznym. Do panelu administracyjnego, roboczej bazy nowych pytań i zgłoszeń użytkowników używany jest **Supabase**.
+Zapis jest lokalny dla danej przeglądarki, urządzenia i adresu strony: **nie synchronizuje się między urządzeniami** i znika po wyczyszczeniu danych witryny. Rozpoczęcie nowego testu lub zakończenie bieżącego usuwa zapis trwającego testu.
 
----
+## Zgłaszanie problemów z pytaniami
 
-## Główne funkcje
-
-### Test
-
-Po wejściu na stronę użytkownik najpierw wybiera egzamin: **ŻJ, JSM, SM albo MSM**.
-
-Następnie aplikacja:
-
-- losuje **75 unikalnych pytań** pasujących do wybranego egzaminu,
-- pokazuje po każdej odpowiedzi informację, czy była poprawna,
-- wyświetla wyjaśnienie,
-- obsługuje pytania z ilustracjami,
-- pokazuje dyskretne **ID pytania**,
-- pozwala zgłosić problem z konkretnym pytaniem,
-- pozwala zakończyć test wcześniej,
-- na końcu pokazuje wynik i podsumowanie odpowiedzi.
-
-Stan rozpoczętego testu jest przechowywany w `sessionStorage`. Dzięki temu po przejściu do formularza zgłoszenia i powrocie użytkownik wraca do tego samego zestawu, tego samego pytania i zachowuje dotychczasowe odpowiedzi.
-
-### Zakres egzaminacyjny pytań
-
-Każde pytanie może należeć do jednego lub kilku egzaminów:
-
-```js
-{
-  "zj": true,
-  "jsm": true,
-  "sm": false,
-  "msm": false
-}
-```
-
-Znaczenie pól:
-
-| Pole | Egzamin |
-|---|---|
-| `zj` | Żeglarz Jachtowy |
-| `jsm` | Jachtowy Sternik Morski |
-| `sm` | Sternik Motorowodny |
-| `msm` | Motorowodny Sternik Morski |
-
-`true` oznacza, że temat pytania pasuje do zakresu danego egzaminu.
-
----
-
-## Baza pytań
-
-Produkcyjna baza pytań znajduje się w:
+Przy pytaniu oraz przy pytaniach w podsumowaniu znajduje się link **„Zgłoś pytanie”**. Otwiera on formularz pod adresem:
 
 ```text
-questions.js
+/report/?question=487
 ```
 
-i jest udostępniana jako:
+Formularz ma edytowalne pole **„ID pytania”**, treść uwagi i opcjonalny kontakt. ID jest wstępnie uzupełniane z linku i weryfikowane względem `questions.js`; to **ID w bazie**, a nie numer pytania w wylosowanym teście. Dane trafiają do tabeli Supabase `jsm_question_reports`.
 
-```js
-window.QUESTIONS = [
-  // ...
-];
-```
+Po udanym wysłaniu formularz zastępuje **ekran podziękowania** z przyciskiem powrotu. Przy błędzie formularz pozostaje na stronie, zachowując wpisane dane i umożliwiając ponowienie próby. Powrót ze zgłoszenia prowadzi bezpośrednio do bieżącego pytania lub podsumowania, bez dodatkowego pytania o wznowienie.
 
-Obecna baza zawiera **540 pytań**.
+## Baza pytań i panel administratora
 
-Pytania `1–210` są autorskimi pytaniami treningowymi. Pytania `211–540` pochodzą z archiwalnego arkusza PZŻ JSM z 2016 r.
+- **`questions.js`** zawiera bazę wykorzystywaną przez test (`window.QUESTIONS`). W dostarczonej wersji opisano **540 pytań**, w tym pytania autorskie i archiwalne PZŻ.
+- Pytanie ma unikalne `id`, treść `question`, tablicę `answers`, indeks prawidłowej odpowiedzi `correct` (**0 = A, 1 = B, 2 = C**), wyjaśnienie `explanation` oraz opcjonalny obrazek `image`.
+- Pola logiczne `zj`, `jsm`, `sm`, `msm` określają, do których egzaminów należy pytanie. Jedno pytanie może występować w kilku zakresach.
+- **`/admin/`** służy do przeglądania, oceniania i edycji pytań, dodawania nowych, zarządzania ilustracjami oraz eksportu `questions.js`.
+- **`/reports/`** umożliwia przeglądanie i filtrowanie zgłoszeń użytkowników.
 
-> **Uwaga dotycząca pytań PZŻ:** źródłowy arkusz nie zawierał oficjalnego klucza odpowiedzi. Pola `correct` i `explanation` dla tej części bazy są rekonstrukcją pomocniczą i nie należy traktować ich jako oficjalnego klucza PZŻ.
+Pytania w panelu mają statusy `draft` (szkic), `review` (do oceny), `published` (do eksportu) i `archived` (pomijane w eksporcie). **Zmiana w Supabase nie aktualizuje automatycznie testu**: po publikacji należy wyeksportować `questions.js` z panelu i wdrożyć nowy plik na stronie.
 
-Przykładowy rekord:
+> **Ważne:** aplikacja jest materiałem edukacyjnym, a nie oficjalną bazą egzaminacyjną PZŻ. Odpowiedzi i wyjaśnienia do archiwalnych pytań PZŻ nie są oficjalnym kluczem.
 
-```js
-{
-  "id": 123,
-  "author": "ChatGPT",
-  "category": "Meteorologia",
-  "difficulty": "średnie",
+## Uruchomienie
 
-  "zj": true,
-  "jsm": true,
-  "sm": true,
-  "msm": true,
-
-  "question": "Treść pytania?",
-  "answers": [
-    "Odpowiedź A",
-    "Odpowiedź B",
-    "Odpowiedź C"
-  ],
-  "correct": 1,
-  "explanation": "Wyjaśnienie odpowiedzi.",
-  "image": "images/q123.png"
-}
-```
-
-Pole `image` jest opcjonalne.
-
-`correct` używa indeksowania od zera:
-
-```text
-0 = A
-1 = B
-2 = C
-```
-
----
-
-## Panel administratora
-
-Panel znajduje się pod:
-
-```text
-/admin/
-```
-
-Umożliwia m.in.:
-
-- przeglądanie całej bazy,
-- przechodzenie do pytania po ID,
-- ocenianie pytań,
-- dodawanie komentarzy administracyjnych,
-- oznaczenie pytania jako:
-  - `Zatwierdzam`,
-  - `Do poprawy`,
-  - `Do usunięcia`,
-- wskazanie, co wymaga poprawy,
-- proponowanie zmian zakresu egzaminacyjnego ŻJ/JSM/SM/MSM,
-- tworzenie nowych pytań,
-- edycję pytań zapisanych w Supabase,
-- dodawanie ilustracji,
-- publikowanie i archiwizowanie pytań,
-- eksport aktualnego `questions.js`.
-
-Nowe pytanie musi mieć przypisany co najmniej jeden zakres egzaminacyjny.
-
-### Statusy roboczych pytań
-
-Pytania tworzone w panelu mają status:
-
-```text
-draft
-review
-published
-archived
-```
-
-Znaczenie:
-
-- `draft` — szkic,
-- `review` — gotowe do oceny,
-- `published` — ma trafić do produkcyjnego `questions.js`,
-- `archived` — nie powinno znaleźć się w eksporcie.
-
-### Nadawanie ID
-
-ID nowego pytania nie jest ustawione na stałe.
-
-Panel sprawdza:
-
-1. najwyższe ID w `questions.js`,
-2. najwyższe ID pytań zapisanych w Supabase,
-
-a następnie nadaje:
-
-```text
-max(ID) + 1
-```
-
-Zapobiega to nadpisywaniu istniejących pytań.
-
----
-
-## Zgłaszanie błędów przez użytkowników
-
-Przy każdym pytaniu w teście znajduje się niewielki przycisk:
-
-```text
-Zgłoś pytanie
-```
-
-Prowadzi on do:
-
-```text
-/report/?question=<ID>
-```
-
-Formularz pozwala podać:
-
-- numer pytania,
-- treść uwagi,
-- opcjonalny kontakt.
-
-Zgłoszenia są zapisywane w Supabase w tabeli:
-
-```text
-jsm_question_reports
-```
-
-Po wysłaniu zgłoszenia użytkownik może wrócić do dokładnie tego miejsca testu, z którego przyszedł.
-
----
-
-## Podgląd zgłoszeń
-
-Widok zgłoszeń administratora znajduje się pod:
-
-```text
-/reports/
-```
-
-Pozwala:
-
-- czytać zgłoszenia użytkowników,
-- filtrować po ID pytania,
-- wyszukiwać w treści,
-- sortować zgłoszenia,
-- przejść bezpośrednio z konkretnego zgłoszenia do odpowiedniego pytania w panelu admina.
-
----
-
-## Supabase
-
-Supabase jest używany do:
-
-- roboczej bazy nowych i edytowanych pytań,
-- opinii administratorów,
-- zgłoszeń użytkowników,
-- przechowywania obrazków dodawanych z panelu.
-
-Konfiguracja frontendu znajduje się w:
-
-```text
-admin/config.js
-```
-
-Przykład:
-
-```js
-window.JSM_ADMIN_CONFIG = {
-  supabaseUrl: "https://YOUR-PROJECT.supabase.co",
-  supabaseAnonKey: "YOUR_PUBLISHABLE_KEY"
-};
-```
-
-W frontendzie wolno używać wyłącznie **publishable/anon key**.
-
-**Nigdy nie umieszczaj w repozytorium ani w kodzie przeglądarkowym `service_role` / secret key.**
-
-### SQL
-
-Repozytorium zawiera skrypty SQL używane do konfiguracji m.in.:
-
-- `jsm_questions`,
-- `jsm_question_reviews`,
-- `jsm_question_reports`,
-- pól `zj`, `jsm`, `sm`, `msm`,
-- Supabase Storage dla ilustracji.
-
-Po zmianach schematu należy uruchamiać odpowiednie migracje w:
-
-```text
-Supabase → SQL Editor
-```
-
----
-
-## Ważne: bezpieczeństwo panelu
-
-Aktualna wersja panelu nie ma jeszcze właściwego logowania administratorów przez Supabase Auth.
-
-Publishable key nie jest sekretem. Bez dodatkowego uwierzytelniania i odpowiednich polityk RLS nie należy traktować `/admin/` ani `/reports/` jako prywatnych tylko dlatego, że ich adres nie jest podlinkowany publicznie.
-
-Przed szerszym udostępnieniem aplikacji warto dodać:
-
-- Supabase Auth,
-- dostęp do zapisu pytań tylko dla zalogowanych administratorów,
-- dostęp do odczytu zgłoszeń tylko dla administratorów.
-
----
-
-## Struktura projektu
-
-Najważniejsze pliki i katalogi:
-
-```text
-testy_zeglarskie/
-├── index.html
-├── app.js
-├── style.css
-├── questions.js
-│
-├── images/
-│   └── ...
-│
-├── report/
-│   ├── index.html
-│   ├── report.js
-│   └── report.css
-│
-├── reports/
-│   ├── index.html
-│   ├── reports.js
-│   └── reports.css
-│
-└── admin/
-    ├── index.html
-    ├── admin.js
-    ├── admin.css
-    ├── config.js
-    └── ...
-```
-
----
-
-## Uruchomienie lokalne
-
-Aplikacja nie wymaga Node.js, frameworka ani procesu budowania.
-
-W katalogu projektu można uruchomić prosty serwer HTTP, np.:
+W katalogu projektu wykonaj:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-i wejść na:
+Otwórz `http://localhost:8000/`. Nie potrzeba Node.js ani procesu kompilacji; korzystaj z serwera HTTP zamiast otwierać plik przez `file://`.
+
+Połączenie z Supabase konfiguruje się w **`admin/config.js`** przez `supabaseUrl` i `supabaseAnonKey`. Odpowiednie tabele, polityki i Storage tworzy się za pomocą skryptów SQL z repozytorium, uruchamianych w **Supabase → SQL Editor**.
+
+**Bezpieczeństwo:** w kodzie przeglądarkowym wolno umieszczać wyłącznie klucz publiczny (`anon` / publishable), nigdy `service_role` ani secret key. Panel administracyjny i odczyt zgłoszeń wymagają ograniczenia dostępu przez Supabase Auth i właściwe polityki RLS. Sam niepodlinkowany adres `/admin/` czy `/reports/` nie stanowi zabezpieczenia.
+
+## Najważniejsze pliki
 
 ```text
-http://localhost:8000/
+testy_zeglarskie/
+├── index.html, app.js, style.css  # interfejs i logika testu
+├── questions.js                   # pytania wykorzystywane w teście
+├── images/                        # ilustracje
+├── report/                        # formularz zgłoszenia + potwierdzenie
+├── reports/                       # lista zgłoszeń
+├── admin/                         # panel administracyjny, config.js, SQL
+└── README.md
 ```
-
-Można również użyć:
-
-```bash
-php -S localhost:8000
-```
-
-PHP nie jest jednak wymagane przez aplikację.
-
-Nie zaleca się otwierania `index.html` bezpośrednio przez `file://`, ponieważ część zachowania przeglądarki może różnić się od normalnego hostingu HTTP.
-
----
-
-## Publikowanie zmian w pytaniach
-
-`questions.js` jest produkcyjną bazą używaną przez test.
-
-Typowy workflow:
-
-```text
-nowe pytanie
-    ↓
-Supabase / draft
-    ↓
-review
-    ↓
-published
-    ↓
-Eksport questions.js z panelu
-    ↓
-podmiana questions.js w repozytorium
-    ↓
-commit + deploy
-```
-
-Panel podczas eksportu:
-
-- zachowuje istniejące pytania z `questions.js`,
-- dodaje pytania Supabase o statusie `published`,
-- nadpisuje rekord o tym samym ID jego nowszą wersją z Supabase,
-- pomija nowe pytania `draft` i `review`,
-- usuwa z eksportu pytania oznaczone jako `archived`,
-- zachowuje pola `zj`, `jsm`, `sm`, `msm`.
-
----
-
-## Git
-
-Po zmianie nazwy projektu repozytorium powinno nazywać się:
-
-```text
-testy_zeglarskie
-```
-
-Sprawdzenie skonfigurowanego zdalnego repozytorium:
-
-```bash
-git remote -v
-```
-
-Zmiana adresu `origin`, jeśli repozytorium zostało przemianowane na GitHubie:
-
-```bash
-git remote set-url origin git@github.com:TWOJ_LOGIN/testy_zeglarskie.git
-```
-
-lub przez HTTPS:
-
-```bash
-git remote set-url origin https://github.com/TWOJ_LOGIN/testy_zeglarskie.git
-```
-
----
-
-## Cel projektu
-
-Projekt służy do nauki i treningu przed egzaminami.
-
-Nie jest oficjalnym systemem egzaminacyjnym PZŻ ani oficjalną bazą egzaminacyjną. Zakresy pytań, odpowiedzi, wyjaśnienia oraz przypisanie pytań do konkretnych egzaminów należy traktować jako materiał edukacyjny i w razie wątpliwości weryfikować z aktualnymi przepisami oraz materiałami szkoleniowymi.
