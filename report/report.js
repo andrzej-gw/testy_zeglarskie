@@ -27,7 +27,7 @@
 
   // Numer w teście pobieramy z zapisanego stanu, aby nie pomylić go z ID w bazie.
   try {
-    const saved = JSON.parse(sessionStorage.getItem('jsmTestState') || 'null');
+    const saved = JSON.parse(localStorage.getItem('jsmTestState') || sessionStorage.getItem('jsmTestState') || 'null');
     if (saved && Array.isArray(saved.questionIds) &&
         Number(saved.questionIds[saved.current]) === idFromUrl) {
       testPosition = {

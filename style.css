@@ -744,3 +744,40 @@ body.start-mode .result {
   margin: 12px 0 0;
   font-size: .85rem;
 }
+
+/* Wznowienie testu po powrocie do aplikacji */
+.resume-area[hidden] { display: none; }
+.resume-area {
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1px solid #a4d7db;
+  border-radius: 15px;
+  background: #effbfa;
+}
+.resume-kicker {
+  margin: 0 0 5px;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.resume-area h3 { margin: 0 0 8px; font-size: 1.25rem; }
+.resume-area p#resumeText { margin: 0 0 16px; color: var(--muted); line-height: 1.5; }
+.resume-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.resume-btn, .discard-btn {
+  min-height: 46px;
+  padding: 11px 17px;
+  border-radius: 11px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+.resume-btn { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+.resume-btn:hover { background: var(--accent-dark); }
+.discard-btn { color: var(--accent); border: 1px solid var(--border); background: #fff; }
+.discard-btn:hover { background: #e6f1f3; }
+@media (max-width: 560px) {
+  .resume-area { padding: 16px; }
+  .resume-actions { display: grid; }
+}

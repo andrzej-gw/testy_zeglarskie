@@ -1,5 +1,7 @@
 const TEST_SIZE = 75;
 const TEST_STATE_KEY = "jsmTestState";
+const RETURN_CONTEXT_KEY = "jsmReturnToResult";
+const RETURN_TO_QUIZ_KEY = "jsmReturnToQuiz";
 
 const EXAMS = {
   zj: {
@@ -52,11 +54,34 @@ const mainTitle = document.getElementById("mainTitle");
 const resultTitle = document.getElementById("resultTitle");
 const changeExamBtn = document.getElementById("changeExamBtn");
 const examChoiceButtons = [...document.querySelectorAll(".exam-choice")];
+const resumeArea = document.getElementById("resumeArea");
+const resumeText = document.getElementById("resumeText");
+const resumeBtn = document.getElementById("resumeBtn");
+const discardBtn = document.getElementById("discardBtn");
 
+
+// Przechowujemy test trwale w tej przeglądarce. Dane z poprzedniej wersji
+// (sessionStorage) są jednorazowo migrowane do localStorage.
+function readSavedTestState() {
+  try {
+    const currentState = localStorage.getItem(TEST_STATE_KEY);
+    if (currentState) return JSON.parse(currentState);
+
+    const legacy = sessionStorage.getItem(TEST_STATE_KEY);
+    if (!legacy) return null;
+    const parsed = JSON.parse(legacy);
+    localStorage.setItem(TEST_STATE_KEY, legacy);
+    sessionStorage.removeItem(TEST_STATE_KEY);
+    return parsed;
+  } catch (error) {
+    console.warn("Nie udało się odczytać zapisanego testu:", error);
+    return null;
+  }
+}
 
 function saveTestState() {
   try {
-    sessionStorage.setItem(TEST_STATE_KEY, JSON.stringify({
+    localStorage.setItem(TEST_STATE_KEY, JSON.stringify({
       exam: selectedExam,
       questionIds: testQuestions.map(q => q.id),
       current,
@@ -71,49 +96,25 @@ function saveTestState() {
 
 function restoreTestState() {
   try {
-    const raw = sessionStorage.getItem(TEST_STATE_KEY);
-    if (!raw) return false;
+    const saved = readSavedTestState();
+    if (!saved || !EXAMS[saved.exam] ||
+        !Array.isArray(saved.questionIds) || !saved.questionIds.length ||
+        !Number.isInteger(saved.current) ||
+        saved.current < 0 || saved.current >= saved.questionIds.length ||
+        !Number.isInteger(saved.score) || saved.score < 0 ||
+        !Array.isArray(saved.userAnswers) ||
+        saved.userAnswers.length > saved.questionIds.length) return false;
 
-    const saved = JSON.parse(raw);
-
-    if (
-      !saved ||
-      !EXAMS[saved.exam] ||
-      !Array.isArray(saved.questionIds) ||
-      !Number.isInteger(saved.current) ||
-      !Number.isInteger(saved.score) ||
-      !Array.isArray(saved.userAnswers)
-    ) {
-      return false;
-    }
+    const questionMap = new Map(window.QUESTIONS.map(q => [Number(q.id), q]));
+    const restoredQuestions = saved.questionIds.map(id => questionMap.get(Number(id)));
+    if (restoredQuestions.some(q => !q || q[saved.exam] !== true)) return false;
 
     selectedExam = saved.exam;
-
-    const questionMap = new Map(
-      window.QUESTIONS.map(q => [Number(q.id), q])
-    );
-
-    const restoredQuestions = saved.questionIds
-      .map(id => questionMap.get(Number(id)))
-      .filter(Boolean);
-
-    if (
-      restoredQuestions.length !== saved.questionIds.length ||
-      restoredQuestions.length === 0 ||
-      restoredQuestions.some(q => q[selectedExam] !== true)
-    ) {
-      return false;
-    }
-
     testQuestions = restoredQuestions;
-    current = Math.min(
-      Math.max(saved.current, 0),
-      testQuestions.length - 1
-    );
+    current = saved.current;
     score = saved.score;
     userAnswers = saved.userAnswers;
     answered = Boolean(saved.answered);
-
     return true;
   } catch (error) {
     console.warn("Nie udało się odtworzyć stanu testu:", error);
@@ -123,10 +124,42 @@ function restoreTestState() {
 
 function clearTestState() {
   try {
+    localStorage.removeItem(TEST_STATE_KEY);
     sessionStorage.removeItem(TEST_STATE_KEY);
+    sessionStorage.removeItem(RETURN_TO_QUIZ_KEY);
+    sessionStorage.removeItem(RETURN_CONTEXT_KEY);
   } catch (error) {
     console.warn("Nie udało się wyczyścić stanu testu:", error);
   }
+}
+
+function showRestoredQuiz() {
+  document.body.classList.remove("start-mode", "result-mode");
+  document.body.classList.add("quiz-mode");
+  startArea.style.display = "none";
+  resultArea.style.display = "none";
+  quizArea.style.display = "grid";
+  setExamHeader();
+  renderQuestion();
+}
+
+function showResumeChoice() {
+  const saved = readSavedTestState();
+  if (!saved || !EXAMS[saved.exam] || !restoreTestState()) {
+    // Nie usuwamy niepoprawnego zapisu bez wiedzy użytkownika.
+    showExamSelector(true);
+    if (saved) startError.textContent =
+      "Nie udało się odtworzyć poprzedniego testu (być może zmieniono bazę pytań). Możesz rozpocząć nowy.";
+    return;
+  }
+
+  const examName = EXAMS[selectedExam].short;
+  const count = testQuestions.length;
+  const progress = Math.min(userAnswers.length, count);
+  showExamSelector(true);
+  resumeText.textContent = `${examName} • ${progress} z ${count} odpowiedzi. ` +
+    `Ostatnie pytanie: ${current + 1} z ${count}.`;
+  resumeArea.hidden = false;
 }
 
 function restoreAnsweredQuestionUI() {
@@ -182,8 +215,8 @@ function setExamHeader() {
   }
 }
 
-function showExamSelector() {
-  clearTestState();
+function showExamSelector(preserveSaved = false) {
+  if (!preserveSaved) clearTestState();
   selectedExam = null;
   testQuestions = [];
   current = 0;
@@ -198,6 +231,7 @@ function showExamSelector() {
   quizArea.style.display = "none";
   resultArea.style.display = "none";
   startError.textContent = "";
+  resumeArea.hidden = true;
   setExamHeader();
 }
 
@@ -306,6 +340,11 @@ function renderQuestion() {
     `Pytanie ${current + 1} z ${testQuestions.length}` +
     ` <span class="question-id">ID ${q.id}</span>` +
     ` <a class="report-question-link" href="report/?question=${encodeURIComponent(q.id)}">Zgłoś pytanie</a>`;
+
+  questionNumber.querySelector(".report-question-link").addEventListener("click", () => {
+    saveTestState();
+    sessionStorage.setItem(RETURN_TO_QUIZ_KEY, "1");
+  });
 
   questionText.textContent = q.question;
 
@@ -525,7 +564,7 @@ function showResult(endedEarly = false) {
     reportLink.addEventListener("click", () => {
       // Przy powrocie z formularza odtwórz podsumowanie zamiast nowego testu.
       saveTestState();
-      sessionStorage.setItem("jsmReturnToResult", endedEarly ? "early" : "complete");
+      sessionStorage.setItem(RETURN_CONTEXT_KEY, endedEarly ? "early" : "complete");
     });
     item.appendChild(reportLink);
     review.appendChild(item);
@@ -550,24 +589,35 @@ examChoiceButtons.forEach(button => {
   });
 });
 
+resumeBtn.addEventListener("click", () => {
+  if (restoreTestState()) {
+    showRestoredQuiz();
+  } else {
+    showResumeChoice();
+  }
+});
+
+discardBtn.addEventListener("click", () => {
+  showExamSelector();
+});
+
 validateQuestionBank();
 
-if (restoreTestState()) {
-  document.body.classList.remove("start-mode", "result-mode");
-  document.body.classList.add("quiz-mode");
-  startArea.style.display = "none";
-  resultArea.style.display = "none";
-  quizArea.style.display = "grid";
-  setExamHeader();
-  const resultReturn = sessionStorage.getItem("jsmReturnToResult");
+// Powrót z formularza to nawigacja w obrębie tego samego testu,
+// więc nie pokazujemy wtedy ekranu wznowienia.
+const resultReturn = sessionStorage.getItem(RETURN_CONTEXT_KEY);
+const quizReturn = sessionStorage.getItem(RETURN_TO_QUIZ_KEY);
+if ((resultReturn || quizReturn) && restoreTestState()) {
+  sessionStorage.removeItem(RETURN_CONTEXT_KEY);
+  sessionStorage.removeItem(RETURN_TO_QUIZ_KEY);
   if (resultReturn === "early" || resultReturn === "complete") {
-    sessionStorage.removeItem("jsmReturnToResult");
+    showRestoredQuiz();
     showResult(resultReturn === "early");
   } else {
-    renderQuestion();
+    showRestoredQuiz();
   }
 } else {
-  sessionStorage.removeItem("jsmReturnToResult");
-  showExamSelector();
+  sessionStorage.removeItem(RETURN_CONTEXT_KEY);
+  sessionStorage.removeItem(RETURN_TO_QUIZ_KEY);
+  showResumeChoice();
 }
-
