@@ -173,3 +173,66 @@ button:disabled { opacity: .55; cursor: default; }
     padding: 8px;
   }
 }
+
+/* Ekran potwierdzenia: zastępuje formularz po udanym zapisie. */
+[hidden] { display: none !important; }
+.success-screen {
+  padding: 20px 0 12px;
+  text-align: center;
+}
+.success-icon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 22px;
+  color: var(--good);
+  background: var(--good-bg);
+  border: 2px solid #9be4b3;
+  border-radius: 50%;
+  font-size: 2.7rem;
+  font-weight: 800;
+}
+.success-kicker {
+  margin: 0 0 10px;
+  color: var(--good);
+  font-size: .78rem;
+  font-weight: 850;
+  letter-spacing: .10em;
+}
+.success-description {
+  max-width: 450px;
+  margin: 16px auto 26px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.success-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.success-back:hover { background: var(--accent-dark); }
+.success-back:focus-visible {
+  outline: 3px solid rgba(15, 107, 120, .3);
+  outline-offset: 3px;
+}
+.success-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: .87rem;
+}
+.status.error {
+  border: 1px solid #f3b5b5;
+  line-height: 1.5;
+}
+@media (max-width: 540px) {
+  .success-screen { padding: 12px 0; }
+  .success-back { width: 100%; }
+}

@@ -9,7 +9,7 @@
 <body>
   <main class="report-shell">
     <section class="report-card">
-      <header>
+      <header id="formHeader">
         <div class="brand">⚓ JSM</div>
         <h1>Zgłoś pytanie</h1>
         <p>
@@ -21,8 +21,8 @@
       <div id="setupWarning" class="warning" hidden></div>
 
       <form id="reportForm">
-        <label class="field small-field">
-          <span>Numer pytania</span>
+        <label id="questionIdField" class="field small-field">
+          <span>ID pytania</span>
           <input id="questionId" name="question_id" type="number" min="1" required>
         </label>
 
@@ -54,6 +54,17 @@
 
         <div id="status" class="status" aria-live="polite"></div>
       </form>
+
+      <section id="successScreen" class="success-screen" aria-labelledby="successTitle" hidden>
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <p class="success-kicker">ZGŁOSZENIE WYSŁANE</p>
+        <h1 id="successTitle" tabindex="-1">Dziękujemy za zgłoszenie!</h1>
+        <p class="success-description">
+          Twoja uwaga została zapisana. Dzięki niej możemy ulepszać bazę pytań.
+        </p>
+        <a id="successBackLink" class="success-back" href="../">← Wróć do testu</a>
+        <p class="success-note">Wrócisz do swojego testu bez utraty postępu.</p>
+      </section>
     </section>
   </main>
 

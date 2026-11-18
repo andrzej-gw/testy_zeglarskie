@@ -14,15 +14,44 @@
   const status = document.getElementById('status');
   const setupWarning = document.getElementById('setupWarning');
   const backToTestLink = document.getElementById('backToTestLink');
+  const formHeader = document.getElementById('formHeader');
+  const successScreen = document.getElementById('successScreen');
+  const successTitle = document.getElementById('successTitle');
+  const successBackLink = document.getElementById('successBackLink');
 
   const params = new URLSearchParams(location.search);
   const idFromUrl = Number(params.get('question'));
 
+  const numberFromUrl = Number(params.get('number'));
+  const totalFromUrl = Number(params.get('total'));
+  let testPosition = null;
+
+  // Numer w teście pobieramy z zapisanego stanu, aby nie pomylić go z ID w bazie.
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('jsmTestState') || 'null');
+    if (saved && Array.isArray(saved.questionIds) &&
+        Number(saved.questionIds[saved.current]) === idFromUrl) {
+      testPosition = {
+        number: saved.current + 1,
+        total: saved.questionIds.length,
+      };
+    }
+  } catch (error) {
+    console.warn('Nie udało się odczytać pozycji pytania w teście:', error);
+  }
+
+  // Parametry odnośnika są awaryjnym źródłem pozycji (np. przy braku stanu testu).
+  if (!testPosition && Number.isInteger(numberFromUrl) && numberFromUrl > 0 &&
+      Number.isInteger(totalFromUrl) && totalFromUrl >= numberFromUrl) {
+    testPosition = { number: numberFromUrl, total: totalFromUrl };
+  }
+
   if (Number.isInteger(idFromUrl) && idFromUrl > 0) {
     questionId.value = idFromUrl;
 
-    if (backToTestLink) {
-      backToTestLink.textContent = `← Wróć do pytania ${idFromUrl}`;
+    if (testPosition) {
+      backToTestLink.textContent = `← Wróć do pytania ${testPosition.number}`;
+      successBackLink.textContent = `← Wróć do pytania ${testPosition.number}`;
     }
   }
 
@@ -38,6 +67,15 @@
   function setStatus(text, type = '') {
     status.textContent = text;
     status.className = `status ${type}`;
+  }
+
+  function showSuccess() {
+    form.hidden = true;
+    formHeader.hidden = true;
+    setupWarning.hidden = true;
+    successScreen.hidden = false;
+    successTitle.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   if (!configured()) {
@@ -84,19 +122,14 @@
         );
       }
 
-      const preservedId = questionId.value;
-      form.reset();
-      questionId.value = preservedId;
-
-      setStatus(
-        'Dziękujemy. Zgłoszenie zostało zapisane.',
-        'success'
-      );
+      showSuccess();
     } catch (error) {
+      console.error('Błąd wysyłania zgłoszenia:', error);
       setStatus(
-        `Nie udało się wysłać zgłoszenia: ${error.message}`,
+        'Nie udało się potwierdzić wysłania zgłoszenia. Twoja treść została zachowana. Sprawdź połączenie i spróbuj ponownie. Jeśli problem się powtórzy, wróć do testu i spróbuj później.',
         'error'
       );
+      submitBtn.textContent = 'Spróbuj ponownie';
     } finally {
       submitBtn.disabled = false;
     }
