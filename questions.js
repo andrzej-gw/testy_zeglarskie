@@ -277,11 +277,11 @@ window.QUESTIONS = [
     "question": "Światła czerwone-białe-czerwone ustawione pionowo oznaczają statek:",
     "answers": [
       "Na kotwicy",
-      "Ograniczony w swojej zdolności manewrowej",
+      "O ograniczonej zdolności manewrowej",
       "Zajęty trałowaniem"
     ],
     "correct": 1,
-    "explanation": "Czerwone-białe-czerwone to charakterystyczne światła statku ograniczonego w swojej zdolności manewrowej."
+    "explanation": "Czerwone-białe-czerwone to charakterystyczne światła statku o ograniczonej zdolności manewrowej."
   },
   {
     "id": 16,
@@ -670,7 +670,7 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Określenie „statek ograniczony zdolnością manewrową” odnosi się do statku, którego zdolność manewrowania jest ograniczona:",
+    "question": "Określenie „statek o ograniczonej zdolności manewrowej” odnosi się do statku, którego zdolność manewrowania jest ograniczona:",
     "answers": [
       "Ze względu na charakter wykonywanej pracy",
       "Ze względu na wyjątkowe okoliczności, np. awarię steru",
@@ -3626,7 +3626,7 @@ window.QUESTIONS = [
     "image": "images/q201.svg",
     "answers": [
       "Statek nieodpowiadający za swoje ruchy",
-      "Statek ograniczony zdolnością manewrową",
+      "Statek o ograniczonej zdolności manewrowej",
       "Statek zajęty połowem"
     ],
     "correct": 0,
@@ -3644,12 +3644,12 @@ window.QUESTIONS = [
     "question": "Co oznacza pokazany układ świateł czerwone-białe-czerwone ustawionych pionowo?",
     "image": "images/q202.svg",
     "answers": [
-      "Statek ograniczony swoim zanurzeniem",
-      "Statek ograniczony zdolnością manewrową",
+      "Statek ograniczony swym zanurzeniem",
+      "Statek o ograniczonej zdolności manewrowej",
       "Statek pilotowy"
     ],
     "correct": 1,
-    "explanation": "Czerwone-białe-czerwone ustawione pionowo to światła statku ograniczonego zdolnością manewrową (RAM)."
+    "explanation": "Czerwone-białe-czerwone ustawione pionowo to światła statku o ograniczonej zdolności manewrowej (RAM)."
   },
   {
     "id": 203,
@@ -3701,12 +3701,12 @@ window.QUESTIONS = [
     "question": "Co oznacza pokazany znak dzienny: kula-romboid-kula ustawione pionowo?",
     "image": "images/q205.svg",
     "answers": [
-      "Statek ograniczony zdolnością manewrową",
+      "Statek o ograniczonej zdolności manewrowej",
       "Statek nieodpowiadający za swoje ruchy",
       "Statek osiadły na mieliźnie"
     ],
     "correct": 0,
-    "explanation": "Kula-romboid-kula to znak dzienny statku ograniczonego zdolnością manewrową."
+    "explanation": "Kula-romboid-kula to znak dzienny statku o ograniczonej zdolności manewrowej."
   },
   {
     "id": 206,
@@ -3722,7 +3722,7 @@ window.QUESTIONS = [
     "answers": [
       "Statek na kotwicy",
       "Statek nieodpowiadający za swoje ruchy",
-      "Statek ograniczony swoim zanurzeniem"
+      "Statek ograniczony swym zanurzeniem"
     ],
     "correct": 1,
     "explanation": "Dwie czarne kule ustawione pionowo oznaczają statek nieodpowiadający za swoje ruchy."
