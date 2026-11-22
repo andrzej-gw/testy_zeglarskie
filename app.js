@@ -1,4 +1,5 @@
 const TEST_SIZE = 75;
+const MIN_EXAM_USEFULNESS = 2;
 const TEST_STATE_KEY = "jsmTestState";
 const RETURN_CONTEXT_KEY = "jsmReturnToResult";
 const RETURN_TO_QUIZ_KEY = "jsmReturnToQuiz";
@@ -280,7 +281,9 @@ function showExamSelector(preserveSaved = false) {
 }
 
 function questionsForExam(exam) {
-  return window.QUESTIONS.filter(q => q[exam] === true);
+  return window.QUESTIONS.filter(q =>
+    q[exam] === true && (q.usefulness ?? 9) >= MIN_EXAM_USEFULNESS
+  );
 }
 
 function questionsForCategory(category) {

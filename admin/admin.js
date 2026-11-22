@@ -155,6 +155,46 @@
     `).join('');
   }
 
+  function formatUsefulness(value) {
+    const number = Number(value);
+    if (number === 9) return 'brak ocen (9)';
+    if (!Number.isFinite(number) || number < 1 || number > 5) return '—';
+    return `${number.toFixed(2).replace(/\.?0+$/, '')} / 5`;
+  }
+
+  function fileUsefulnessText(question) {
+    const value = question?.__source === 'static'
+      ? question.usefulness
+      : question?.__fileUsefulness;
+    return formatUsefulness(value);
+  }
+
+  function renderQuestionMetadata(question) {
+    const metaRows = [
+      ['Numer / ID', question.id],
+      ['Autor', question.author ?? '—'],
+      ['Kategoria', question.category ?? '—'],
+      ['Trudność', question.difficulty ?? '—'],
+      ['Egzaminy', examScopeText(question)],
+      ['Losowanie odpowiedzi', question.shuffleAnswers === false ? 'Nie' : 'Tak'],
+      [
+        'Poprawna odpowiedź',
+        Number.isInteger(question.correct) && question.correct >= 0 && question.correct <= 2
+          ? String.fromCharCode(65 + question.correct)
+          : '—'
+      ],
+      ['Obrazek', question.image ?? 'brak'],
+      ['Użyteczność', fileUsefulnessText(question)],
+    ];
+
+    els.metadata.innerHTML = metaRows.map(([key, value]) => `
+      <div>
+        <dt>${escapeHtml(key)}</dt>
+        <dd>${escapeHtml(value)}</dd>
+      </div>
+    `).join('');
+  }
+
   function reviewProposedScope() {
     return {
       zj: checked('proposed_zj'),
@@ -304,6 +344,7 @@
     return {
       id,
       shuffleAnswers: staticFallback?.shuffleAnswers !== false,
+      __fileUsefulness: staticFallback?.usefulness ?? 9,
       author: row.author || '',
       category: row.category || '',
       difficulty: row.difficulty || '',
@@ -416,29 +457,7 @@
     `;
 
     els.editQuestionBtn.hidden = q.__source !== 'supabase';
-
-    const metaRows = [
-      ['Numer / ID', q.id],
-      ['Autor', q.author ?? '—'],
-      ['Kategoria', q.category ?? '—'],
-      ['Trudność', q.difficulty ?? '—'],
-      ['Egzaminy', examScopeText(q)],
-      ['Losowanie odpowiedzi', q.shuffleAnswers === false ? 'Nie' : 'Tak'],
-      [
-        'Poprawna odpowiedź',
-        Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 2
-          ? String.fromCharCode(65 + q.correct)
-          : '—'
-      ],
-      ['Obrazek', q.image ?? 'brak'],
-    ];
-
-    els.metadata.innerHTML = metaRows.map(([key, value]) => `
-      <div>
-        <dt>${escapeHtml(key)}</dt>
-        <dd>${escapeHtml(value)}</dd>
-      </div>
-    `).join('');
+    renderQuestionMetadata(q);
 
     els.questionText.textContent = q.question || '(brak treści)';
     els.explanationText.textContent = q.explanation || 'Brak wyjaśnienia.';
@@ -521,39 +540,50 @@
     if (!hasConfig()) return;
 
     try {
-      const rows = await restGet(
-        reviewsTable,
-        'select=question_id,status,usefulness&order=question_id.asc'
-      );
-
       const nextSummary = {};
+      let lastReviewId = 0;
 
-      for (const row of rows) {
-        const id = Number(row.question_id);
-        if (!Number.isFinite(id)) continue;
+      while (true) {
+        const rows = await restGet(
+          reviewsTable,
+          `select=id,question_id,status,usefulness&order=id.asc&limit=500&id=gt.${lastReviewId}`
+        );
+        if (!rows.length) break;
+        lastReviewId = rows[rows.length - 1].id;
 
-        if (!nextSummary[id]) {
-          nextSummary[id] = {
-            count: 0,
-            approved: 0,
-            needs_changes: 0,
-            delete: 0,
-            usefulnessSum: 0,
-          };
+        for (const row of rows) {
+          const id = Number(row.question_id);
+          if (!Number.isFinite(id)) continue;
+
+          if (!nextSummary[id]) {
+            nextSummary[id] = {
+              count: 0,
+              approved: 0,
+              needs_changes: 0,
+              delete: 0,
+              usefulnessSum: 0,
+              usefulnessCount: 0,
+            };
+          }
+
+          const item = nextSummary[id];
+          item.count += 1;
+
+          if (['approved', 'needs_changes', 'delete'].includes(row.status)) {
+            item[row.status] += 1;
+          }
+
+          const usefulness = Number(row.usefulness);
+          if (Number.isInteger(usefulness) && usefulness >= 1 && usefulness <= 5) {
+            item.usefulnessSum += usefulness;
+            item.usefulnessCount += 1;
+          }
         }
-
-        const item = nextSummary[id];
-        item.count += 1;
-
-        if (['approved', 'needs_changes', 'delete'].includes(row.status)) {
-          item[row.status] += 1;
-        }
-
-        item.usefulnessSum += Number(row.usefulness || 0);
       }
 
       summary = nextSummary;
       updateSummaryBadge();
+      return nextSummary;
     } catch (error) {
       setStatus(`Nie udało się wczytać podsumowania: ${error.message}`, 'error');
     }
@@ -563,6 +593,7 @@
     const q = currentQuestion();
     const count = Number(summary?.[q?.id]?.count || 0);
     els.reviewCountBadge.textContent = pluralReviews(count);
+    if (q) renderQuestionMetadata(q);
   }
 
   async function loadReviews() {
@@ -1186,9 +1217,20 @@
     return result;
   }
 
-  function exportQuestionsJs() {
+  async function exportQuestionsJs() {
     if (!hasConfig()) return;
 
+    els.exportQuestionsBtn.disabled = true;
+    setStatus('Wczytywanie ocen użyteczności do eksportu…', 'working');
+    try {
+      const reviewSummary = await loadSummary();
+      if (reviewSummary) downloadQuestionsJs(reviewSummary);
+    } finally {
+      els.exportQuestionsBtn.disabled = false;
+    }
+  }
+
+  function downloadQuestionsJs(reviewSummary) {
     const merged = new Map(
       staticQuestions.map(q => [Number(q.id), exportableQuestion(q)])
     );
@@ -1210,12 +1252,20 @@
     const exported = [...merged.values()]
       .sort((a, b) => Number(a.id) - Number(b.id));
 
+    for (const question of exported) {
+      const ratings = reviewSummary[question.id];
+      question.usefulness = ratings?.usefulnessCount
+        ? ratings.usefulnessSum / ratings.usefulnessCount
+        : 9;
+    }
+
     const header = `/*
   BAZA PYTAŃ JSM
   Wygenerowano z panelu administracyjnego: ${new Date().toLocaleString('pl-PL')}
 
   Pytania ze statusem "Opublikowane" z Supabase zostały połączone
   z aktualną bazą questions.js. Szkice i pytania "Do oceny" nie są eksportowane.
+  Pole usefulness zawiera średnią ocen od 1 do 5. Wartość 9 oznacza brak ocen.
 */
 
 window.QUESTIONS = `;
