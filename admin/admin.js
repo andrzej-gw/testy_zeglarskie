@@ -303,6 +303,7 @@
 
     return {
       id,
+      shuffleAnswers: staticFallback?.shuffleAnswers !== false,
       author: row.author || '',
       category: row.category || '',
       difficulty: row.difficulty || '',
@@ -409,6 +410,9 @@
       <span class="source-badge ${questionStatusClass(q.status)}">
         ${escapeHtml(statusLabel(q.status))}
       </span>
+      <span class="source-badge ${q.shuffleAnswers === false ? 'warn' : 'good'}">
+        ${q.shuffleAnswers === false ? '🔒 Stała kolejność odpowiedzi' : '🔀 Losowa kolejność odpowiedzi'}
+      </span>
     `;
 
     els.editQuestionBtn.hidden = q.__source !== 'supabase';
@@ -419,6 +423,7 @@
       ['Kategoria', q.category ?? '—'],
       ['Trudność', q.difficulty ?? '—'],
       ['Egzaminy', examScopeText(q)],
+      ['Losowanie odpowiedzi', q.shuffleAnswers === false ? 'Nie' : 'Tak'],
       [
         'Poprawna odpowiedź',
         Number.isInteger(q.correct) && q.correct >= 0 && q.correct <= 2
@@ -1158,6 +1163,7 @@
   function exportableQuestion(q) {
     const result = {
       id: Number(q.id),
+      shuffleAnswers: q.shuffleAnswers !== false,
       author: q.author || '',
       category: q.category || '',
       difficulty: q.difficulty || '',

@@ -84,6 +84,7 @@ function saveTestState() {
     localStorage.setItem(TEST_STATE_KEY, JSON.stringify({
       exam: selectedExam,
       questionIds: testQuestions.map(q => q.id),
+      answerOrders: testQuestions.map(q => q.answerOrder),
       current,
       score,
       answered,
@@ -109,8 +110,21 @@ function restoreTestState() {
     const restoredQuestions = saved.questionIds.map(id => questionMap.get(Number(id)));
     if (restoredQuestions.some(q => !q || q[saved.exam] !== true)) return false;
 
+    // Poprzednie wersje zapisu nie miały kolejności odpowiedzi.
+    // Odtwarzamy je w pierwotnym układzie zamiast losować ponownie.
+    if (saved.answerOrders !== undefined &&
+        (!Array.isArray(saved.answerOrders) ||
+         saved.answerOrders.length !== restoredQuestions.length)) return false;
+
     selectedExam = saved.exam;
-    testQuestions = restoredQuestions;
+    testQuestions = restoredQuestions.map((q, index) =>
+      prepareQuestionForTest(
+        q,
+        saved.answerOrders === undefined
+          ? q.answers.map((_, i) => i)
+          : saved.answerOrders[index]
+      )
+    );
     current = saved.current;
     score = saved.score;
     userAnswers = saved.userAnswers;
@@ -267,6 +281,10 @@ function validateQuestionBank() {
       throw new Error(`Niepoprawne pole "correct" w pytaniu ID ${q.id}`);
     }
 
+    if (q.shuffleAnswers !== undefined && typeof q.shuffleAnswers !== "boolean") {
+      throw new Error(`Niepoprawne pole "shuffleAnswers" w pytaniu ID ${q.id}`);
+    }
+
     for (const exam of Object.keys(EXAMS)) {
       if (q[exam] !== undefined && typeof q[exam] !== "boolean") {
         throw new Error(`Niepoprawne pole "${exam}" w pytaniu ID ${q.id}`);
@@ -284,6 +302,33 @@ function shuffle(array) {
   }
 
   return result;
+}
+
+// Odpowiedzi i indeks poprawnej odpowiedzi zmieniamy tylko w kopii pytania.
+// answerOrder przechowuje indeksy odpowiedzi z oryginalnej bazy pytań.
+function prepareQuestionForTest(q, savedOrder) {
+  const indices = q.answers.map((_, i) => i);
+  let order;
+
+  if (savedOrder !== undefined) {
+    if (!Array.isArray(savedOrder) ||
+        savedOrder.length !== indices.length ||
+        savedOrder.some(i => !Number.isInteger(i) || i < 0 || i >= indices.length) ||
+        new Set(savedOrder).size !== indices.length) {
+      throw new Error(`Nieprawidłowa kolejność odpowiedzi w pytaniu ${q.id}`);
+    }
+    order = [...savedOrder];
+  } else {
+    // Brak flagi oznacza zezwolenie na losowanie.
+    order = q.shuffleAnswers === false ? indices : shuffle(indices);
+  }
+
+  return {
+    ...q,
+    answers: order.map(i => q.answers[i]),
+    correct: order.indexOf(q.correct),
+    answerOrder: order,
+  };
 }
 
 function createNewTest() {
@@ -306,7 +351,8 @@ function createNewTest() {
   clearTestState();
 
   const size = Math.min(TEST_SIZE, pool.length);
-  testQuestions = shuffle(pool).slice(0, size);
+  testQuestions = shuffle(pool).slice(0, size)
+    .map(q => prepareQuestionForTest(q));
 
   current = 0;
   score = 0;
