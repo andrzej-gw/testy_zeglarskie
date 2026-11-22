@@ -54,9 +54,9 @@ jobs:
             "$STUDENTS_USER@$STUDENTS_HOST" \
             "mkdir -p '$STUDENTS_PATH' && test -w '$STUDENTS_PATH'"
 
-          rsync -az \
+          rsync -azR \
             -e "ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
-            index.html style.css app.js questions.js \
-            images/ report/ reports/ \
-            admin/index.html admin/admin.css admin/admin.js admin/config.js \
+            ./index.html ./style.css ./app.js ./questions.js \
+            ./images ./report ./reports \
+            ./admin/index.html ./admin/admin.css ./admin/admin.js ./admin/config.js \
             "$STUDENTS_USER@$STUDENTS_HOST:$STUDENTS_PATH/"
