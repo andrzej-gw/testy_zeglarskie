@@ -18,9 +18,9 @@
 
     <section id="startArea" class="card start-screen">
       <div class="start-intro">
-        <p class="start-kicker">Wybierz zakres</p>
-        <h2>Do jakiego egzaminu chcesz się przygotowywać?</h2>
-        <p>Wylosuję 75 pytań przypisanych do wybranego egzaminu.</p>
+        <p id="startKicker" class="start-kicker">Wybierz zakres</p>
+        <h2 id="startHeading">Do jakiego egzaminu chcesz się przygotowywać?</h2>
+        <p id="startDescription">Wylosuję 75 pytań przypisanych do wybranego egzaminu.</p>
       </div>
 
       <section id="resumeArea" class="resume-area" aria-labelledby="resumeHeading" hidden>
@@ -54,6 +54,20 @@
           <span>Motorowodny Sternik Morski</span>
         </button>
       </div>
+
+      <button id="sectionLearningBtn" class="section-learning-btn" type="button">
+        Nauka poszczególnych działów →
+      </button>
+
+      <section id="sectionSelector" class="section-selector" aria-labelledby="sectionHeading" hidden>
+        <div class="section-selector-header">
+          <h3 id="sectionHeading">Wybierz dział</h3>
+          <button id="backToExamsBtn" class="back-to-exams-btn" type="button">
+            ← Wróć do wyboru egzaminu
+          </button>
+        </div>
+        <div id="sectionGrid" class="section-grid" aria-label="Wybór działu"></div>
+      </section>
 
       <div id="startError" class="start-error" role="alert" aria-live="polite"></div>
     </section>
@@ -97,7 +111,7 @@
       <p id="resultMessage"></p>
       <div class="result-actions">
         <button id="restartBtn" class="restart-btn">Wylosuj nowy test</button>
-        <button id="changeExamBtn" class="change-exam-btn">Zmień egzamin</button>
+        <button id="changeExamBtn" class="change-exam-btn">Wróć do wyboru</button>
       </div>
       <div id="review" class="review"></div>
     </section>

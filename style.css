@@ -561,6 +561,12 @@ body.start-mode .app-header {
   gap: 12px;
 }
 
+.exam-grid[hidden],
+.section-selector[hidden],
+.section-learning-btn[hidden] {
+  display: none;
+}
+
 .exam-choice {
   min-height: 112px;
   padding: 18px;
@@ -602,6 +608,98 @@ body.start-mode .app-header {
   font-size: .98rem;
   font-weight: 700;
   line-height: 1.3;
+}
+
+.section-learning-btn,
+.back-to-exams-btn {
+  min-height: 46px;
+  padding: 10px 15px;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  background: #f7fafb;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color .15s ease, background .15s ease, transform .15s ease;
+}
+
+.section-learning-btn {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.section-learning-btn:hover,
+.back-to-exams-btn:hover {
+  background: #eef7f8;
+  border-color: var(--accent);
+}
+
+.section-learning-btn:active,
+.back-to-exams-btn:active {
+  transform: scale(.99);
+}
+
+.section-selector {
+  margin-top: 20px;
+}
+
+.section-selector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.section-selector-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.back-to-exams-btn {
+  min-height: 40px;
+  padding: 8px 11px;
+  font-size: .88rem;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.section-choice {
+  min-height: 76px;
+  padding: 13px 15px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  background: #f8fbfc;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.section-choice:hover {
+  background: #f1f8fa;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.section-choice strong,
+.section-choice span {
+  display: block;
+}
+
+.section-choice strong {
+  margin-bottom: 5px;
+  font-size: .98rem;
+}
+
+.section-choice span {
+  color: var(--muted);
+  font-size: .84rem;
 }
 
 .start-error {
@@ -687,6 +785,16 @@ body.start-mode .result {
   .exam-choice span {
     display: inline;
     font-size: .94rem;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .section-selector-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .result-actions {

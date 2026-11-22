@@ -28,6 +28,7 @@ let score = 0;
 let answered = false;
 let userAnswers = [];
 let selectedExam = null;
+let selectedCategory = null;
 
 const questionMeta = document.getElementById("questionMeta");
 const questionNumber = document.getElementById("questionNumber");
@@ -49,11 +50,19 @@ const restartBtn = document.getElementById("restartBtn");
 const review = document.getElementById("review");
 const startArea = document.getElementById("startArea");
 const startError = document.getElementById("startError");
+const startKicker = document.getElementById("startKicker");
+const startHeading = document.getElementById("startHeading");
+const startDescription = document.getElementById("startDescription");
 const subtitle = document.getElementById("subtitle");
 const mainTitle = document.getElementById("mainTitle");
 const resultTitle = document.getElementById("resultTitle");
 const changeExamBtn = document.getElementById("changeExamBtn");
 const examChoiceButtons = [...document.querySelectorAll(".exam-choice")];
+const sectionLearningBtn = document.getElementById("sectionLearningBtn");
+const sectionSelector = document.getElementById("sectionSelector");
+const sectionGrid = document.getElementById("sectionGrid");
+const backToExamsBtn = document.getElementById("backToExamsBtn");
+const examGrid = document.querySelector(".exam-grid");
 const resumeArea = document.getElementById("resumeArea");
 const resumeText = document.getElementById("resumeText");
 const resumeBtn = document.getElementById("resumeBtn");
@@ -83,6 +92,7 @@ function saveTestState() {
   try {
     localStorage.setItem(TEST_STATE_KEY, JSON.stringify({
       exam: selectedExam,
+      category: selectedCategory,
       questionIds: testQuestions.map(q => q.id),
       answerOrders: testQuestions.map(q => q.answerOrder),
       current,
@@ -98,7 +108,13 @@ function saveTestState() {
 function restoreTestState() {
   try {
     const saved = readSavedTestState();
-    if (!saved || !EXAMS[saved.exam] ||
+    const savedCategory = typeof saved?.category === "string" && saved.category
+      ? saved.category
+      : null;
+    const validExam = Boolean(saved && EXAMS[saved.exam] && !savedCategory);
+    const validCategory = Boolean(savedCategory && !saved.exam &&
+      window.QUESTIONS.some(q => q.category === savedCategory));
+    if (!saved || (!validExam && !validCategory) ||
         !Array.isArray(saved.questionIds) || !saved.questionIds.length ||
         !Number.isInteger(saved.current) ||
         saved.current < 0 || saved.current >= saved.questionIds.length ||
@@ -108,7 +124,8 @@ function restoreTestState() {
 
     const questionMap = new Map(window.QUESTIONS.map(q => [Number(q.id), q]));
     const restoredQuestions = saved.questionIds.map(id => questionMap.get(Number(id)));
-    if (restoredQuestions.some(q => !q || q[saved.exam] !== true)) return false;
+    if (restoredQuestions.some(q => !q ||
+        (validExam ? q[saved.exam] !== true : q.category !== savedCategory))) return false;
 
     // Poprzednie wersje zapisu nie miały kolejności odpowiedzi.
     // Odtwarzamy je w pierwotnym układzie zamiast losować ponownie.
@@ -116,7 +133,8 @@ function restoreTestState() {
         (!Array.isArray(saved.answerOrders) ||
          saved.answerOrders.length !== restoredQuestions.length)) return false;
 
-    selectedExam = saved.exam;
+    selectedExam = validExam ? saved.exam : null;
+    selectedCategory = validCategory ? savedCategory : null;
     testQuestions = restoredQuestions.map((q, index) =>
       prepareQuestionForTest(
         q,
@@ -159,7 +177,7 @@ function showRestoredQuiz() {
 
 function showResumeChoice() {
   const saved = readSavedTestState();
-  if (!saved || !EXAMS[saved.exam] || !restoreTestState()) {
+  if (!saved || !restoreTestState()) {
     // Nie usuwamy niepoprawnego zapisu bez wiedzy użytkownika.
     showExamSelector(true);
     if (saved) startError.textContent =
@@ -167,7 +185,9 @@ function showResumeChoice() {
     return;
   }
 
-  const examName = EXAMS[selectedExam].short;
+  const examName = selectedCategory
+    ? `Dział: ${selectedCategory}`
+    : EXAMS[selectedExam].short;
   const count = testQuestions.length;
   const progress = Math.min(userAnswers.length, count);
   showExamSelector(true);
@@ -220,7 +240,10 @@ function restoreAnsweredQuestionUI() {
 }
 
 function setExamHeader() {
-  if (selectedExam && EXAMS[selectedExam]) {
+  if (selectedCategory) {
+    mainTitle.textContent = "⚓ Nauka działów";
+    subtitle.textContent = selectedCategory;
+  } else if (selectedExam && EXAMS[selectedExam]) {
     mainTitle.textContent = `⚓ ${EXAMS[selectedExam].short}`;
     subtitle.textContent = EXAMS[selectedExam].name;
   } else {
@@ -232,6 +255,7 @@ function setExamHeader() {
 function showExamSelector(preserveSaved = false) {
   if (!preserveSaved) clearTestState();
   selectedExam = null;
+  selectedCategory = null;
   testQuestions = [];
   current = 0;
   score = 0;
@@ -246,6 +270,12 @@ function showExamSelector(preserveSaved = false) {
   resultArea.style.display = "none";
   startError.textContent = "";
   resumeArea.hidden = true;
+  examGrid.hidden = false;
+  sectionLearningBtn.hidden = false;
+  sectionSelector.hidden = true;
+  startKicker.textContent = "Wybierz zakres";
+  startHeading.textContent = "Do jakiego egzaminu chcesz się przygotowywać?";
+  startDescription.textContent = "Wylosuję 75 pytań przypisanych do wybranego egzaminu.";
   setExamHeader();
 }
 
@@ -253,10 +283,55 @@ function questionsForExam(exam) {
   return window.QUESTIONS.filter(q => q[exam] === true);
 }
 
+function questionsForCategory(category) {
+  return window.QUESTIONS.filter(q => q.category === category);
+}
+
+function showSectionSelector() {
+  startError.textContent = "";
+  examGrid.hidden = true;
+  sectionLearningBtn.hidden = true;
+  sectionSelector.hidden = false;
+  startKicker.textContent = "Nauka działów";
+  startHeading.textContent = "Wybierz dział do nauki";
+  startDescription.textContent =
+    "Rozwiąż test obejmujący wszystkie pytania z wybranego działu.";
+  sectionGrid.innerHTML = "";
+
+  const categoryCounts = new Map();
+  window.QUESTIONS.forEach(q => {
+    if (q.category) {
+      categoryCounts.set(q.category, (categoryCounts.get(q.category) || 0) + 1);
+    }
+  });
+
+  [...categoryCounts.entries()]
+    .sort(([a], [b]) => a.localeCompare(b, "pl"))
+    .forEach(([category, count]) => {
+      const button = document.createElement("button");
+      button.className = "section-choice";
+      button.type = "button";
+      button.innerHTML = `<strong></strong><span></span>`;
+      button.querySelector("strong").textContent = category;
+      button.querySelector("span").textContent = `${count} ${count === 1 ? "pytanie" : count < 5 ? "pytania" : "pytań"}`;
+      button.addEventListener("click", () => startCategory(category));
+      sectionGrid.appendChild(button);
+    });
+}
+
 function startExam(exam) {
   if (!EXAMS[exam]) return;
 
   selectedExam = exam;
+  selectedCategory = null;
+  createNewTest();
+}
+
+function startCategory(category) {
+  if (!questionsForCategory(category).length) return;
+
+  selectedExam = null;
+  selectedCategory = category;
   createNewTest();
 }
 
@@ -334,23 +409,27 @@ function prepareQuestionForTest(q, savedOrder) {
 function createNewTest() {
   validateQuestionBank();
 
-  if (!selectedExam || !EXAMS[selectedExam]) {
+  if ((!selectedExam || !EXAMS[selectedExam]) && !selectedCategory) {
     showExamSelector();
     return;
   }
 
-  const pool = questionsForExam(selectedExam);
+  const pool = selectedCategory
+    ? questionsForCategory(selectedCategory)
+    : questionsForExam(selectedExam);
 
   if (pool.length === 0) {
+    const emptyPoolMessage = selectedCategory
+      ? `Brak pytań przypisanych do działu „${selectedCategory}”.`
+      : `Brak pytań przypisanych do egzaminu ${EXAMS[selectedExam]?.short || ""}.`;
     showExamSelector();
-    startError.textContent =
-      `Brak pytań przypisanych do egzaminu ${EXAMS[selectedExam]?.short || ""}.`;
+    startError.textContent = emptyPoolMessage;
     return;
   }
 
   clearTestState();
 
-  const size = Math.min(TEST_SIZE, pool.length);
+  const size = selectedCategory ? pool.length : Math.min(TEST_SIZE, pool.length);
   testQuestions = shuffle(pool).slice(0, size)
     .map(q => prepareQuestionForTest(q));
 
@@ -511,11 +590,13 @@ function showResult(endedEarly = false) {
   quizArea.style.display = "none";
   resultArea.style.display = "block";
 
-  const exam = EXAMS[selectedExam];
-  resultTitle.textContent = exam
+  const resultScope = selectedCategory
+    ? `Dział: ${selectedCategory}`
+    : EXAMS[selectedExam]?.short;
+  resultTitle.textContent = resultScope
     ? endedEarly
-      ? `${exam.short} • zakończono wcześniej`
-      : `${exam.short} • test ukończony`
+      ? `${resultScope} • zakończono wcześniej`
+      : `${resultScope} • test ukończony`
     : endedEarly
       ? "Test zakończony wcześniej"
       : "Test ukończony";
@@ -625,7 +706,9 @@ restartBtn.addEventListener("click", () => {
 });
 
 changeExamBtn.addEventListener("click", () => {
+  const wasCategoryTest = Boolean(selectedCategory);
   showExamSelector();
+  if (wasCategoryTest) showSectionSelector();
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
@@ -634,6 +717,9 @@ examChoiceButtons.forEach(button => {
     startExam(button.dataset.exam);
   });
 });
+
+sectionLearningBtn.addEventListener("click", showSectionSelector);
+backToExamsBtn.addEventListener("click", showExamSelector);
 
 resumeBtn.addEventListener("click", () => {
   if (restoreTestState()) {

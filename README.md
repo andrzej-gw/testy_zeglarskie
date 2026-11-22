@@ -5,6 +5,7 @@ Statyczna aplikacja do ćwiczenia pytań przed egzaminami **ŻJ** (Żeglarz Jach
 ## Testy i zapisywanie postępu
 
 - Po wyborze egzaminu aplikacja losuje maksymalnie **75 różnych pytań** z przypisanego zakresu.
+- Opcja **„Nauka poszczególnych działów”** pozwala wybrać dział i rozwiązać test ze wszystkich przypisanych do niego pytań w losowej kolejności.
 - Po odpowiedzi pokazuje poprawne rozwiązanie i wyjaśnienie; obsługuje również ilustracje.
 - Wynik, odpowiedzi, kolejność pytań i bieżąca pozycja są zapisywane w **`localStorage`**. Po ponownym otwarciu strony można **kontynuować test** lub **rozpocząć nowy**.
 - Przy aktualizacji starszy zapis z `sessionStorage` jest przenoszony do `localStorage`, jeśli nie istnieje już nowszy zapis.
