@@ -15,6 +15,7 @@
 window.QUESTIONS = [
   {
     "id": 1,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -33,6 +34,7 @@ window.QUESTIONS = [
   },
   {
     "id": 2,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -51,6 +53,7 @@ window.QUESTIONS = [
   },
   {
     "id": 3,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -69,6 +72,7 @@ window.QUESTIONS = [
   },
   {
     "id": 4,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -87,6 +91,7 @@ window.QUESTIONS = [
   },
   {
     "id": 5,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -105,6 +110,7 @@ window.QUESTIONS = [
   },
   {
     "id": 6,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -123,6 +129,7 @@ window.QUESTIONS = [
   },
   {
     "id": 7,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -141,6 +148,7 @@ window.QUESTIONS = [
   },
   {
     "id": 8,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -159,6 +167,7 @@ window.QUESTIONS = [
   },
   {
     "id": 9,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "trudne",
@@ -177,6 +186,7 @@ window.QUESTIONS = [
   },
   {
     "id": 10,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -195,6 +205,7 @@ window.QUESTIONS = [
   },
   {
     "id": 11,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -213,6 +224,7 @@ window.QUESTIONS = [
   },
   {
     "id": 12,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -231,6 +243,7 @@ window.QUESTIONS = [
   },
   {
     "id": 13,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -249,6 +262,7 @@ window.QUESTIONS = [
   },
   {
     "id": 14,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -267,6 +281,7 @@ window.QUESTIONS = [
   },
   {
     "id": 15,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -285,6 +300,7 @@ window.QUESTIONS = [
   },
   {
     "id": 16,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -303,6 +319,7 @@ window.QUESTIONS = [
   },
   {
     "id": 17,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -321,6 +338,7 @@ window.QUESTIONS = [
   },
   {
     "id": 18,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -339,6 +357,7 @@ window.QUESTIONS = [
   },
   {
     "id": 19,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -357,6 +376,7 @@ window.QUESTIONS = [
   },
   {
     "id": 20,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -375,6 +395,7 @@ window.QUESTIONS = [
   },
   {
     "id": 21,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -393,6 +414,7 @@ window.QUESTIONS = [
   },
   {
     "id": 22,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -411,6 +433,7 @@ window.QUESTIONS = [
   },
   {
     "id": 23,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -429,6 +452,7 @@ window.QUESTIONS = [
   },
   {
     "id": 24,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -447,6 +471,7 @@ window.QUESTIONS = [
   },
   {
     "id": 25,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -465,6 +490,7 @@ window.QUESTIONS = [
   },
   {
     "id": 26,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -483,6 +509,7 @@ window.QUESTIONS = [
   },
   {
     "id": 27,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -501,6 +528,7 @@ window.QUESTIONS = [
   },
   {
     "id": 28,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -519,6 +547,7 @@ window.QUESTIONS = [
   },
   {
     "id": 29,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -537,6 +566,7 @@ window.QUESTIONS = [
   },
   {
     "id": 30,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -555,6 +585,7 @@ window.QUESTIONS = [
   },
   {
     "id": 31,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -573,6 +604,7 @@ window.QUESTIONS = [
   },
   {
     "id": 32,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -591,6 +623,7 @@ window.QUESTIONS = [
   },
   {
     "id": 33,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -609,6 +642,7 @@ window.QUESTIONS = [
   },
   {
     "id": 34,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -627,6 +661,7 @@ window.QUESTIONS = [
   },
   {
     "id": 35,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "trudne",
@@ -645,6 +680,7 @@ window.QUESTIONS = [
   },
   {
     "id": 36,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -663,6 +699,7 @@ window.QUESTIONS = [
   },
   {
     "id": 37,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -681,6 +718,7 @@ window.QUESTIONS = [
   },
   {
     "id": 38,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -699,6 +737,7 @@ window.QUESTIONS = [
   },
   {
     "id": 39,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -717,6 +756,7 @@ window.QUESTIONS = [
   },
   {
     "id": 40,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "łatwe",
@@ -735,6 +775,7 @@ window.QUESTIONS = [
   },
   {
     "id": 41,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -753,6 +794,7 @@ window.QUESTIONS = [
   },
   {
     "id": 42,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -771,6 +813,7 @@ window.QUESTIONS = [
   },
   {
     "id": 43,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -789,6 +832,7 @@ window.QUESTIONS = [
   },
   {
     "id": 44,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -807,6 +851,7 @@ window.QUESTIONS = [
   },
   {
     "id": 45,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -825,6 +870,7 @@ window.QUESTIONS = [
   },
   {
     "id": 46,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -843,6 +889,7 @@ window.QUESTIONS = [
   },
   {
     "id": 47,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -861,6 +908,7 @@ window.QUESTIONS = [
   },
   {
     "id": 48,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -879,6 +927,7 @@ window.QUESTIONS = [
   },
   {
     "id": 49,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -897,6 +946,7 @@ window.QUESTIONS = [
   },
   {
     "id": 50,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -915,6 +965,7 @@ window.QUESTIONS = [
   },
   {
     "id": 51,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -933,6 +984,7 @@ window.QUESTIONS = [
   },
   {
     "id": 52,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -951,6 +1003,7 @@ window.QUESTIONS = [
   },
   {
     "id": 53,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -969,6 +1022,7 @@ window.QUESTIONS = [
   },
   {
     "id": 54,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -987,6 +1041,7 @@ window.QUESTIONS = [
   },
   {
     "id": 55,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -1005,6 +1060,7 @@ window.QUESTIONS = [
   },
   {
     "id": 56,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1023,6 +1079,7 @@ window.QUESTIONS = [
   },
   {
     "id": 57,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -1041,6 +1098,7 @@ window.QUESTIONS = [
   },
   {
     "id": 58,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1059,6 +1117,7 @@ window.QUESTIONS = [
   },
   {
     "id": 59,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1077,6 +1136,7 @@ window.QUESTIONS = [
   },
   {
     "id": 60,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "łatwe",
@@ -1095,6 +1155,7 @@ window.QUESTIONS = [
   },
   {
     "id": 61,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1113,6 +1174,7 @@ window.QUESTIONS = [
   },
   {
     "id": 62,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1131,6 +1193,7 @@ window.QUESTIONS = [
   },
   {
     "id": 63,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1149,6 +1212,7 @@ window.QUESTIONS = [
   },
   {
     "id": 64,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1167,6 +1231,7 @@ window.QUESTIONS = [
   },
   {
     "id": 65,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Budowa i silnik",
     "difficulty": "średnie",
@@ -1185,6 +1250,7 @@ window.QUESTIONS = [
   },
   {
     "id": 66,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1203,6 +1269,7 @@ window.QUESTIONS = [
   },
   {
     "id": 67,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1221,6 +1288,7 @@ window.QUESTIONS = [
   },
   {
     "id": 68,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1239,6 +1307,7 @@ window.QUESTIONS = [
   },
   {
     "id": 69,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1257,6 +1326,7 @@ window.QUESTIONS = [
   },
   {
     "id": 70,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1275,6 +1345,7 @@ window.QUESTIONS = [
   },
   {
     "id": 71,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1293,6 +1364,7 @@ window.QUESTIONS = [
   },
   {
     "id": 72,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1311,6 +1383,7 @@ window.QUESTIONS = [
   },
   {
     "id": 73,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1329,6 +1402,7 @@ window.QUESTIONS = [
   },
   {
     "id": 74,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1347,6 +1421,7 @@ window.QUESTIONS = [
   },
   {
     "id": 75,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1365,6 +1440,7 @@ window.QUESTIONS = [
   },
   {
     "id": 76,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1383,6 +1459,7 @@ window.QUESTIONS = [
   },
   {
     "id": 77,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1401,6 +1478,7 @@ window.QUESTIONS = [
   },
   {
     "id": 78,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1419,6 +1497,7 @@ window.QUESTIONS = [
   },
   {
     "id": 79,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1437,6 +1516,7 @@ window.QUESTIONS = [
   },
   {
     "id": 80,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1455,6 +1535,7 @@ window.QUESTIONS = [
   },
   {
     "id": 81,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "łatwe",
@@ -1473,6 +1554,7 @@ window.QUESTIONS = [
   },
   {
     "id": 82,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1491,6 +1573,7 @@ window.QUESTIONS = [
   },
   {
     "id": 83,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1509,6 +1592,7 @@ window.QUESTIONS = [
   },
   {
     "id": 84,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1527,6 +1611,7 @@ window.QUESTIONS = [
   },
   {
     "id": 85,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Teoria i manewrowanie",
     "difficulty": "średnie",
@@ -1545,6 +1630,7 @@ window.QUESTIONS = [
   },
   {
     "id": 86,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1563,6 +1649,7 @@ window.QUESTIONS = [
   },
   {
     "id": 87,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1581,6 +1668,7 @@ window.QUESTIONS = [
   },
   {
     "id": 88,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1599,6 +1687,7 @@ window.QUESTIONS = [
   },
   {
     "id": 89,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1617,6 +1706,7 @@ window.QUESTIONS = [
   },
   {
     "id": 90,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1635,6 +1725,7 @@ window.QUESTIONS = [
   },
   {
     "id": 91,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1653,6 +1744,7 @@ window.QUESTIONS = [
   },
   {
     "id": 92,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1671,6 +1763,7 @@ window.QUESTIONS = [
   },
   {
     "id": 93,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1689,6 +1782,7 @@ window.QUESTIONS = [
   },
   {
     "id": 94,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1707,6 +1801,7 @@ window.QUESTIONS = [
   },
   {
     "id": 95,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1725,6 +1820,7 @@ window.QUESTIONS = [
   },
   {
     "id": 96,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1743,6 +1839,7 @@ window.QUESTIONS = [
   },
   {
     "id": 97,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1761,6 +1858,7 @@ window.QUESTIONS = [
   },
   {
     "id": 98,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1779,6 +1877,7 @@ window.QUESTIONS = [
   },
   {
     "id": 99,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1797,6 +1896,7 @@ window.QUESTIONS = [
   },
   {
     "id": 100,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -1815,6 +1915,7 @@ window.QUESTIONS = [
   },
   {
     "id": 101,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1833,6 +1934,7 @@ window.QUESTIONS = [
   },
   {
     "id": 102,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1851,6 +1953,7 @@ window.QUESTIONS = [
   },
   {
     "id": 103,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1869,6 +1972,7 @@ window.QUESTIONS = [
   },
   {
     "id": 104,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1887,6 +1991,7 @@ window.QUESTIONS = [
   },
   {
     "id": 105,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1905,6 +2010,7 @@ window.QUESTIONS = [
   },
   {
     "id": 106,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1923,6 +2029,7 @@ window.QUESTIONS = [
   },
   {
     "id": 107,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1941,6 +2048,7 @@ window.QUESTIONS = [
   },
   {
     "id": 108,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1959,6 +2067,7 @@ window.QUESTIONS = [
   },
   {
     "id": 109,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "trudne",
@@ -1977,6 +2086,7 @@ window.QUESTIONS = [
   },
   {
     "id": 110,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -1995,6 +2105,7 @@ window.QUESTIONS = [
   },
   {
     "id": 111,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2013,6 +2124,7 @@ window.QUESTIONS = [
   },
   {
     "id": 112,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -2031,6 +2143,7 @@ window.QUESTIONS = [
   },
   {
     "id": 113,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "łatwe",
@@ -2049,6 +2162,7 @@ window.QUESTIONS = [
   },
   {
     "id": 114,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2067,6 +2181,7 @@ window.QUESTIONS = [
   },
   {
     "id": 115,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2085,6 +2200,7 @@ window.QUESTIONS = [
   },
   {
     "id": 116,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2103,6 +2219,7 @@ window.QUESTIONS = [
   },
   {
     "id": 117,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2121,6 +2238,7 @@ window.QUESTIONS = [
   },
   {
     "id": 118,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2139,6 +2257,7 @@ window.QUESTIONS = [
   },
   {
     "id": 119,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2157,6 +2276,7 @@ window.QUESTIONS = [
   },
   {
     "id": 120,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Nawigacja",
     "difficulty": "średnie",
@@ -2175,6 +2295,7 @@ window.QUESTIONS = [
   },
   {
     "id": 121,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2193,6 +2314,7 @@ window.QUESTIONS = [
   },
   {
     "id": 122,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2211,6 +2333,7 @@ window.QUESTIONS = [
   },
   {
     "id": 123,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2229,6 +2352,7 @@ window.QUESTIONS = [
   },
   {
     "id": 124,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2247,6 +2371,7 @@ window.QUESTIONS = [
   },
   {
     "id": 125,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2265,6 +2390,7 @@ window.QUESTIONS = [
   },
   {
     "id": 126,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2283,6 +2409,7 @@ window.QUESTIONS = [
   },
   {
     "id": 127,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2301,6 +2428,7 @@ window.QUESTIONS = [
   },
   {
     "id": 128,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2319,6 +2447,7 @@ window.QUESTIONS = [
   },
   {
     "id": 129,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2337,6 +2466,7 @@ window.QUESTIONS = [
   },
   {
     "id": 130,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "trudne",
@@ -2355,6 +2485,7 @@ window.QUESTIONS = [
   },
   {
     "id": 131,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "trudne",
@@ -2373,6 +2504,7 @@ window.QUESTIONS = [
   },
   {
     "id": 132,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "trudne",
@@ -2391,6 +2523,7 @@ window.QUESTIONS = [
   },
   {
     "id": 133,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2409,6 +2542,7 @@ window.QUESTIONS = [
   },
   {
     "id": 134,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2427,6 +2561,7 @@ window.QUESTIONS = [
   },
   {
     "id": 135,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2445,6 +2580,7 @@ window.QUESTIONS = [
   },
   {
     "id": 136,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2463,6 +2599,7 @@ window.QUESTIONS = [
   },
   {
     "id": 137,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2481,6 +2618,7 @@ window.QUESTIONS = [
   },
   {
     "id": 138,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2499,6 +2637,7 @@ window.QUESTIONS = [
   },
   {
     "id": 139,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2517,6 +2656,7 @@ window.QUESTIONS = [
   },
   {
     "id": 140,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2535,6 +2675,7 @@ window.QUESTIONS = [
   },
   {
     "id": 141,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2553,6 +2694,7 @@ window.QUESTIONS = [
   },
   {
     "id": 142,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2571,6 +2713,7 @@ window.QUESTIONS = [
   },
   {
     "id": 143,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2589,6 +2732,7 @@ window.QUESTIONS = [
   },
   {
     "id": 144,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "łatwe",
@@ -2607,6 +2751,7 @@ window.QUESTIONS = [
   },
   {
     "id": 145,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2625,6 +2770,7 @@ window.QUESTIONS = [
   },
   {
     "id": 146,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2643,6 +2789,7 @@ window.QUESTIONS = [
   },
   {
     "id": 147,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2661,6 +2808,7 @@ window.QUESTIONS = [
   },
   {
     "id": 148,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2679,6 +2827,7 @@ window.QUESTIONS = [
   },
   {
     "id": 149,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2697,6 +2846,7 @@ window.QUESTIONS = [
   },
   {
     "id": 150,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja i pływy",
     "difficulty": "średnie",
@@ -2715,6 +2865,7 @@ window.QUESTIONS = [
   },
   {
     "id": 151,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2733,6 +2884,7 @@ window.QUESTIONS = [
   },
   {
     "id": 152,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2751,6 +2903,7 @@ window.QUESTIONS = [
   },
   {
     "id": 153,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2769,6 +2922,7 @@ window.QUESTIONS = [
   },
   {
     "id": 154,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2787,6 +2941,7 @@ window.QUESTIONS = [
   },
   {
     "id": 155,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2805,6 +2960,7 @@ window.QUESTIONS = [
   },
   {
     "id": 156,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2823,6 +2979,7 @@ window.QUESTIONS = [
   },
   {
     "id": 157,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2841,6 +2998,7 @@ window.QUESTIONS = [
   },
   {
     "id": 158,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2859,6 +3017,7 @@ window.QUESTIONS = [
   },
   {
     "id": 159,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2877,6 +3036,7 @@ window.QUESTIONS = [
   },
   {
     "id": 160,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2895,6 +3055,7 @@ window.QUESTIONS = [
   },
   {
     "id": 161,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2913,6 +3074,7 @@ window.QUESTIONS = [
   },
   {
     "id": 162,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2931,6 +3093,7 @@ window.QUESTIONS = [
   },
   {
     "id": 163,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2949,6 +3112,7 @@ window.QUESTIONS = [
   },
   {
     "id": 164,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -2967,6 +3131,7 @@ window.QUESTIONS = [
   },
   {
     "id": 165,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "łatwe",
@@ -2985,6 +3150,7 @@ window.QUESTIONS = [
   },
   {
     "id": 166,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3003,6 +3169,7 @@ window.QUESTIONS = [
   },
   {
     "id": 167,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3021,6 +3188,7 @@ window.QUESTIONS = [
   },
   {
     "id": 168,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3039,6 +3207,7 @@ window.QUESTIONS = [
   },
   {
     "id": 169,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3057,6 +3226,7 @@ window.QUESTIONS = [
   },
   {
     "id": 170,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3075,6 +3245,7 @@ window.QUESTIONS = [
   },
   {
     "id": 171,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3093,6 +3264,7 @@ window.QUESTIONS = [
   },
   {
     "id": 172,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3111,6 +3283,7 @@ window.QUESTIONS = [
   },
   {
     "id": 173,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3129,6 +3302,7 @@ window.QUESTIONS = [
   },
   {
     "id": 174,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3147,6 +3321,7 @@ window.QUESTIONS = [
   },
   {
     "id": 175,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Meteorologia",
     "difficulty": "średnie",
@@ -3165,6 +3340,7 @@ window.QUESTIONS = [
   },
   {
     "id": 176,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "łatwe",
@@ -3183,6 +3359,7 @@ window.QUESTIONS = [
   },
   {
     "id": 177,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "łatwe",
@@ -3201,6 +3378,7 @@ window.QUESTIONS = [
   },
   {
     "id": 178,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "łatwe",
@@ -3219,6 +3397,7 @@ window.QUESTIONS = [
   },
   {
     "id": 179,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "łatwe",
@@ -3237,6 +3416,7 @@ window.QUESTIONS = [
   },
   {
     "id": 180,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3255,6 +3435,7 @@ window.QUESTIONS = [
   },
   {
     "id": 181,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3273,6 +3454,7 @@ window.QUESTIONS = [
   },
   {
     "id": 182,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3291,6 +3473,7 @@ window.QUESTIONS = [
   },
   {
     "id": 183,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3309,6 +3492,7 @@ window.QUESTIONS = [
   },
   {
     "id": 184,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3327,6 +3511,7 @@ window.QUESTIONS = [
   },
   {
     "id": 185,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Łączność i GMDSS",
     "difficulty": "średnie",
@@ -3345,6 +3530,7 @@ window.QUESTIONS = [
   },
   {
     "id": 186,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "łatwe",
@@ -3363,6 +3549,7 @@ window.QUESTIONS = [
   },
   {
     "id": 187,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3381,6 +3568,7 @@ window.QUESTIONS = [
   },
   {
     "id": 188,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3399,6 +3587,7 @@ window.QUESTIONS = [
   },
   {
     "id": 189,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "łatwe",
@@ -3417,6 +3606,7 @@ window.QUESTIONS = [
   },
   {
     "id": 190,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3435,6 +3625,7 @@ window.QUESTIONS = [
   },
   {
     "id": 191,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3453,6 +3644,7 @@ window.QUESTIONS = [
   },
   {
     "id": 192,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3471,6 +3663,7 @@ window.QUESTIONS = [
   },
   {
     "id": 193,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3489,6 +3682,7 @@ window.QUESTIONS = [
   },
   {
     "id": 194,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "łatwe",
@@ -3507,6 +3701,7 @@ window.QUESTIONS = [
   },
   {
     "id": 195,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3525,6 +3720,7 @@ window.QUESTIONS = [
   },
   {
     "id": 196,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3543,6 +3739,7 @@ window.QUESTIONS = [
   },
   {
     "id": 197,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3561,6 +3758,7 @@ window.QUESTIONS = [
   },
   {
     "id": 198,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3579,6 +3777,7 @@ window.QUESTIONS = [
   },
   {
     "id": 199,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "łatwe",
@@ -3597,6 +3796,7 @@ window.QUESTIONS = [
   },
   {
     "id": 200,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Bezpieczeństwo i ratownictwo",
     "difficulty": "średnie",
@@ -3615,6 +3815,7 @@ window.QUESTIONS = [
   }
   ,{
     "id": 201,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3634,6 +3835,7 @@ window.QUESTIONS = [
   },
   {
     "id": 202,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3653,6 +3855,7 @@ window.QUESTIONS = [
   },
   {
     "id": 203,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3672,6 +3875,7 @@ window.QUESTIONS = [
   },
   {
     "id": 204,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3691,6 +3895,7 @@ window.QUESTIONS = [
   },
   {
     "id": 205,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3710,6 +3915,7 @@ window.QUESTIONS = [
   },
   {
     "id": 206,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "COLREG i przepisy",
     "difficulty": "średnie",
@@ -3729,6 +3935,7 @@ window.QUESTIONS = [
   },
   {
     "id": 207,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja, oznakowanie i pływy",
     "difficulty": "łatwe",
@@ -3748,6 +3955,7 @@ window.QUESTIONS = [
   },
   {
     "id": 208,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja, oznakowanie i pływy",
     "difficulty": "łatwe",
@@ -3767,6 +3975,7 @@ window.QUESTIONS = [
   },
   {
     "id": 209,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja, oznakowanie i pływy",
     "difficulty": "średnie",
@@ -3786,6 +3995,7 @@ window.QUESTIONS = [
   },
   {
     "id": 210,
+    "shuffleAnswers": true,
     "author": "ChatGPT",
     "category": "Locja, oznakowanie i pływy",
     "difficulty": "średnie",
@@ -3827,6 +4037,7 @@ window.QUESTIONS = [
 window.QUESTIONS.push(
 {
   "id": 211,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3845,6 +4056,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 212,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3863,6 +4075,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 213,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3881,6 +4094,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 214,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3899,6 +4113,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 215,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3917,6 +4132,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 216,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3935,6 +4151,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 217,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3953,6 +4170,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 218,
+  "shuffleAnswers": false,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3972,6 +4190,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 219,
+  "shuffleAnswers": false,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -3991,6 +4210,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 220,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4009,6 +4229,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 221,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4027,6 +4248,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 222,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4045,6 +4267,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 223,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4063,6 +4286,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 224,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4081,6 +4305,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 225,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4099,6 +4324,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 226,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4117,6 +4343,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 227,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4135,6 +4362,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 228,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4153,6 +4381,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 229,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4171,6 +4400,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 230,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4189,6 +4419,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 231,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4207,6 +4438,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 232,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4225,6 +4457,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 233,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4243,6 +4476,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 234,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4261,6 +4495,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 235,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4279,6 +4514,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 236,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4297,6 +4533,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 237,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4315,6 +4552,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 238,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4333,6 +4571,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 239,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4351,6 +4590,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 240,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4369,6 +4609,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 241,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4387,6 +4628,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 242,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4405,6 +4647,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 243,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4423,6 +4666,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 244,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4441,6 +4685,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 245,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4459,6 +4704,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 246,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4477,6 +4723,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 247,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4496,6 +4743,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 248,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4514,6 +4762,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 249,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4532,6 +4781,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 250,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Jachty żaglowe morskie",
   "difficulty": "średnie",
@@ -4550,6 +4800,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 251,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4569,6 +4820,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 252,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4588,6 +4840,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 253,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4607,6 +4860,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 254,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4625,6 +4879,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 255,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4643,6 +4898,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 256,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4661,6 +4917,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 257,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4679,6 +4936,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 258,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4697,6 +4955,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 259,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4715,6 +4974,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 260,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4733,6 +4993,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 261,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4752,6 +5013,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 262,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4770,6 +5032,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 263,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4788,6 +5051,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 264,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4806,6 +5070,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 265,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4824,6 +5089,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 266,
+  "shuffleAnswers": false,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4843,6 +5109,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 267,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4862,6 +5129,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 268,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4880,6 +5148,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 269,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4899,6 +5168,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 270,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4918,6 +5188,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 271,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4937,6 +5208,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 272,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4955,6 +5227,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 273,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4973,6 +5246,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 274,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -4992,6 +5266,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 275,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5011,6 +5286,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 276,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5030,6 +5306,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 277,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5049,6 +5326,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 278,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5068,6 +5346,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 279,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5087,6 +5366,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 280,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5106,6 +5386,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 281,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5125,6 +5406,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 282,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5144,6 +5426,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 283,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5163,6 +5446,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 284,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5182,6 +5466,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 285,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Locja",
   "difficulty": "średnie",
@@ -5201,6 +5486,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 286,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5219,6 +5505,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 287,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5237,6 +5524,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 288,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5255,6 +5543,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 289,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5273,6 +5562,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 290,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5291,6 +5581,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 291,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5309,6 +5600,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 292,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5328,6 +5620,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 293,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5346,6 +5639,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 294,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5364,6 +5658,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 295,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5382,6 +5677,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 296,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5401,6 +5697,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 297,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5420,6 +5717,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 298,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5439,6 +5737,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 299,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5457,6 +5756,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 300,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5475,6 +5775,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 301,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5493,6 +5794,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 302,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5511,6 +5813,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 303,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5530,6 +5833,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 304,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5548,6 +5852,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 305,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5566,6 +5871,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 306,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5584,6 +5890,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 307,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5602,6 +5909,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 308,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5620,6 +5928,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 309,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5638,6 +5947,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 310,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5656,6 +5966,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 311,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5674,6 +5985,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 312,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5692,6 +6004,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 313,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5710,6 +6023,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 314,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5729,6 +6043,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 315,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5747,6 +6062,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 316,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5765,6 +6081,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 317,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5783,6 +6100,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 318,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5801,6 +6119,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 319,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5819,6 +6138,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 320,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Meteorologia",
   "difficulty": "średnie",
@@ -5837,6 +6157,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 321,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5855,6 +6176,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 322,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5873,6 +6195,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 323,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5891,6 +6214,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 324,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5909,6 +6233,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 325,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5928,6 +6253,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 326,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5947,6 +6273,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 327,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5965,6 +6292,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 328,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -5983,6 +6311,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 329,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6002,6 +6331,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 330,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6021,6 +6351,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 331,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6039,6 +6370,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 332,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6057,6 +6389,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 333,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6075,6 +6408,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 334,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6093,6 +6427,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 335,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6111,6 +6446,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 336,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6129,6 +6465,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 337,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6147,6 +6484,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 338,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6165,6 +6503,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 339,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6183,6 +6522,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 340,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6201,6 +6541,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 341,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6220,6 +6561,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 342,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6239,6 +6581,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 343,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6258,6 +6601,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 344,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6277,6 +6621,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 345,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6296,6 +6641,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 346,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6314,6 +6660,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 347,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6333,6 +6680,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 348,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6352,6 +6700,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 349,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6370,6 +6719,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 350,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6388,6 +6738,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 351,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6406,6 +6757,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 352,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6424,6 +6776,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 353,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6443,6 +6796,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 354,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6461,6 +6815,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 355,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6480,6 +6835,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 356,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6499,6 +6855,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 357,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6518,6 +6875,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 358,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6536,6 +6894,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 359,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6555,6 +6914,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 360,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6574,6 +6934,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 361,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6592,6 +6953,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 362,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6611,6 +6973,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 363,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6630,6 +6993,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 364,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6648,6 +7012,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 365,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "MPZZM",
   "difficulty": "średnie",
@@ -6667,6 +7032,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 366,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6685,6 +7051,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 367,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6703,6 +7070,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 368,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6721,6 +7089,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 369,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6739,6 +7108,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 370,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6757,6 +7127,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 371,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6775,6 +7146,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 372,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6793,6 +7165,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 373,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6811,6 +7184,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 374,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6829,6 +7203,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 375,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6848,6 +7223,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 376,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6866,6 +7242,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 377,
+  "shuffleAnswers": false,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6885,6 +7262,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 378,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6903,6 +7281,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 379,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6921,6 +7300,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 380,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6939,6 +7319,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 381,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6957,6 +7338,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 382,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6975,6 +7357,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 383,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -6993,6 +7376,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 384,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7011,6 +7395,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 385,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7029,6 +7414,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 386,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7047,6 +7433,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 387,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7065,6 +7452,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 388,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7083,6 +7471,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 389,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7101,6 +7490,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 390,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7119,6 +7509,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 391,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7137,6 +7528,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 392,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7155,6 +7547,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 393,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7173,6 +7566,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 394,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7191,6 +7585,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 395,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7209,6 +7604,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 396,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7227,6 +7623,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 397,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7245,6 +7642,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 398,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7263,6 +7661,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 399,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7281,6 +7680,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 400,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7299,6 +7699,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 401,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Nawigacja",
   "difficulty": "średnie",
@@ -7317,6 +7718,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 402,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7335,6 +7737,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 403,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7353,6 +7756,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 404,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7371,6 +7775,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 405,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7389,6 +7794,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 406,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7407,6 +7813,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 407,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7425,6 +7832,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 408,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7443,6 +7851,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 409,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7461,6 +7870,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 410,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7479,6 +7889,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 411,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7497,6 +7908,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 412,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7515,6 +7927,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 413,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7533,6 +7946,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 414,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7551,6 +7965,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 415,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7570,6 +7985,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 416,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7588,6 +8004,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 417,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7606,6 +8023,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 418,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7624,6 +8042,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 419,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7642,6 +8061,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 420,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7660,6 +8080,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 421,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7678,6 +8099,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 422,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7696,6 +8118,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 423,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7714,6 +8137,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 424,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7732,6 +8156,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 425,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7750,6 +8175,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 426,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7768,6 +8194,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 427,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7786,6 +8213,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 428,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7804,6 +8232,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 429,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7822,6 +8251,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 430,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7840,6 +8270,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 431,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7858,6 +8289,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 432,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7876,6 +8308,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 433,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7894,6 +8327,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 434,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7912,6 +8346,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 435,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7930,6 +8365,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 436,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7948,6 +8384,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 437,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7966,6 +8403,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 438,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -7984,6 +8422,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 439,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8002,6 +8441,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 440,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8021,6 +8461,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 441,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8039,6 +8480,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 442,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8057,6 +8499,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 443,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8075,6 +8518,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 444,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8093,6 +8537,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 445,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8111,6 +8556,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 446,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8129,6 +8575,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 447,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8147,6 +8594,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 448,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8165,6 +8613,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 449,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Planowanie rejsów",
   "difficulty": "średnie",
@@ -8183,6 +8632,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 450,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8201,6 +8651,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 451,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8219,6 +8670,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 452,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8237,6 +8689,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 453,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8255,6 +8708,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 454,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8273,6 +8727,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 455,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8291,6 +8746,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 456,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8309,6 +8765,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 457,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8327,6 +8784,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 458,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8345,6 +8803,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 459,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8363,6 +8822,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 460,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8381,6 +8841,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 461,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8399,6 +8860,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 462,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8417,6 +8879,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 463,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8435,6 +8898,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 464,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8453,6 +8917,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 465,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8471,6 +8936,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 466,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8489,6 +8955,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 467,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8507,6 +8974,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 468,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8525,6 +8993,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 469,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8543,6 +9012,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 470,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8561,6 +9031,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 471,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8579,6 +9050,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 472,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8597,6 +9069,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 473,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8615,6 +9088,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 474,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8633,6 +9107,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 475,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8651,6 +9126,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 476,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8669,6 +9145,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 477,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8687,6 +9164,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 478,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8705,6 +9183,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 479,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8723,6 +9202,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 480,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8741,6 +9221,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 481,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8759,6 +9240,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 482,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8777,6 +9259,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 483,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8795,6 +9278,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 484,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8813,6 +9297,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 485,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8831,6 +9316,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 486,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8849,6 +9335,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 487,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8867,6 +9354,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 488,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8886,6 +9374,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 489,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8904,6 +9393,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 490,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8922,6 +9412,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 491,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8940,6 +9431,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 492,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8958,6 +9450,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 493,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8976,6 +9469,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 494,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -8994,6 +9488,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 495,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9012,6 +9507,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 496,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9030,6 +9526,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 497,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9048,6 +9545,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 498,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9066,6 +9564,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 499,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9084,6 +9583,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 500,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Ratownictwo",
   "difficulty": "średnie",
@@ -9102,6 +9602,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 501,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9120,6 +9621,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 502,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9138,6 +9640,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 503,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9156,6 +9659,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 504,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9174,6 +9678,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 505,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9192,6 +9697,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 506,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9210,6 +9716,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 507,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9228,6 +9735,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 508,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9247,6 +9755,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 509,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9265,6 +9774,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 510,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9283,6 +9793,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 511,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9301,6 +9812,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 512,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9319,6 +9831,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 513,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9337,6 +9850,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 514,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9355,6 +9869,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 515,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9373,6 +9888,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 516,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9391,6 +9907,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 517,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9409,6 +9926,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 518,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9427,6 +9945,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 519,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9445,6 +9964,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 520,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9463,6 +9983,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 521,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9481,6 +10002,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 522,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9499,6 +10021,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 523,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9517,6 +10040,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 524,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9535,6 +10059,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 525,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9553,6 +10078,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 526,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9571,6 +10097,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 527,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9589,6 +10116,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 528,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9607,6 +10135,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 529,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9625,6 +10154,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 530,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9643,6 +10173,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 531,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9661,6 +10192,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 532,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9679,6 +10211,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 533,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9697,6 +10230,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 534,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9716,6 +10250,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 535,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9735,6 +10270,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 536,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9753,6 +10289,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 537,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9772,6 +10309,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 538,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9791,6 +10329,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 539,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
@@ -9809,6 +10348,7 @@ window.QUESTIONS.push(
 },
 {
   "id": 540,
+  "shuffleAnswers": true,
   "author": "PZŻ",
   "category": "Sygnalizacja i łączność",
   "difficulty": "średnie",
