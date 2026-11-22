@@ -1,0 +1,62 @@
+name: Deploy to students.mimuw.edu.pl
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          STUDENTS_SSH_KEY: ${{ secrets.STUDENTS_SSH_KEY }}
+          STUDENTS_KNOWN_HOSTS: ${{ secrets.STUDENTS_KNOWN_HOSTS }}
+        run: |
+          test -n "$STUDENTS_SSH_KEY" || { echo "Missing STUDENTS_SSH_KEY"; exit 1; }
+          test -n "$STUDENTS_KNOWN_HOSTS" || { echo "Missing STUDENTS_KNOWN_HOSTS"; exit 1; }
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$STUDENTS_SSH_KEY" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$STUDENTS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Deploy website files
+        env:
+          STUDENTS_HOST: ${{ secrets.STUDENTS_HOST }}
+          STUDENTS_USER: ${{ secrets.STUDENTS_USER }}
+          STUDENTS_PATH: ${{ secrets.STUDENTS_PATH }}
+        run: |
+          set -eu
+          test -n "$STUDENTS_HOST" || { echo "Missing STUDENTS_HOST"; exit 1; }
+          test -n "$STUDENTS_USER" || { echo "Missing STUDENTS_USER"; exit 1; }
+          test -n "$STUDENTS_PATH" || { echo "Missing STUDENTS_PATH"; exit 1; }
+          case "$STUDENTS_PATH" in
+            /*) ;;
+            *) echo "STUDENTS_PATH must be an absolute path"; exit 1 ;;
+          esac
+          case "$STUDENTS_PATH" in
+            *[!A-Za-z0-9_./-]*|*..*) echo "STUDENTS_PATH contains unsupported characters"; exit 1 ;;
+          esac
+
+          ssh -i "$HOME/.ssh/id_ed25519" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            "$STUDENTS_USER@$STUDENTS_HOST" \
+            "mkdir -p '$STUDENTS_PATH' && test -w '$STUDENTS_PATH'"
+
+          rsync -az \
+            -e "ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts" \
+            index.html style.css app.js questions.js \
+            images/ report/ reports/ \
+            admin/index.html admin/admin.css admin/admin.js admin/config.js \
+            "$STUDENTS_USER@$STUDENTS_HOST:$STUDENTS_PATH/"
