@@ -77,6 +77,7 @@ create table if not exists public.jsm_questions (
   author text,
   category text,
   difficulty text,
+  shuffle_answers boolean not null default true,
 
   question text,
 

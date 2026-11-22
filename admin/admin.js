@@ -72,6 +72,7 @@
     qJsm: document.getElementById('qJsm'),
     qSm: document.getElementById('qSm'),
     qMsm: document.getElementById('qMsm'),
+    qShuffleAnswers: document.getElementById('qShuffleAnswers'),
     qQuestion: document.getElementById('qQuestion'),
     qImageUrl: document.getElementById('qImageUrl'),
     qImageFile: document.getElementById('qImageFile'),
@@ -343,7 +344,9 @@
 
     return {
       id,
-      shuffleAnswers: staticFallback?.shuffleAnswers !== false,
+      shuffleAnswers: typeof row.shuffle_answers === 'boolean'
+        ? row.shuffle_answers
+        : staticFallback?.shuffleAnswers !== false,
       __fileUsefulness: staticFallback?.usefulness ?? 9,
       author: row.author || '',
       category: row.category || '',
@@ -413,7 +416,7 @@
   async function loadDatabaseQuestions() {
     const rows = await restGet(
       questionsTable,
-      'select=id,author,category,difficulty,zj,jsm,sm,msm,question,answer_a,answer_b,answer_c,correct,explanation,image_url,status,created_at,updated_at&order=id.asc'
+      'select=id,author,category,difficulty,zj,jsm,sm,msm,shuffle_answers,question,answer_a,answer_b,answer_c,correct,explanation,image_url,status,created_at,updated_at&order=id.asc'
     );
 
     databaseQuestions = rows.map(databaseRowToQuestion);
@@ -836,6 +839,7 @@
       jsm: Boolean(els.qJsm.checked),
       sm: Boolean(els.qSm.checked),
       msm: Boolean(els.qMsm.checked),
+      shuffle_answers: Boolean(els.qShuffleAnswers.checked),
       question: els.qQuestion.value.trim(),
       answer_a: els.qAnswerA.value.trim(),
       answer_b: els.qAnswerB.value.trim(),
@@ -942,6 +946,7 @@
     els.qJsm.checked = false;
     els.qSm.checked = false;
     els.qMsm.checked = false;
+    els.qShuffleAnswers.checked = true;
 
     els.archiveQuestionBtn.hidden = true;
     els.testPreview.hidden = true;
@@ -965,6 +970,7 @@
     els.qJsm.checked = Boolean(question.jsm);
     els.qSm.checked = Boolean(question.sm);
     els.qMsm.checked = Boolean(question.msm);
+    els.qShuffleAnswers.checked = question.shuffleAnswers !== false;
     els.qQuestion.value = question.question || '';
     els.qImageUrl.value = question.image || '';
     els.qAnswerA.value = question.answers?.[0] || '';

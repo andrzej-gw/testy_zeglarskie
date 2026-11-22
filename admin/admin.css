@@ -625,6 +625,20 @@ input[type="file"]:focus {
   font-weight: 800;
 }
 
+.shuffle-answers-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 750;
+}
+
+.shuffle-answers-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
 .exam-scope-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
