@@ -6,6 +6,8 @@ create table if not exists public.jsm_question_reports (
   question_id integer not null,
   message text not null,
   contact text,
+  resolved boolean not null default false,
+  resolved_at timestamptz,
   created_at timestamptz not null default now()
 );
 
