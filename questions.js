@@ -1300,8 +1300,8 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Regularna kontrola napięcia paska alternatora jest ważna, ponieważ zbyt luźny pasek może:",
     "answers": [
-      "Zwiększyć głębokość zanurzenia",
-      "Otworzyć zawór denny",
+      "Powodować nadmierne obciążenie łożysk alternatora i przyspieszać ich zużycie",
+      "Powodować wzrost napięcia ładowania akumulatora powyżej wartości dopuszczalnej",
       "Ślizgać się i ograniczać ładowanie"
     ],
     "correct": 2,
@@ -1420,12 +1420,12 @@ window.QUESTIONS = [
     "msm": false,
     "question": "Podczas zwrotu przez rufę największym bezpośrednim zagrożeniem dla załogi jest:",
     "answers": [
-      "Zatrzymanie alternatora",
-      "Zmiana deklinacji",
+      "Zatrzymanie jachtu w kącie martwym",
+      "Utrata kontroli nad fokiem po wyluzowaniu obu szotów",
       "Gwałtowne przejście bomu na drugą burtę"
     ],
     "correct": 2,
-    "explanation": "Niekontrolowany przelot bomu może spowodować ciężkie obrażenia i uszkodzenia osprzętu.",
+    "explanation": "Niekontrolowany przelot bomu może spowodować ciężkie obrażenia i uszkodzenia osprzętu. Zatrzymanie w kącie martwym nie nastąpi, bo to nie sztag, a utrata kontroli nad fokiem nie jest taka groźna, bo nie stanowi bezpośredniego zagrożenia dla załogantów, tylko dla żagla.",
     "usefulness": 9
   },
   {
@@ -1538,14 +1538,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": true,
     "msm": true,
-    "question": "Prop walk, czyli efekt śruby, jest najbardziej odczuwalny często:",
+    "question": "Efekt śruby (prop walk) jest najbardziej odczuwalny:",
     "answers": [
-      "Przy żegludze bez użycia silnika",
-      "Na kotwicy bez pracującego silnika",
-      "Na biegu wstecznym przy małej prędkości postępowej"
+      "Na biegu naprzód przy małej prędkości postępowej",
+      "Na biegu wstecz przy dużej prędkości postępowej",
+      "Na biegu wstecz przy małej prędkości postępowej"
     ],
     "correct": 2,
-    "explanation": "Poprzeczna składowa działania śruby bywa szczególnie wyraźna na biegu wstecznym.",
+    "explanation": "Poprzeczna składowa działania śruby bywa szczególnie wyraźna na biegu wstecz, zwłaszcza przy małej prędkości postępowej.",
     "usefulness": 9
   },
   {
@@ -1581,8 +1581,8 @@ window.QUESTIONS = [
     "question": "Odbijacze podczas podejścia do nabrzeża powinny być:",
     "answers": [
       "Przygotowane po stronie planowanego kontaktu z nabrzeżem i na odpowiedniej wysokości",
-      "Schowane pod pokładem do chwili uderzenia",
-      "Zawieszone wyłącznie na rufie"
+      "Przygotowane do podania na ląd",
+      "Zamontowane na rufie"
     ],
     "correct": 0,
     "explanation": "Odbijacze należy przygotować przed manewrem tam, gdzie realnie mogą chronić burtę.",
@@ -2338,14 +2338,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "Jeśli kurs sterowany pozostaje stały, ale COG wyraźnie zmienia się po wejściu w silny prąd, oznacza to przede wszystkim:",
+    "question": "Jeśli kurs kompasowy pozostaje stały, ale COG wyraźnie zmienia się po wejściu w silny prąd, oznacza to przede wszystkim:",
     "answers": [
-      "Uszkodzenie wszystkich kompasów",
-      "Wpływ prądu na drogę nad dnem",
-      "Nagłą zmianę deklinacji"
+      "Zmianę kąta dryfu wywołaną oddziaływaniem prądu na część podwodną kadłuba",
+      "Wpływ prądu na wypadkowy wektor prędkości jachtu względem dna",
+      "Zmianę dewiacji kompasu spowodowaną zmianą kierunku ruchu jachtu względem dna"
     ],
     "correct": 1,
-    "explanation": "Prąd wpływa na wektor ruchu nad dnem, więc COG może różnić się od kursu sterowanego.",
+    "explanation": "COG określa kierunek ruchu jednostki względem dna i wynika z sumowania wektorów prędkości jachtu względem wody oraz prądu. Dryf jest natomiast odchyleniem toru ruchu względem kierunku ustawienia dziobu, wywołanym przede wszystkim oddziaływaniem wiatru. Dewiacja kompasu zależy od pola magnetycznego jednostki i jej kursu kompasowego, a nie od kierunku przemieszczania się względem dna.",
     "usefulness": 9
   },
   {
@@ -2818,14 +2818,14 @@ window.QUESTIONS = [
     "jsm": true,
     "sm": false,
     "msm": true,
-    "question": "Wysokość pływu 2,1 m i głębokość mapowa 1,4 m dają w przybliżeniu rzeczywistą głębokość:",
+    "question": "Wysokość pływu 2,1 m i chart datum 1,4 m dają w przybliżeniu rzeczywistą głębokość:",
     "answers": [
       "2,1 m",
       "3,5 m",
       "0,7 m"
     ],
     "correct": 1,
-    "explanation": "Przy typowym zastosowaniu wysokość pływu dodaje się do sondowania odniesionego do chart datum: 1,4 + 2,1 = 3,5 m.",
+    "explanation": "Przy typowym zastosowaniu wysokość pływu dodaje się do chart datum: 1,4 + 2,1 = 3,5 m.",
     "usefulness": 9
   },
   {
@@ -3321,11 +3321,11 @@ window.QUESTIONS = [
     "question": "6°B odpowiada określeniu:",
     "answers": [
       "Silny wiatr",
-      "Cisza",
-      "Sztorm huraganowy"
+      "Bardzo silny wiatr",
+      "Dość silny wiatr"
     ],
     "correct": 0,
-    "explanation": "W skali Beauforta 6 B to silny wiatr (strong breeze), około 22–27 kn.",
+    "explanation": "W skali Beauforta 6°B to silny wiatr (strong breeze), około 22–27 kn.",
     "usefulness": 9
   },
   {
@@ -3340,12 +3340,12 @@ window.QUESTIONS = [
     "msm": true,
     "question": "8°B to:",
     "answers": [
-      "Łagodny wiatr",
-      "Cisza",
-      "Sztormowy wiatr/gale"
+      "Bardzo silny wiatr",
+      "Silny sztorm",
+      "Sztorm"
     ],
     "correct": 2,
-    "explanation": "8 B odpowiada gale, około 34–40 kn.",
+    "explanation": "W skali Beauforta 8°B to sztorm (gale), około 34–40 kn.",
     "usefulness": 9
   },
   {
@@ -3520,7 +3520,7 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Sygnał MAYDAY oznacza:",
     "answers": [
-      "Wiadomość wyłącznie meteorologiczną",
+      "Wiadomość meteorologiczną",
       "Rutynowe wywołanie portu",
       "Poważne i bezpośrednie niebezpieczeństwo wymagające natychmiastowej pomocy"
     ],
@@ -3720,9 +3720,9 @@ window.QUESTIONS = [
     "msm": true,
     "question": "Po zauważeniu człowieka wypadającego za burtę jednym z pierwszych działań jest:",
     "answers": [
-      "Wyłączyć wszystkie urządzenia nawigacyjne",
-      "Natychmiast zaalarmować załogę, wskazywać poszkodowanego i oznaczyć pozycję",
-      "Najpierw zejść pod pokład po dokumenty"
+      "Zrzucenie żagli",
+      "Ogłoszenie alarmu",
+      "Skontaktowanie się z innymi jednostkami"
     ],
     "correct": 1,
     "explanation": "Szybkie ogłoszenie MOB, utrzymanie kontaktu wzrokowego i oznaczenie pozycji zwiększają szanse odnalezienia człowieka.",
@@ -3760,7 +3760,7 @@ window.QUESTIONS = [
     "msm": true,
     "question": "W przypadku hipotermii poszkodowanego należy przede wszystkim:",
     "answers": [
-      "Intensywnie nacierać kończyny śniegiem",
+      "Rozpocząć intensywne ogrzewanie kończyn, aby przywrócić prawidłowe krążenie obwodowe",
       "Podawać alkohol dla rozgrzania",
       "Chronić przed dalszą utratą ciepła i obchodzić się z nim delikatnie"
     ],
@@ -5250,7 +5250,7 @@ window.QUESTIONS = [
     "shuffleAnswers": true,
     "author": "PZŻ",
     "category": "Locja",
-    "difficulty": "średnie",
+    "difficulty": "trudne",
     "zj": false,
     "jsm": true,
     "sm": false,
@@ -6124,7 +6124,7 @@ window.QUESTIONS = [
       "Trzeba przeliczyć węzły na m/s: 3 m/s = 1°B; 6 m/s = 2°B; 9 m/s = 3°B itd."
     ],
     "correct": 1,
-    "explanation": "W podanym zestawie jako szybkie przybliżenie przyjęto wzór B ≈ (Vkn + 5) / 5.",
+    "explanation": "Można skorzystać z przybliżenia B ≈ (V kn + 5) / 5.",
     "usefulness": 9
   },
   {
@@ -10852,7 +10852,7 @@ window.QUESTIONS = [
     "answers": [
       "Ustawić kanał 16 radiotelefonu UKF i prowadzić nasłuch",
       "Natychmiast skierować jacht w kierunku, w którym widziano sygnały",
-      "Ustawić kanał 16 radiotelefonu UKF i prowadzić nasłuch. Natychmiast skierować jacht w kierunku, w którym widziano sygnały. Nadać May Day Relay, jeżeli nie ma reakcji stacji brzegowej"
+      "Ustawić kanał 16 radiotelefonu UKF i prowadzić nasłuch. Natychmiast skierować jacht w kierunku, w którym widziano sygnały. Nadać Mayday Relay, jeżeli nie ma reakcji stacji brzegowej"
     ],
     "correct": 2,
     "explanation": "SOS nadawany światłem jest sygnałem wzywania pomocy; należy podjąć działania ratownicze, prowadzić nasłuch i w razie potrzeby przekazać wezwanie dalej.",
