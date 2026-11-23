@@ -1,6 +1,6 @@
 /*
   BAZA PYTAŃ JSM
-  Wygenerowano z panelu administracyjnego: 22.11.2026, 17:51:22
+  Wygenerowano z panelu administracyjnego: 23.11.2026, 02:29:58
 
   Pytania ze statusem "Opublikowane" z Supabase zostały połączone
   z aktualną bazą questions.js. Szkice i pytania "Do oceny" nie są eksportowane.
@@ -746,7 +746,7 @@ window.QUESTIONS = [
     ],
     "correct": 0,
     "explanation": "RAM jest ograniczony charakterem wykonywanej pracy, np. pracami podwodnymi, pogłębianiem czy zaopatrywaniem w morzu.",
-    "usefulness": 4.5
+    "usefulness": 4.666666666666667
   },
   {
     "id": 38,
@@ -1306,7 +1306,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Luźny pasek może się ślizgać, przegrzewać i zmniejszać skuteczność napędu alternatora lub pompy, jeśli jest wspólna.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 66,
@@ -1426,7 +1426,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Niekontrolowany przelot bomu może spowodować ciężkie obrażenia i uszkodzenia osprzętu. Zatrzymanie w kącie martwym nie nastąpi, bo to nie sztag, a utrata kontroli nad fokiem nie jest taka groźna, bo nie stanowi bezpośredniego zagrożenia dla załogantów, tylko dla żagla.",
-    "usefulness": 9
+    "usefulness": 5
   },
   {
     "id": 72,
@@ -1546,7 +1546,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Poprzeczna składowa działania śruby bywa szczególnie wyraźna na biegu wstecz, zwłaszcza przy małej prędkości postępowej.",
-    "usefulness": 9
+    "usefulness": 5
   },
   {
     "id": 78,
@@ -1586,7 +1586,7 @@ window.QUESTIONS = [
     ],
     "correct": 0,
     "explanation": "Odbijacze należy przygotować przed manewrem tam, gdzie realnie mogą chronić burtę.",
-    "usefulness": 9
+    "usefulness": 2
   },
   {
     "id": 80,
@@ -1866,7 +1866,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Przyjmując wschód jako dodatni: +5° + (-2°) = +3°. Kurs rzeczywisty jest o 3° większy od kompasowego.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 94,
@@ -2346,7 +2346,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "COG określa kierunek ruchu jednostki względem dna i wynika z sumowania wektorów prędkości jachtu względem wody oraz prądu. Dryf jest natomiast odchyleniem toru ruchu względem kierunku ustawienia dziobu, wywołanym przede wszystkim oddziaływaniem wiatru. Dewiacja kompasu zależy od pola magnetycznego jednostki i jej kursu kompasowego, a nie od kierunku przemieszczania się względem dna.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 118,
@@ -2826,7 +2826,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Przy typowym zastosowaniu wysokość pływu dodaje się do chart datum: 1,4 + 2,1 = 3,5 m.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 142,
@@ -3066,7 +3066,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Na półkuli północnej cyrkulacja wokół wyżu jest zgodna z ruchem wskazówek zegara, z niewielką składową na zewnątrz.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 154,
@@ -3326,7 +3326,7 @@ window.QUESTIONS = [
     ],
     "correct": 0,
     "explanation": "W skali Beauforta 6°B to silny wiatr (strong breeze), około 22–27 kn.",
-    "usefulness": 9
+    "usefulness": 3
   },
   {
     "id": 167,
@@ -3346,7 +3346,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "W skali Beauforta 8°B to sztorm (gale), około 34–40 kn.",
-    "usefulness": 9
+    "usefulness": 3
   },
   {
     "id": 168,
@@ -3526,7 +3526,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "MAYDAY jest sygnałem niebezpieczeństwa dla sytuacji poważnego i bezpośredniego zagrożenia.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 177,
@@ -3726,7 +3726,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Szybkie ogłoszenie MOB, utrzymanie kontaktu wzrokowego i oznaczenie pozycji zwiększają szanse odnalezienia człowieka.",
-    "usefulness": 9
+    "usefulness": 5
   },
   {
     "id": 187,
@@ -3766,7 +3766,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "W hipotermii ważne jest zatrzymanie utraty ciepła, izolacja i delikatne obchodzenie się z poszkodowanym; alkohol nie jest właściwym sposobem ogrzewania.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 189,
@@ -4111,7 +4111,7 @@ window.QUESTIONS = [
     "correct": 0,
     "explanation": "Kula-romboid-kula to znak dzienny statku o ograniczonej zdolności manewrowej.",
     "image": "images/q205.svg",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 206,
@@ -4356,7 +4356,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Odwrócenie skoku łopat może odwrócić kierunek siły ciągu bez zmiany kierunku obrotów wału.",
-    "usefulness": 9
+    "usefulness": 2
   },
   {
     "id": 218,
@@ -4878,7 +4878,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Przy odpadaniu spinakerbom jest ustawiany bardziej poprzecznie: wybiera się bras, a szot odpowiednio luzuje.",
-    "usefulness": 9
+    "usefulness": 1
   },
   {
     "id": 244,
@@ -5263,7 +5263,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Do powiązania stron atlasu lub danych z rombów pływowych z konkretną godziną potrzebna jest jeszcze informacja o czasie HW portu odniesienia, zwykle z tablic pływów.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 263,
@@ -5448,7 +5448,7 @@ window.QUESTIONS = [
     "correct": 2,
     "explanation": "Niebiesko-żółta pława z pionowym krzyżem jest awaryjnym znakiem nowego wraku i wymaga zachowania bezpiecznej odległości.",
     "image": "images/q271.png",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 272,
@@ -6125,7 +6125,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Można skorzystać z przybliżenia B ≈ (V kn + 5) / 5.",
-    "usefulness": 9
+    "usefulness": 5
   },
   {
     "id": 305,
@@ -6406,7 +6406,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "Aktywnemu frontowi chłodnemu często towarzyszą chmury konwekcyjne, przelotne intensywne opady, burze i szkwały.",
-    "usefulness": 9
+    "usefulness": 2
   },
   {
     "id": 319,
@@ -6955,7 +6955,7 @@ window.QUESTIONS = [
     "correct": 0,
     "explanation": "Na rysunku jest zwykły statek o napędzie mechanicznym; wobec jachtu żaglowego co do zasady to on ma obowiązek ustąpienia, więc jacht utrzymuje kurs i prędkość, obserwując sytuację.",
     "image": "images/q345.png",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 346,
@@ -7466,7 +7466,7 @@ window.QUESTIONS = [
     ],
     "correct": 0,
     "explanation": "Katalog map służy do doboru właściwych arkuszy po ich numerach i zasięgu.",
-    "usefulness": 9
+    "usefulness": 1
   },
   {
     "id": 371,
@@ -7628,7 +7628,7 @@ window.QUESTIONS = [
     ],
     "correct": 1,
     "explanation": "Po instalacji należy skonfigurować podstawowe parametry urządzenia zgodnie z instrukcją.",
-    "usefulness": 9
+    "usefulness": 1
   },
   {
     "id": 379,
@@ -8870,7 +8870,7 @@ window.QUESTIONS = [
     "correct": 2,
     "explanation": "Na żaglowcu o długości poniżej 20 m światła burtowe i rufowe mogą być połączone w jednej latarni trójsektorowej na topie masztu.",
     "image": "images/q440.png",
-    "usefulness": 9
+    "usefulness": 1
   },
   {
     "id": 441,
@@ -9190,7 +9190,7 @@ window.QUESTIONS = [
     ],
     "correct": 0,
     "explanation": "Skuteczne oddechy ratownicze wymagają najpierw udrożnienia dróg oddechowych.",
-    "usefulness": 9
+    "usefulness": 4
   },
   {
     "id": 457,
@@ -10856,7 +10856,7 @@ window.QUESTIONS = [
     ],
     "correct": 2,
     "explanation": "SOS nadawany światłem jest sygnałem wzywania pomocy; należy podjąć działania ratownicze, prowadzić nasłuch i w razie potrzeby przekazać wezwanie dalej.",
-    "usefulness": 9
+    "usefulness": 5
   },
   {
     "id": 540,
